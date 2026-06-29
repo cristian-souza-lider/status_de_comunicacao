@@ -18,8 +18,9 @@ from selenium.webdriver.support import expected_conditions as EC
 # Inicializa o Flask configurado para ler arquivos da mesma pasta raiz
 app = Flask(__name__, static_folder='.', template_folder='.')
 
-# Configurações de pastas e arquivos locais
-DOWNLOAD_DIR = r"C:\Users\cmi\OneDrive - Nossa Senhora do Ó Participações S.A\Status em Python"
+# Configurações de pastas e arquivos locais de forma dinâmica
+user_home = os.path.expanduser("~")
+DOWNLOAD_DIR = os.path.join(user_home, "OneDrive - Nossa Senhora do Ó Participações S.A", "Status em Python")
 GECKODRIVER_PATH = r"C:\Projetos em Python\Status em Python\geckodriver.exe"
 LOCAL_PROJETO_DIR = r"C:\Projetos em Python\Status em Python"
 
@@ -287,15 +288,15 @@ def processar_e_unificar_arquivos():
         json.dump(dados_da_hora_atual, f, ensure_ascii=False, indent=4)
     print(f"[Backup OneDrive] Salvo arquivo individual da hora em: {caminho_json_hora}")
     
-    # UNIFICAÇÃO FÍSICA: Ocorre apenas se for a última execução de 23h
+    # UNIFICAÇÃO FÍSICA NO ONEDRIVE: Ocorre apenas às 23h52
     caminho_unificado_salvo = None
-    if now.hour == 23:
+    if now.hour == 23 and now.minute == 52:
         diretorio_dia = os.path.join(DOWNLOAD_DIR, ano, mes_nome, dia_str)
         padrao_horas_dia = os.path.join(diretorio_dia, "*h", "status_comunicacao.json")
         arquivos_horas = glob.glob(padrao_horas_dia)
         
         todos_dados_dia = []
-        print(f"[Unificação - Final do Dia] Consolidando {len(arquivos_horas)} horas para o dia {dia_str}/{now.month:02d}/{ano}...")
+        print(f"[Unificação - Fim do Dia] Consolidando {len(arquivos_horas)} horas de dados...")
         
         for arq_hora in arquivos_horas:
             try:
@@ -314,9 +315,9 @@ def processar_e_unificar_arquivos():
         
         with open(caminho_unificado_salvo, 'w', encoding='utf-8') as f:
             json.dump(todos_dados_dia, f, ensure_ascii=False, indent=4)
-        print(f"[Unificação - Final do Dia] Salvo com sucesso em: {caminho_unificado_salvo}")
+        print(f"[Unificação - Fim do Dia] Salvo com sucesso em: {caminho_unificado_salvo}")
     else:
-        print(f"[Hora] Execução das {now.hour:02d}h concluída. Unificação física agendada para às 23h.")
+        print(f"[Hora] Execução concluída. Unificação física no OneDrive agendada para às 23h52.")
         
     # Salva os arquivos locais para envio ao GitHub
     caminho_dados_dia_local = os.path.join(LOCAL_PROJETO_DIR, f"dados-{dia_str}-{now.month:02d}-{ano}.json")
@@ -521,16 +522,24 @@ def escutar_teclado():
         input()
         Thread(target=executar_com_bloqueio, args=("Manual",), daemon=True).start()
 
-def obter_segundos_ate_minuto_5():
+def obter_segundos_ate_proximo_agendamento():
+    """Calcula os segundos restantes até os minutos 07, 22, 37 ou 52 subsequentes."""
     agora = datetime.now()
-    proximo = agora.replace(minute=5, second=0, microsecond=0)
-    if proximo <= agora:
-        proximo += timedelta(hours=1)
-    return (proximo - agora).total_seconds()
+    alvos = [7, 22, 37, 52]
+    proximos_horarios = []
+    
+    for minuto in alvos:
+        proximo = agora.replace(minute=minuto, second=0, microsecond=0)
+        if proximo <= agora:
+            proximo += timedelta(hours=1)
+        proximos_horarios.append(proximo)
+        
+    proximo_agendamento = min(proximos_horarios)
+    return (proximo_agendamento - agora).total_seconds()
 
 def loop_agendamento():
     while True:
-        segundos_espera = obter_segundos_ate_minuto_5()
+        segundos_espera = obter_segundos_ate_proximo_agendamento()
         proximo_horario = datetime.now() + timedelta(seconds=segundos_espera)
         print(f"[Agendador] Próxima execução programada para: {proximo_horario.strftime('%d/%m/%Y %H:%M:%S')}")
         
@@ -559,5 +568,5 @@ if __name__ == '__main__':
     # 3. Escuta do teclado (PowerShell) para execuções manuais intermediárias
     Thread(target=escutar_teclado, daemon=True).start()
     
-    # 4. Mantém a thread principal no loop de agendamento permanente (minuto 5 de hora em hora)
+    # 4. Mantém a thread principal no loop de agendamento permanente (minutos 07, 22, 37 e 52)
     loop_agendamento()
