@@ -2,10 +2,11 @@ import os
 import time
 import glob
 import json
-import subprocess
+import logging
 from datetime import datetime, timedelta
 from threading import Thread, Lock
 import pandas as pd
+from flask import Flask, jsonify, send_from_directory
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
@@ -13,14 +14,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 
+# Inicializa o Flask configurado para ler arquivos da mesma pasta raiz
+app = Flask(__name__, static_folder='.', template_folder='.')
+
 # Configurações de pastas e arquivos locais
-# Detecta automaticamente a pasta de usuário do Windows logado na máquina
-user_home = os.path.expanduser("~")
-DOWNLOAD_DIR = os.path.join(user_home, "OneDrive - Nossa Senhora do Ó Participações S.A", "Status em Python")
+DOWNLOAD_DIR = r"C:\Users\cmi\OneDrive - Nossa Senhora do Ó Participações S.A\Status em Python"
 GECKODRIVER_PATH = r"C:\Projetos em Python\Status em Python\geckodriver.exe"
 LOCAL_PROJETO_DIR = r"C:\Projetos em Python\Status em Python"
 
-# Credenciais do sistema Cittati
+# Credenciais do sistema
 USUARIO_GOOL = "status.nso"
 SENHA_GOOL = "@Cmi123"
 
@@ -42,30 +44,30 @@ MESES_PT = {int(v): k for k, v in MESES_PT_REV.items()}
 def enviar_para_github():
     """Executa comandos git de commit e push de forma silenciosa para o GitHub."""
     try:
-        print("[Git] Escaneando e adicionando arquivos de dados modificados...")
-        # Adiciona somente os arquivos estruturados do dashboard e código front
+        print("[Git] Adicionando arquivos de dados modificados...")
         subprocess.run(["git", "add", "datas.json", "dados.json", "dados-*.json", "index.html", "app.js", "style.css"], cwd=LOCAL_PROJETO_DIR, check=True)
         
-        # Verifica se há realmente alguma alteração para comitar
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
         if not status.stdout.strip():
-            print("[Git] Nenhuma alteração de dados encontrada para comitar.")
+            print("[Git] Nenhuma alteração encontrada para comitar.")
             return
             
-        print("[Git] Criando commit de dados...")
-        subprocess.run(["git", "commit", "-m", "Automacao: Atualizacao horaria de dados"], cwd=LOCAL_PROJETO_DIR, check=True)
+        print("[Git] Criando commit...")
+        import subprocess
+        subprocess.run(["git", "commit", "-m", "Automacao: Sincronizacao de dados"], cwd=LOCAL_PROJETO_DIR, check=True)
         
-        print("[Git] Enviando alterações ao GitHub remoto...")
+        print("[Git] Enviando alterações ao GitHub...")
         subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
-        print("[Git] Sincronização com o GitHub concluída.")
+        print("[Git] Sincronização concluída.")
     except Exception as e:
-        print(f"[Git - Erro] Falha ao sincronizar dados com o GitHub: {e}")
+        print(f"[Git - Erro] Falha ao sincronizar com o GitHub: {e}")
 
 # =====================================================================
-#                 ROTINA DO ROBO AUTOMATIZADO (SELENIUM)
+#             ROTAS E LOGICA DO SERVIDOR DO DASHBOARD
 # =====================================================================
 
 def buscar_caminho_firefox():
+    """Busca o executável do Firefox nos caminhos padrões do Windows."""
     caminhos_provaveis = [
         r"C:\Program Files\Mozilla Firefox\firefox.exe",
         r"C:\Program Files (x86)\Mozilla Firefox\firefox.exe",
@@ -75,6 +77,136 @@ def buscar_caminho_firefox():
         if os.path.exists(caminho):
             return caminho
     return None
+
+@app.route('/')
+def index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/app.js')
+def serve_js():
+    return send_from_directory('.', 'app.js')
+
+@app.route('/style.css')
+def serve_css():
+    return send_from_directory('.', 'style.css')
+
+@app.route('/datas.json')
+def serve_lista_datas():
+    datas = set()
+    if not os.path.exists(DOWNLOAD_DIR):
+        return jsonify([])
+        
+    for ano in os.listdir(DOWNLOAD_DIR):
+        caminho_ano = os.path.join(DOWNLOAD_DIR, ano)
+        if not os.path.isdir(caminho_ano) or not ano.isdigit():
+            continue
+            
+        for mes_nome in os.listdir(caminho_ano):
+            caminho_mes = os.path.join(caminho_ano, mes_nome)
+            if not os.path.isdir(caminho_mes) or mes_nome not in MESES_PT_REV:
+                continue
+                
+            mes_num = MESES_PT_REV[mes_nome]
+            
+            for dia_nome in os.listdir(caminho_mes):
+                caminho_dia = os.path.join(caminho_mes, dia_nome)
+                if not os.path.isdir(caminho_dia) or not dia_nome.isdigit():
+                    continue
+                    
+                tem_unificado = glob.glob(os.path.join(caminho_dia, "unificado_*.json"))
+                tem_horas = glob.glob(os.path.join(caminho_dia, "*h", "status_comunicacao.json"))
+                
+                if tem_unificado or tem_horas:
+                    datas.add(f"{int(dia_nome):02d}/{mes_num}/{ano}")
+                    
+    lista_ordenada = sorted(list(datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
+    return jsonify(lista_ordenada)
+
+@app.route('/dados-<data_str>.json')
+def serve_dados_data(data_str):
+    data_normal = data_str.replace('-', '/')
+    dados = obter_dados_da_data(data_normal)
+    return jsonify(dados)
+
+@app.route('/dados.json')
+def serve_dados_atual():
+    datas = listar_datas_disponiveis_interno()
+    if datas:
+        ultima_data = datas[-1]
+        dados = obter_dados_da_data(ultima_data)
+        return jsonify(dados)
+    return jsonify([])
+
+@app.after_request
+def evitar_cache(response):
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
+
+def listar_datas_disponiveis_interno():
+    datas = set()
+    if not os.path.exists(DOWNLOAD_DIR):
+        return []
+    for ano in os.listdir(DOWNLOAD_DIR):
+        caminho_ano = os.path.join(DOWNLOAD_DIR, ano)
+        if not os.path.isdir(caminho_ano) or not ano.isdigit():
+            continue
+        for mes_nome in os.listdir(caminho_ano):
+            caminho_mes = os.path.join(caminho_ano, mes_nome)
+            if not os.path.isdir(caminho_mes) or mes_nome not in MESES_PT_REV:
+                continue
+            mes_num = MESES_PT_REV[mes_nome]
+            for dia_nome in os.listdir(caminho_mes):
+                caminho_dia = os.path.join(caminho_mes, dia_nome)
+                if not os.path.isdir(caminho_dia) or not dia_nome.isdigit():
+                    continue
+                datas.add(f"{int(dia_nome):02d}/{mes_num}/{ano}")
+    return sorted(list(datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
+
+def obter_dados_da_data(data_str):
+    try:
+        dia, mes_num, ano = data_str.split("/")
+        mes_nome = MESES_PT[int(mes_num)]
+        dia_str = f"{int(dia):02d}"
+        
+        caminho_dia = os.path.join(DOWNLOAD_DIR, ano, mes_nome, dia_str)
+        if not os.path.exists(caminho_dia):
+            return []
+            
+        nome_unificado = f"unificado_{dia_str}-{mes_num}-{ano}.json"
+        caminho_unificado = os.path.join(caminho_dia, nome_unificado)
+        
+        if os.path.exists(caminho_unificado):
+            try:
+                with open(caminho_unificado, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"[Erro] Falha ao ler arquivo unificado {caminho_unificado}: {e}")
+                
+        dados_dia = []
+        padrao_horas_dia = os.path.join(caminho_dia, "*h", "status_comunicacao.json")
+        arquivos_horas = glob.glob(padrao_horas_dia)
+        
+        for arq_hora in arquivos_horas:
+            try:
+                nome_pasta_hora = os.path.basename(os.path.dirname(arq_hora))
+                with open(arq_hora, 'r', encoding='utf-8') as f:
+                    registros_hora = json.load(f)
+                    for r in registros_hora:
+                        r["_data_pasta"] = f"{dia_str}/{mes_num}/{ano}"  # Formato dd/mm/aaaa
+                        r["_hora_pasta"] = nome_pasta_hora
+                    dados_dia.extend(registros_hora)
+            except Exception as e:
+                print(f"[Erro] Falha ao ler arquivo de hora {arq_hora}: {e}")
+        return dados_dia
+    except Exception as e:
+        print(f"[Erro] Falha na junção de dados da data {data_str}: {e}")
+        return []
+
+# =====================================================================
+#                 ROTINA DO ROBO AUTOMATIZADO (SELENIUM)
+# =====================================================================
 
 def obter_arquivos_existentes():
     return set(glob.glob(os.path.join(DOWNLOAD_DIR, "*")))
@@ -129,7 +261,7 @@ def carregar_dados_xls(caminho_arquivo):
     return None
 
 def processar_e_unificar_arquivos():
-    """Lê planilhas, salva individual na pasta de hora, gera o unificado local e o envia ao GitHub."""
+    """Salva a execução individual na pasta de hora. Se for 23h52, gera o consolidado unificado."""
     padrao_busca = os.path.join(DOWNLOAD_DIR, "pesquisar status de comunicação*.xls")
     arquivos_xls = glob.glob(padrao_busca)
     
@@ -150,7 +282,7 @@ def processar_e_unificar_arquivos():
         else:
             print(f"-> Falha ao extrair dados de: {nome_curto}.")
             
-    # Define diretório específico de hora para backup no OneDrive
+    # Define diretório específico de hora (sobrepondo o anterior da mesma hora)
     now = datetime.now()
     ano = str(now.year)
     mes_nome = MESES_PT[now.month]
@@ -165,44 +297,50 @@ def processar_e_unificar_arquivos():
         json.dump(dados_da_hora_atual, f, ensure_ascii=False, indent=4)
     print(f"[Backup OneDrive] Salvo arquivo individual da hora em: {caminho_json_hora}")
     
-    # UNIFICAÇÃO FÍSICA PARA O GITHUB (Sempre atualiza de hora em hora para o Cloudflare estar em dia)
-    diretorio_dia = os.path.join(DOWNLOAD_DIR, ano, mes_nome, dia_str)
-    padrao_horas_dia = os.path.join(diretorio_dia, "*h", "status_comunicacao.json")
-    arquivos_horas = glob.glob(padrao_horas_dia)
-    
-    todos_dados_dia = []
-    print(f"[Dashboard] Consolidando {len(arquivos_horas)} horas de dados para envio ao GitHub...")
-    
-    for arq_hora in arquivos_horas:
-        try:
-            nome_pasta_hora = os.path.basename(os.path.dirname(arq_hora))
-            with open(arq_hora, 'r', encoding='utf-8') as f:
-                registros_hora = json.load(f)
-                for r in registros_hora:
-                    r["_data_pasta"] = f"{dia_str}/{now.month:02d}/{ano}"  # Formato dd/mm/aaaa
-                    r["_hora_pasta"] = nome_pasta_hora
-                todos_dados_dia.extend(registros_hora)
-        except Exception as e:
-            print(f"[Erro] Falha ao ler arquivo de hora {arq_hora}: {e}")
-            
-    # Cria o unificado físico definitivo apenas nas execuções das 23h na pasta do OneDrive (backup)
+    # UNIFICAÇÃO FÍSICA: Ocorre apenas se for a última execução de 23h
+    caminho_unificado_salvo = None
     if now.hour == 23:
+        diretorio_dia = os.path.join(DOWNLOAD_DIR, ano, mes_nome, dia_str)
+        padrao_horas_dia = os.path.join(diretorio_dia, "*h", "status_comunicacao.json")
+        arquivos_horas = glob.glob(padrao_horas_dia)
+        
+        todos_dados_dia = []
+        print(f"[Unificação - Final do Dia] Consolidando {len(arquivos_horas)} horas para o dia {dia_str}/{now.month:02d}/{ano}...")
+        
+        for arq_hora in arquivos_horas:
+            try:
+                nome_pasta_hora = os.path.basename(os.path.dirname(arq_hora))
+                with open(arq_hora, 'r', encoding='utf-8') as f:
+                    registros_hora = json.load(f)
+                    for r in registros_hora:
+                        r["_data_pasta"] = f"{dia_str}/{now.month:02d}/{ano}"
+                        r["_hora_pasta"] = nome_pasta_hora
+                    todos_dados_dia.extend(registros_hora)
+            except Exception as e:
+                print(f"[Erro] Falha ao ler arquivo de hora {arq_hora}: {e}")
+                
         nome_unificado = f"unificado_{dia_str}-{now.month:02d}-{ano}.json"
         caminho_unificado_salvo = os.path.join(diretorio_dia, nome_unificado)
+        
         with open(caminho_unificado_salvo, 'w', encoding='utf-8') as f:
             json.dump(todos_dados_dia, f, ensure_ascii=False, indent=4)
-        print(f"[Backup OneDrive] Unificação das 23h salva em: {caminho_unificado_salvo}")
+        print(f"[Unificação - Final do Dia] Salvo com sucesso em: {caminho_unificado_salvo}")
+    else:
+        print(f"[Hora] Execução das {now.hour:02d}h concluída. Unificação física agendada para às 23h.")
         
-    # Salva os arquivos de dados locais utilizados pelo painel do Cloudflare (dados.json e dados-dia.json)
+    # Salva os arquivos locais para envio ao GitHub
     caminho_dados_dia_local = os.path.join(LOCAL_PROJETO_DIR, f"dados-{dia_str}-{now.month:02d}-{ano}.json")
+    # Busca todas as horas existentes no dia atual para criar o arquivo local de hoje atualizado
+    todos_dados_atuais_mesclados = obter_dados_da_data(f"{dia_str}/{now.month:02d}/{ano}")
+    
     with open(caminho_dados_dia_local, 'w', encoding='utf-8') as f:
-        json.dump(todos_dados_dia, f, ensure_ascii=False, indent=4)
+        json.dump(todos_dados_atuais_mesclados, f, ensure_ascii=False, indent=4)
         
     caminho_dados_atual_local = os.path.join(LOCAL_PROJETO_DIR, "dados.json")
     with open(caminho_dados_atual_local, 'w', encoding='utf-8') as f:
-        json.dump(todos_dados_dia, f, ensure_ascii=False, indent=4)
+        json.dump(todos_dados_atuais_mesclados, f, ensure_ascii=False, indent=4)
         
-    # Atualiza o arquivo de datas disponíveis com base nos arquivos locais existentes
+    # Atualiza a lista de datas locais para o GitHub
     datas_disponiveis = set()
     for arq_local in glob.glob(os.path.join(LOCAL_PROJETO_DIR, "dados-*.json")):
         nome_base = os.path.basename(arq_local)
@@ -218,16 +356,13 @@ def processar_e_unificar_arquivos():
     with open(caminho_datas_local, 'w', encoding='utf-8') as f:
         json.dump(lista_datas_ordenada, f, ensure_ascii=False, indent=4)
         
-    # Deleta as planilhas XLS temporárias da raiz
     for caminho_arquivo in arquivos_xls:
         try:
             os.remove(caminho_arquivo)
         except:
             pass
             
-    # Executa a sincronização silenciosa com o seu repositório do GitHub
     enviar_para_github()
-    
     return True, caminho_dados_dia_local
 
 def imprimir_tabela_logs(logs):
@@ -368,7 +503,7 @@ def iniciar_automacao():
         
         imprimir_tabela_logs(logs_execucao)
         if sucesso_unificacao:
-            print(f"[Sucesso] Arquivo de dados sincronizado localmente: {resultado_unificacao}")
+            print(f"[Sucesso] Unificação gerada: {resultado_unificacao}")
         else:
             print(f"[Aviso] {resultado_unificacao}")
             
@@ -397,16 +532,24 @@ def escutar_teclado():
         input()
         Thread(target=executar_com_bloqueio, args=("Manual",), daemon=True).start()
 
-def obter_segundos_ate_minuto_5():
+def obter_segundos_ate_proximo_agendamento():
+    """Calcula os segundos restantes até os minutos 07, 22, 37 ou 52 subsequentes."""
     agora = datetime.now()
-    proximo = agora.replace(minute=5, second=0, microsecond=0)
-    if proximo <= agora:
-        proximo += timedelta(hours=1)
-    return (proximo - agora).total_seconds()
+    alvos = [7, 22, 37, 52]
+    proximos_horarios = []
+    
+    for minuto in alvos:
+        proximo = agora.replace(minute=minuto, second=0, microsecond=0)
+        if proximo <= agora:
+            proximo += timedelta(hours=1)
+        proximos_horarios.append(proximo)
+        
+    proximo_agendamento = min(proximos_horarios)
+    return (proximo_agendamento - agora).total_seconds()
 
 def loop_agendamento():
     while True:
-        segundos_espera = obter_segundos_ate_minuto_5()
+        segundos_espera = obter_segundos_ate_proximo_agendamento()
         proximo_horario = datetime.now() + timedelta(seconds=segundos_espera)
         print(f"[Agendador] Próxima execução programada para: {proximo_horario.strftime('%d/%m/%Y %H:%M:%S')}")
         
@@ -416,12 +559,45 @@ def loop_agendamento():
             
         executar_com_bloqueio("Agendada")
 
+def rodar_servidor_web():
+    """Inicia o servidor Flask de forma silenciosa para hospedar o Dashboard."""
+    # Desativa logs poluídos no terminal para manter focado na execução
+    log = logging.getLogger('werkzeug')
+    log.setLevel(logging.ERROR)
+    
+    print("\n[Servidor Web] Iniciando o Dashboard local no endereço: http://127.0.0.1:5000\n")
+    app.run(host='127.0.0.1', port=5000, debug=False, use_reloader=False)
+
+def enviar_para_github():
+    """Executa comandos git de commit e push de forma silenciosa para o GitHub."""
+    try:
+        print("[Git] Adicionando arquivos de dados modificados...")
+        subprocess.run(["git", "add", "datas.json", "dados.json", "dados-*.json", "index.html", "app.js", "style.css"], cwd=LOCAL_PROJETO_DIR, check=True)
+        
+        status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
+        if not status.stdout.strip():
+            print("[Git] Nenhuma alteração encontrada para comitar.")
+            return
+            
+        print("[Git] Criando commit...")
+        import subprocess
+        subprocess.run(["git", "commit", "-m", "Automacao: Sincronizacao de dados"], cwd=LOCAL_PROJETO_DIR, check=True)
+        
+        print("[Git] Enviando alterações ao GitHub...")
+        subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
+        print("[Git] Sincronização concluída.")
+    except Exception as e:
+        print(f"[Git - Erro] Falha ao sincronizar com o GitHub: {e}")
+
 if __name__ == '__main__':
-    # Roda a primeira automação de dados imediatamente
+    # 1. Inicia o Servidor Web do Dashboard em segundo plano (silencioso)
+    Thread(target=rodar_servidor_web, daemon=True).start()
+    
+    # 2. Roda a automação imediatamente ao iniciar o executável
     Thread(target=executar_com_bloqueio, args=("Manual Inicial",), daemon=True).start()
     
-    # Escuta do teclado para execuções manuais intermediárias
+    # 3. Escuta do teclado (PowerShell) para execuções manuais intermediárias
     Thread(target=escutar_teclado, daemon=True).start()
     
-    # Mantém o loop de agendamento permanente no minuto 5
+    # 4. Mantém a thread principal no loop de agendamento permanente (minutos 07, 22, 37 e 52)
     loop_agendamento()
