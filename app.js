@@ -316,7 +316,9 @@ function processarDadosGerais() {
     }
 
     const dPartes = dataReferenciaStr.split("/");
-    const exportDataFormatada = `${dPartes[0]}/${dPartes[1]}/${dPartes[2].length === 4 ? dPartes[2].substring(2) : dPartes[2]}`; // dd/mm/aa
+    
+    // CORREÇÃO: Mantém o ano com 4 dígitos para comparação direta com o filtro do calendário
+    const exportDataFormatada = `${dPartes[0]}/${dPartes[1]}/${dPartes[2].length === 2 ? '20' + dPartes[2] : dPartes[2]}`; // dd/mm/aaaa
     const exportHoraFormatada = `${horaReferenciaStr.split(":")[0]}h`;
 
     dadosProcessados = dadosOriginais.map(item => {
@@ -630,35 +632,7 @@ function atualizarKPIs() {
     const semIntegracao = dadosFiltrados.filter(d => d._integracao === "Sem Integração").length;
 
     const fichasAbertas = dadosFiltrados.filter(item => {
-       const keyFicha = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
-        const estadoFicha = localStorage.getItem(keyFicha) || '';
-        
-        // Define o conteúdo da célula: Se aberta, mostra apenas a pílula (sem checkbox). Se fechada, mostra apenas o checkbox.
-        let tdFichaConteudo = '';
-        if (estadoFicha === 'Aberta') {
-            tdFichaConteudo = `
-                <span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1 cursor-pointer btn-fechar-ficha" 
-                      data-veiculo="${item._veiculoFormatado}" 
-                      data-data="${item._dataExportacao}"
-                      title="Clique para fechar a ficha de manutenção">
-                    <i class="fa-solid fa-triangle-exclamation"></i>Aberta
-                </span>
-            `;
-        } else {
-            tdFichaConteudo = `
-                <input type="checkbox" class="chk-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
-                       data-veiculo="${item._veiculoFormatado}"
-                       data-data="${item._dataExportacao}">
-            `;
-        }
-
-        const tdFicha = `
-            <td class="align-middle">
-                <div class="flex items-center justify-center gap-2">
-                    ${tdFichaConteudo}
-                </div>
-            </td>
-        `;
+        const key = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
         return localStorage.getItem(key) === "Aberta";
     }).length;
 
@@ -721,14 +695,28 @@ function renderizarTabela() {
         const keyFicha = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
         const estadoFicha = localStorage.getItem(keyFicha) || '';
         
+        let tdFichaConteudo = '';
+        if (estadoFicha === 'Aberta') {
+            tdFichaConteudo = `
+                <span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1 cursor-pointer btn-fechar-ficha" 
+                      data-veiculo="${item._veiculoFormatado}" 
+                      data-data="${item._dataExportacao}"
+                      title="Clique para fechar a ficha de manutenção">
+                    <i class="fa-solid fa-triangle-exclamation"></i>Aberta
+                </span>
+            `;
+        } else {
+            tdFichaConteudo = `
+                <input type="checkbox" class="chk-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
+                       data-veiculo="${item._veiculoFormatado}"
+                       data-data="${item._dataExportacao}">
+            `;
+        }
+
         const tdFicha = `
             <td class="align-middle">
                 <div class="flex items-center justify-center gap-2">
-                    <input type="checkbox" class="chk-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
-                           data-veiculo="${item._veiculoFormatado}"
-                           data-data="${item._dataExportacao}"
-                           ${estadoFicha === 'Aberta' ? 'checked' : ''}>
-                    ${estadoFicha === 'Aberta' ? '<span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1"><i class="fa-solid fa-triangle-exclamation"></i>Aberta</span>' : ''}
+                    ${tdFichaConteudo}
                 </div>
             </td>
         `;
