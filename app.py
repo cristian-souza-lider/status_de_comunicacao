@@ -3,6 +3,7 @@ import time
 import glob
 import json
 import logging
+import subprocess
 from datetime import datetime, timedelta
 from threading import Thread, Lock
 import pandas as pd
@@ -53,7 +54,6 @@ def enviar_para_github():
             return
             
         print("[Git] Criando commit...")
-        import subprocess
         subprocess.run(["git", "commit", "-m", "Automacao: Sincronizacao de dados"], cwd=LOCAL_PROJETO_DIR, check=True)
         
         print("[Git] Enviando alterações ao GitHub...")
@@ -96,29 +96,18 @@ def serve_lista_datas():
     if not os.path.exists(DOWNLOAD_DIR):
         return jsonify([])
         
-    for ano in os.listdir(DOWNLOAD_DIR):
-        caminho_ano = os.path.join(DOWNLOAD_DIR, ano)
-        if not os.path.isdir(caminho_ano) or not ano.isdigit():
-            continue
+    padrao = os.path.join(DOWNLOAD_DIR, "**", "unificado_*.json")
+    arquivos_unificados = glob.glob(padrao, recursive=True)
+    
+    for caminho in arquivos_unificados:
+        nome_arquivo = os.path.basename(caminho)
+        parte_data = nome_arquivo.replace("unificado_", "").replace(".json", "")
+        try:
+            dia, mes, ano = parte_data.split("-")
+            datas.add(f"{dia}/{mes}/{ano}")
+        except:
+            pass
             
-        for mes_nome in os.listdir(caminho_ano):
-            caminho_mes = os.path.join(caminho_ano, mes_nome)
-            if not os.path.isdir(caminho_mes) or mes_nome not in MESES_PT_REV:
-                continue
-                
-            mes_num = MESES_PT_REV[mes_nome]
-            
-            for dia_nome in os.listdir(caminho_mes):
-                caminho_dia = os.path.join(caminho_mes, dia_nome)
-                if not os.path.isdir(caminho_dia) or not dia_nome.isdigit():
-                    continue
-                    
-                tem_unificado = glob.glob(os.path.join(caminho_dia, "unificado_*.json"))
-                tem_horas = glob.glob(os.path.join(caminho_dia, "*h", "status_comunicacao.json"))
-                
-                if tem_unificado or tem_horas:
-                    datas.add(f"{int(dia_nome):02d}/{mes_num}/{ano}")
-                    
     lista_ordenada = sorted(list(datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
     return jsonify(lista_ordenada)
 
@@ -235,6 +224,7 @@ def aguardar_conclusao_download(diretorio, conjunto_arquivos_antigo, timeout=45)
     return False
 
 def selecionar_empresa_com_postback(driver, value):
+    """Seleciona a empresa no dropdown de forma segura, limpando a loadmask antes e depois."""
     wait = WebDriverWait(driver, 15)
     select_id = "ContentPlaceHolder1_contentFiltroPesquisa_ddlEmpresa"
     
@@ -330,7 +320,6 @@ def processar_e_unificar_arquivos():
         
     # Salva os arquivos locais para envio ao GitHub
     caminho_dados_dia_local = os.path.join(LOCAL_PROJETO_DIR, f"dados-{dia_str}-{now.month:02d}-{ano}.json")
-    # Busca todas as horas existentes no dia atual para criar o arquivo local de hoje atualizado
     todos_dados_atuais_mesclados = obter_dados_da_data(f"{dia_str}/{now.month:02d}/{ano}")
     
     with open(caminho_dados_dia_local, 'w', encoding='utf-8') as f:
@@ -532,24 +521,16 @@ def escutar_teclado():
         input()
         Thread(target=executar_com_bloqueio, args=("Manual",), daemon=True).start()
 
-def obter_segundos_ate_proximo_agendamento():
-    """Calcula os segundos restantes até os minutos 07, 22, 37 ou 52 subsequentes."""
+def obter_segundos_ate_minuto_5():
     agora = datetime.now()
-    alvos = [7, 22, 37, 52]
-    proximos_horarios = []
-    
-    for minuto in alvos:
-        proximo = agora.replace(minute=minuto, second=0, microsecond=0)
-        if proximo <= agora:
-            proximo += timedelta(hours=1)
-        proximos_horarios.append(proximo)
-        
-    proximo_agendamento = min(proximos_horarios)
-    return (proximo_agendamento - agora).total_seconds()
+    proximo = agora.replace(minute=5, second=0, microsecond=0)
+    if proximo <= agora:
+        proximo += timedelta(hours=1)
+    return (proximo - agora).total_seconds()
 
 def loop_agendamento():
     while True:
-        segundos_espera = obter_segundos_ate_proximo_agendamento()
+        segundos_espera = obter_segundos_ate_minuto_5()
         proximo_horario = datetime.now() + timedelta(seconds=segundos_espera)
         print(f"[Agendador] Próxima execução programada para: {proximo_horario.strftime('%d/%m/%Y %H:%M:%S')}")
         
@@ -568,27 +549,6 @@ def rodar_servidor_web():
     print("\n[Servidor Web] Iniciando o Dashboard local no endereço: http://127.0.0.1:5000\n")
     app.run(host='127.0.0.1', port=5000, debug=False, use_reloader=False)
 
-def enviar_para_github():
-    """Executa comandos git de commit e push de forma silenciosa para o GitHub."""
-    try:
-        print("[Git] Adicionando arquivos de dados modificados...")
-        subprocess.run(["git", "add", "datas.json", "dados.json", "dados-*.json", "index.html", "app.js", "style.css"], cwd=LOCAL_PROJETO_DIR, check=True)
-        
-        status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
-        if not status.stdout.strip():
-            print("[Git] Nenhuma alteração encontrada para comitar.")
-            return
-            
-        print("[Git] Criando commit...")
-        import subprocess
-        subprocess.run(["git", "commit", "-m", "Automacao: Sincronizacao de dados"], cwd=LOCAL_PROJETO_DIR, check=True)
-        
-        print("[Git] Enviando alterações ao GitHub...")
-        subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
-        print("[Git] Sincronização concluída.")
-    except Exception as e:
-        print(f"[Git - Erro] Falha ao sincronizar com o GitHub: {e}")
-
 if __name__ == '__main__':
     # 1. Inicia o Servidor Web do Dashboard em segundo plano (silencioso)
     Thread(target=rodar_servidor_web, daemon=True).start()
@@ -599,5 +559,5 @@ if __name__ == '__main__':
     # 3. Escuta do teclado (PowerShell) para execuções manuais intermediárias
     Thread(target=escutar_teclado, daemon=True).start()
     
-    # 4. Mantém a thread principal no loop de agendamento permanente (minutos 07, 22, 37 e 52)
+    # 4. Mantém a thread principal no loop de agendamento permanente (minuto 5 de hora em hora)
     loop_agendamento()
