@@ -14,7 +14,9 @@ from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 
 # Configurações de pastas e arquivos locais
-DOWNLOAD_DIR = r"C:\Users\cristian.souza\OneDrive - Nossa Senhora do Ó Participações S.A\Status em Python"
+# Detecta automaticamente a pasta de usuário do Windows logado na máquina
+user_home = os.path.expanduser("~")
+DOWNLOAD_DIR = os.path.join(user_home, "OneDrive - Nossa Senhora do Ó Participações S.A", "Status em Python")
 GECKODRIVER_PATH = r"C:\Projetos em Python\Status em Python\geckodriver.exe"
 LOCAL_PROJETO_DIR = r"C:\Projetos em Python\Status em Python"
 
