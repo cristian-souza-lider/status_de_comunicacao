@@ -630,7 +630,35 @@ function atualizarKPIs() {
     const semIntegracao = dadosFiltrados.filter(d => d._integracao === "Sem Integração").length;
 
     const fichasAbertas = dadosFiltrados.filter(item => {
-        const key = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
+       const keyFicha = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
+        const estadoFicha = localStorage.getItem(keyFicha) || '';
+        
+        // Define o conteúdo da célula: Se aberta, mostra apenas a pílula (sem checkbox). Se fechada, mostra apenas o checkbox.
+        let tdFichaConteudo = '';
+        if (estadoFicha === 'Aberta') {
+            tdFichaConteudo = `
+                <span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1 cursor-pointer btn-fechar-ficha" 
+                      data-veiculo="${item._veiculoFormatado}" 
+                      data-data="${item._dataExportacao}"
+                      title="Clique para fechar a ficha de manutenção">
+                    <i class="fa-solid fa-triangle-exclamation"></i>Aberta
+                </span>
+            `;
+        } else {
+            tdFichaConteudo = `
+                <input type="checkbox" class="chk-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
+                       data-veiculo="${item._veiculoFormatado}"
+                       data-data="${item._dataExportacao}">
+            `;
+        }
+
+        const tdFicha = `
+            <td class="align-middle">
+                <div class="flex items-center justify-center gap-2">
+                    ${tdFichaConteudo}
+                </div>
+            </td>
+        `;
         return localStorage.getItem(key) === "Aberta";
     }).length;
 
@@ -723,6 +751,7 @@ function renderizarTabela() {
         corpo.appendChild(tr);
     });
 
+    // Evento para abrir a ficha de manutenção (Checkbox)
     document.querySelectorAll('.chk-ficha').forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
             const v = e.target.getAttribute('data-veiculo');
@@ -737,6 +766,20 @@ function renderizarTabela() {
             }
             atualizarKPIs();
             renderizarTabela(); 
+        });
+    });
+
+    // Evento para fechar a ficha de manutenção ao clicar na pílula vermelha
+    document.querySelectorAll('.btn-fechar-ficha').forEach(badge => {
+        badge.addEventListener('click', (e) => {
+            const target = e.target.closest('.btn-fechar-ficha');
+            const v = target.getAttribute('data-veiculo');
+            const d = target.getAttribute('data-data');
+            const key = `ficha_${v}_${d}`;
+            
+            localStorage.removeItem(key);
+            atualizarKPIs();
+            renderizarTabela();
         });
     });
 
