@@ -1,0 +1,242 @@
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--scroll-track, #f1f5f9);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb, #cbd5e1);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover, #94a3b8);
+}
+
+/* Personalização da rolagem horizontal dos filtros */
+.scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+}
+
+/* Redução de 20% na Altura das Células da Tabela */
+#tabela-analise th {
+    padding: 8px 10px !important;
+}
+#tabela-analise td {
+    padding: 8px 10px !important;
+}
+
+/* Transições de Cores de Fundo */
+body {
+    transition: background-color 0.2s, color 0.2s;
+    --scroll-track: #f1f5f9;
+    --scroll-thumb: #cbd5e1;
+    --scroll-thumb-hover: #94a3b8;
+}
+
+tbody tr {
+    transition: background-color 0.1s;
+}
+
+/* --- ESTILO DE ALTO CONTRASTE: TEMA CLARO --- */
+body:not(.dark) {
+    background-color: #f1f5f9; /* Slate-100 */
+    color: #0f172a; /* Slate-900 */
+}
+
+body:not(.dark) .card-container {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important; /* Bordas nítidas */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+body:not(.dark) .title-color {
+    color: #1e293b; /* Slate-800 */
+}
+
+body:not(.dark) .number-color {
+    color: #0f172a;
+}
+
+body:not(.dark) .select-input {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important; /* Borda visível */
+}
+
+body:not(.dark) .select-input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 1px #6366f1;
+}
+
+body:not(.dark) .chart-box {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Força Fundo Branco Puro em toda a tabela (th, td, tr, tbody) no Tema Claro */
+body:not(.dark) #tabela-analise {
+    background-color: #ffffff !important;
+}
+
+/* Fundo Branco também no Topo (Header) da Tabela no Tema Claro */
+body:not(.dark) #tabela-analise th {
+    background-color: #ffffff !important;
+    color: #0f172a !important; /* Slate-900 */
+    border-bottom: 2px solid #cbd5e1 !important;
+}
+
+body:not(.dark) #tabela-analise tbody {
+    background-color: #ffffff !important;
+}
+
+body:not(.dark) #tabela-analise tbody tr {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+body:not(.dark) #tabela-analise td {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+/* Força o fundo branco nos badges (pílulas de Situação) na tabela no Tema Claro */
+body:not(.dark) #tabela-analise td span.rounded-full {
+    background-color: #ffffff !important;
+}
+
+body:not(.dark) #tabela-analise tbody tr:hover,
+body:not(.dark) #tabela-analise tbody tr:hover td {
+    background-color: #f8fafc !important; /* Hover sutil muito claro */
+}
+
+/* Força o fundo branco absoluto para o contêiner de Ocorrências Ativas no Tema Claro */
+body:not(.dark) #container-mini-cards {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Força o fundo branco e texto preto de alto contraste no rodapé de paginação */
+body:not(.dark) #tabela-analise + div,
+body:not(.dark) .p-3.border-t.flex {
+    background-color: #ffffff !important;
+    color: #0f172a !important; /* Slate-900 */
+    border-color: #cbd5e1 !important;
+}
+
+/* Força o topo de registros da tabela ("Registros de Status") a ser fundo branco no tema claro */
+body:not(.dark) .card-container > div:first-child {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Força o texto "Exibir" e "linhas por página" a ficar preto puro no Tema Claro */
+body:not(.dark) .p-4.border-b.flex span,
+body:not(.dark) .p-3.border-t.flex span {
+    color: #000000 !important;
+    font-weight: 800 !important;
+}
+
+body:not(.dark) #txt-total-registros,
+body:not(.dark) #txt-pag-atual {
+    color: #000000 !important; 
+    font-weight: 800 !important;
+}
+
+body:not(.dark) #pag-anterior,
+body:not(.dark) #pag-proximo {
+    color: #000000 !important;
+    border-color: #94a3b8 !important;
+    background-color: #ffffff !important;
+}
+
+/* Forçar fontes em preto no indicador de não conformidades (Tema Claro) */
+body:not(.dark) #container-mini-cards,
+body:not(.dark) #container-mini-cards span,
+body:not(.dark) #container-mini-cards div {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;    
+    color: #000000 !important;
+    font-weight: 800 !important;
+}   
+
+/* --- ESTILOS DO TEMA ESCURO (DARK MODE) --- */
+body.dark {
+    background-color: #0b0f19;
+    color: #cbd5e1;
+    --scroll-track: #1e293b;
+    --scroll-thumb: #475569;
+    --scroll-thumb-hover: #64748b;
+}
+
+body.dark .card-container {
+    background-color: #111827; /* Gray-900 */
+    border-color: #1f2937; /* Gray-800 */
+}
+
+body.dark .title-color {
+    color: #f1f5f9;
+}
+
+body.dark .number-color {
+    color: #ffffff;
+}
+
+body.dark .select-input {
+    background-color: #1f2937 !important;
+    color: #f1f5f9 !important;
+    border-color: #374151 !important;
+}
+
+body.dark .select-input:focus {
+    border-color: #6366f1 !important;
+}
+
+body.dark .chart-box {
+    background-color: #111827;
+    border-color: #1f2937;
+}
+
+body.dark #tabela-analise th {
+    background-color: #1f2937;
+    color: #ffffff;
+    border-bottom: 2px solid #374151;
+}
+
+body.dark #tabela-analise tbody tr {
+    border-color: #1f2937;
+}
+
+body.dark #tabela-analise tbody tr:hover {
+    background-color: #1e293b !important;
+}
+
+body.dark #tabela-analise td {
+    color: #cbd5e1;
+}
+
+/* Força os textos de paginação e controles superiores a ficarem em branco nítido no Tema Escuro */
+body.dark .p-4.border-b.flex span,
+body.dark .p-3.border-t.flex span,
+body.dark #txt-total-registros,
+body.dark #txt-pag-atual {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
+
+body.dark #pag-anterior,
+body.dark #pag-proximo {
+    color: #ffffff !important;
+    border-color: #374151 !important;
+    background-color: #1f2937 !important;
+}
+
+.rotate-anim {
+    animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}

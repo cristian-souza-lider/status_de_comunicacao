@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Status de Comunicação</title>
+    <!-- Tailwind CSS para design responsivo e fluido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para gráficos estatísticos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plugin ChartDataLabels para exibir os valores dentro das barras -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <!-- FontAwesome para ícones do sistema -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col transition-colors duration-200">
+
+    <!-- CONTAINER FIXO NO TOPO (Header + Filtros) -->
+    <div class="sticky top-0 z-50 w-full bg-slate-50 dark:bg-[#0b0f19] border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+        
+        <!-- Header Unificado em Linha Única -->
+        <header class="bg-slate-900 text-white shadow-lg py-3 px-6 flex items-center justify-between w-full border-b border-slate-800 text-xs md:text-sm">
+            <div class="flex items-center gap-3 flex-wrap">
+                <span class="text-base font-bold tracking-tight text-white whitespace-nowrap">Análise de Status de Comunicação</span>
+                <span class="hidden xl:inline text-slate-500">|</span>
+                <span class="hidden lg:inline text-slate-300 font-medium whitespace-nowrap">CMI Tráfego - Urubupungá e Viação Cidade Caieiras, empresas do Grupo NSO</span>
+                <span class="hidden xl:inline text-slate-500">|</span>
+                <span class="hidden md:inline text-slate-400 whitespace-nowrap">
+                    <i class="fa-solid fa-circle-info mr-1 text-slate-500"></i> Extraído do sistema Gool System, a cada hora.
+                </span>
+            </div>
+            <!-- Controles Reordenados: Botão Atualizar -> Info Atualização -> Alternância de Tema -->
+            <div class="flex items-center gap-4 flex-shrink-0">
+                <button id="btn-atualizar" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 px-4 rounded shadow transition flex items-center gap-1.5 text-xs">
+                    <i class="fa-solid fa-rotate" id="icon-reload"></i> Atualizar
+                </button>
+                <span id="txt-atualizado-em" class="text-xs text-slate-300 font-mono font-bold">Carregando dados...</span>
+                <button id="btn-tema" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition" title="Alternar Tema">
+                    <i class="fa-solid fa-moon text-sm" id="icon-tema"></i>
+                </button>
+                <button id="btn-fullscreen" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition" title="Tela Cheia">
+                    <i class="fa-solid fa-expand text-sm" id="icon-fullscreen"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Seção de Filtros (Ocupando 100% do box horizontal) -->
+        <section class="p-4 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-sm card-container">
+            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100 dark:border-slate-800">
+                <h2 class="text-xs font-bold text-slate-700 flex items-center gap-1.5 title-color">
+                    <i class="fa-solid fa-filter text-indigo-600"></i> Filtros de Pesquisa
+                </h2>
+                <button id="btn-limpar-filtros" class="text-[11px] text-rose-600 hover:text-rose-500 font-bold flex items-center gap-1 transition">
+                    <i class="fa-solid fa-filter-circle-xmark"></i> Limpar Filtros
+                </button>
+            </div>
+
+            <!-- Filtros distribuídos para preencher o box de forma dinâmica -->
+            <div class="flex w-full items-end gap-2 overflow-x-auto pb-1 scrollbar-thin">
+                <div class="grow shrink-0 min-w-[75px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Data</label>
+                    <select id="filtro-data" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[60px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Hora</label>
+                    <select id="filtro-hora" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[80px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Empresa</label>
+                    <select id="filtro-empresa" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
+                        <option value="">Todas</option>
+                        <option value="AVUL">AVUL</option>
+                        <option value="VCCL">VCCL</option>
+                    </select>
+                </div>
+                <div class="grow-2 shrink-0 min-w-[150px] max-w-[220px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Segmento</label>
+                    <select id="filtro-segmento" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full truncate font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[75px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Linha</label>
+                    <input type="text" id="filtro-linha" placeholder="Ex: 021" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
+                </div>
+                <div class="grow shrink-0 min-w-[75px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Veículo</label>
+                    <input type="text" id="filtro-veiculo" placeholder="Ex: 00314" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
+                </div>
+                <div class="grow shrink-0 min-w-[95px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Condição</label>
+                    <select id="filtro-condicao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
+                        <option value="">Todas</option>
+                        <option value="Escalado">Escalado</option>
+                        <option value="Sem Escala">Sem Escala</option>
+                    </select>
+                </div>
+                <div class="grow shrink-0 min-w-[110px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Situação</label>
+                    <select id="filtro-situacao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[100px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Equipamento</label>
+                    <select id="filtro-equipamento" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[120px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Status</label>
+                    <select id="filtro-status" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow-2 shrink-0 min-w-[130px] max-w-[200px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Não Conformidade</label>
+                    <select id="filtro-nao-conformidade" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full truncate font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[95px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Status GPS</label>
+                    <select id="filtro-status-gps" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
+                </div>
+                <div class="grow shrink-0 min-w-[115px]">
+                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Integração</label>
+                    <select id="filtro-integracao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
+                        <option value="">Todas</option>
+                        <option value="Sem Integração">Sem Integração</option>
+                        <option value="Falha na Integração">Falha na Integração</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ÁREA DE ROLAGEM DINÂMICA (Tabela e Dashboard) -->
+    <main class="flex-1 p-4 md:p-6 space-y-6 w-full max-w-none">
+
+        <!-- 1. Tabela de Registros -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col card-container">
+            <!-- Topo da Tabela (Fundo Branco no Tema Claro) -->
+            <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white dark:bg-slate-900/40">
+                <h3 class="text-base font-bold text-slate-700 flex items-center gap-1.5 title-color">
+                    <i class="fa-solid fa-table-list text-indigo-600"></i> Registros de Status de Comunicação
+                </h3>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-extrabold select-none">Exibir</span>
+                    <input type="number" id="input-linhas-pagina" value="10" min="1" max="100" class="w-14 border border-slate-300 rounded p-0.5 text-center text-xs outline-none focus:ring-1 focus:ring-indigo-500 font-bold select-input">
+                    <span class="text-xs font-extrabold select-none">linhas por página</span>
+                </div>
+            </div>
+
+            <!-- Barra de Ocorrências Ativas (Fundo Branco no Tema Claro) -->
+            <div id="container-mini-cards" class="p-3 border-b border-slate-100 dark:border-slate-800 flex flex-wrap gap-2 items-center">
+                <!-- Gerado dinamicamente via JS -->
+            </div>
+
+            <!-- Tabela Compacta -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-center border-collapse" id="tabela-analise">
+                    <thead>
+                        <tr class="bg-slate-900 text-white text-[11px] font-bold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
+                            <th class="cursor-pointer select-none text-center" data-sort="_dataExportacao">Data <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="_horaExportacao">Hora <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="_linhaPrefixo">Linha <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="_veiculoFormatado">Veículo <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Situação">Situação <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Fab">Equipamento <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Status">Status <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="_naoConformidadeLimpa">Não Conformidade <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Status GPS">Status GPS <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Estado Validador">Estado Validador <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="Hora estado validador">Hora Estado Validador <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="cursor-pointer select-none text-center" data-sort="_integracao">Integração <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
+                            <th class="select-none text-center">Ficha de Manutenção</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela" class="divide-y divide-slate-100 dark:divide-slate-800 text-xs font-semibold">
+                        <!-- Gerado Dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            <div class="p-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3 bg-white dark:bg-slate-900/40 text-[11px] font-bold text-slate-900 dark:text-slate-300">
+                <span id="txt-total-registros">Exibindo 0 de 0 registros</span>
+                <div class="flex items-center gap-1.5">
+                    <button id="pag-anterior" class="px-2.5 py-1 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-50 select-input text-slate-800 dark:text-slate-300">Anterior</button>
+                    <span id="txt-pag-atual" class="px-2">Pág. 1 de 1</span>
+                    <button id="pag-proximo" class="px-2.5 py-1 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-50 select-input text-slate-800 dark:text-slate-300">Próximo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Pequeno Dashboard (Cards KPI) -->
+        <section class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-10  gap-3">
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Total Veículos</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-total" class="text-xl font-black text-slate-800 number-color">0</span>
+                    <i class="fa-solid fa-bus text-slate-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-emerald-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Operando</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-operando" class="text-xl font-black text-emerald-700 dark:text-emerald-500">0</span>
+                    <i class="fa-solid fa-circle-play text-emerald-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-amber-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Manutenção</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-manutencao" class="text-xl font-black text-amber-700 dark:text-amber-500">0</span>
+                    <i class="fa-solid fa-screwdriver-wrench text-amber-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Escalados</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-escalados" class="text-xl font-black text-indigo-700 dark:text-indigo-400">0</span>
+                    <i class="fa-solid fa-calendar-check text-indigo-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-rose-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider">Sem Escala</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-sem-escala" class="text-xl font-black text-rose-700 dark:text-rose-400">0</span>
+                    <i class="fa-solid fa-calendar-xmark text-rose-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-teal-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-teal-600 uppercase tracking-wider">GPS Válido</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-gps-valido" class="text-xl font-black text-teal-700 dark:text-teal-400">0</span>
+                    <i class="fa-solid fa-location-dot text-teal-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-slate-400 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">GPS Inválido</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-gps-invalido" class="text-xl font-black text-slate-600 dark:text-slate-400">0</span>
+                    <i class="fa-solid fa-location-pin-lock text-slate-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-amber-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Falha Integração</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-falha-integracao" class="text-xl font-black text-amber-700 dark:text-amber-500">0</span>
+                    <i class="fa-solid fa-triangle-exclamation text-amber-400 text-base"></i>
+                </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-rose-500 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider">Sem Integração</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-sem-integracao" class="text-xl font-black text-rose-700 dark:text-rose-400">0</span>
+                    <i class="fa-solid fa-circle-xmark text-rose-400 text-base"></i>
+                </div>
+            </div>
+            
+            <!-- Ficha Aberta (No fim da linha de cartões) -->
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-rose-600 flex flex-col justify-between card-container">
+                <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider">Ficha Aberta</span>
+                <div class="flex items-baseline justify-between mt-1">
+                    <span id="kpi-fichas-abertas" class="text-xl font-black text-rose-800 dark:text-rose-500">0</span>
+                    <i class="fa-solid fa-folder-open text-rose-400 text-base"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção de Gráficos em Linhas Separadas -->
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 card-container">
+            <h3 class="text-sm font-bold text-slate-700 mb-4 flex items-center gap-1.5 title-color">
+                <i class="fa-solid fa-chart-pie text-indigo-600"></i> Distribuição Estatística de Não Conformidades
+            </h3>
+            
+            <div class="space-y-6">
+                <!-- Primeira Linha: Os 4 Gráficos Horizontais de Comparação -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Por Empresa -->
+                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 flex flex-col items-center chart-box">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 text-center">Por Empresa</span>
+                        <div class="w-full h-40 relative flex items-center justify-center">
+                            <canvas id="chart-empresa"></canvas>
+                        </div>
+                    </div>
+                    <!-- Por Segmento -->
+                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 flex flex-col items-center chart-box">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 text-center">Por Segmento</span>
+                        <div class="w-full h-40 relative flex items-center justify-center">
+                            <canvas id="chart-segmento"></canvas>
+                        </div>
+                    </div>
+                    <!-- Por Veículo (Top 5) -->
+                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 flex flex-col items-center chart-box">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 text-center">Por Veículo (Top 5)</span>
+                        <div class="w-full h-40 relative flex items-center justify-center">
+                            <canvas id="chart-veiculo"></canvas>
+                        </div>
+                    </div>
+                    <!-- Por Equipamento -->
+                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 flex flex-col items-center chart-box">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 text-center">Por Equipamento</span>
+                        <div class="w-full h-40 relative flex items-center justify-center">
+                            <canvas id="chart-equipamento"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda Linha: Gráfico Horário em Largura Total -->
+                <div class="grid grid-cols-1">
+                    <div class="bg-slate-50 p-4 rounded border border-slate-100 dark:border-slate-800 flex flex-col items-center chart-box w-full">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 text-center">Por Faixa Horária</span>
+                        <!-- Altura estendida para excelente visualização em tela cheia -->
+                        <div class="w-full h-64 relative flex items-center justify-center">
+                            <canvas id="chart-faixa-horaria"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Inteligente e Alinhado (Esquerda e Direita) -->
+    <footer class="bg-slate-950 text-slate-500 py-3 px-6 flex flex-col sm:flex-row justify-between items-center text-xs border-t border-slate-900 mt-auto w-full font-semibold">
+        <p>© 2026 - Grupo NSO S.A. Todos os direitos reservados.</p>
+        <p class="mt-1 sm:mt-0 text-slate-400 font-bold hover:text-indigo-400 transition duration-150">
+            <i class="fa-solid fa-code mr-1"></i> Desenvolvido por Cristian Oliveira de Souza
+        </p>
+    </footer>
+
+    <!-- Carrega quebrando cache (?v=3) para carregar o novo escopo do app.js -->
+    <script src="app.js?v=3"></script>
+</body>
+</html>
