@@ -39,6 +39,79 @@ const segmentosEmpresa = {
     ]
 };
 
+// =====================================================================
+//           FUNÇÕES DE PERSISTÊNCIA E TIMELINE DA MANUTENÇÃO
+// =====================================================================
+
+function obterFichasManutencao() {
+    return JSON.parse(localStorage.getItem('manutencao_fichas') || '[]');
+}
+
+def_salvar = function(fichas) {
+    localStorage.setItem('manutencao_fichas', JSON.stringify(fichas));
+}
+
+function converterParaDataObjeto(dataStr, horaStr) {
+    if (!dataStr) return new Date(0);
+    const partesD = dataStr.split("/");
+    const dia = parseInt(partesD[0]);
+    const mes = parseInt(partesD[1]) - 1;
+    const ano = parseInt(partesD[2]);
+    
+    let hora = 0;
+    if (horaStr) {
+        hora = parseInt(horaStr.replace("h", ""));
+    }
+    return new Date(ano, mes, dia, hora, 0, 0);
+}
+
+function resolverEstadoFicha(veiculo, dataLinha, horaLinha) {
+    const fichas = obterFichasManutencao();
+    const tLinha = converterParaDataObjeto(dataLinha, horaLinha);
+    
+    const fichasVeiculo = fichas.filter(f => f.veiculo === veiculo);
+    if (fichasVeiculo.length === 0) {
+        return { estado: 'Sem Ficha', ticket: null, index: -1 };
+    }
+    
+    // 1. Procura se o veículo possui alguma ficha aberta no momento desta linha
+    for (let i = 0; i < fichas.length; i++) {
+        const f = fichas[i];
+        if (f.veiculo !== veiculo) continue;
+        
+        const tAbertura = converterParaDataObjeto(f.data_abertura, f.hora_abertura);
+        const tFechamento = f.data_fechamento ? converterParaDataObjeto(f.data_fechamento, f.hora_fechamento) : null;
+        
+        if (tLinha >= tAbertura) {
+            if (!tFechamento || tLinha < tFechamento) {
+                return { estado: 'Aberta', ticket: f, index: i };
+            }
+        }
+    }
+    
+    // 2. Se não está aberta, verifica se há alguma ficha que já foi fechada antes desta linha
+    let ultimaFechada = null;
+    let indexFechada = -1;
+    for (let i = 0; i < fichas.length; i++) {
+        const f = fichas[i];
+        if (f.veiculo !== veiculo) continue;
+        
+        const tFechamento = f.data_fechamento ? converterParaDataObjeto(f.data_fechamento, f.hora_fechamento) : null;
+        if (tFechamento && tLinha >= tFechamento) {
+            if (!ultimaFechada || tFechamento > converterParaDataObjeto(ultimaFechada.data_fechamento, ultimaFechada.hora_fechamento)) {
+                ultimaFechada = f;
+                indexFechada = i;
+            }
+        }
+    }
+    
+    if (ultimaFechada) {
+        return { estado: 'Fechada', ticket: ultimaFechada, index: indexFechada };
+    }
+    
+    return { estado: 'Sem Ficha', ticket: null, index: -1 };
+}
+
 // Inicialização da Página (DOMContentLoaded)
 document.addEventListener('DOMContentLoaded', () => {
     inicializarTema();
@@ -173,34 +246,19 @@ function sincronizarIconeFullscreen() {
     }
 }
 
-// Limpeza automática de chaves do LocalStorage com mais de 7 dias
+// Limpeza automática de chaves com mais de 7 dias do histórico estruturado
 function limparFichasAntigas() {
     const hoje = new Date();
     const seteDiasEmMs = 7 * 24 * 60 * 60 * 1000;
+    const fichas = obterFichasManutencao();
     
-    for (let i = localStorage.length - 1; i >= 0; i--) {
-        const chave = localStorage.key(i);
-        if (chave && chave.startsWith("ficha_")) {
-            const partes = chave.split("_");
-            if (partes.length >= 3) {
-                const dataStr = partes[2]; 
-                const partesData = dataStr.split("/");
-                if (partesData.length === 3) {
-                    let dia = parseInt(partesData[0]);
-                    let mes = parseInt(partesData[1]) - 1;
-                    let ano = parseInt(partesData[2]);
-                    if (ano < 100) ano += 2000;
-                    
-                    const dataFicha = new Date(ano, mes, dia);
-                    if (!isNaN(dataFicha.getTime())) {
-                        if (hoje - dataFicha > seteDiasEmMs) {
-                            localStorage.removeItem(chave);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    const filtradas = fichas.filter(f => {
+        if (!f.data_fechamento) return true; // Mantém aberta indefinidamente
+        const tFechamento = converterParaDataObjeto(f.data_fechamento, f.hora_fechamento);
+        return (hoje - tFechamento) <= seteDiasEmMs;
+    });
+    
+    def_salvar(filtradas);
 }
 
 // Carga inicial estruturada (Data Index -> Dados Atuais)
@@ -316,8 +374,6 @@ function processarDadosGerais() {
     }
 
     const dPartes = dataReferenciaStr.split("/");
-    
-    // CORREÇÃO: Mantém o ano com 4 dígitos para comparação direta com o filtro do calendário
     const exportDataFormatada = `${dPartes[0]}/${dPartes[1]}/${dPartes[2].length === 2 ? '20' + dPartes[2] : dPartes[2]}`; // dd/mm/aaaa
     const exportHoraFormatada = `${horaReferenciaStr.split(":")[0]}h`;
 
@@ -632,8 +688,8 @@ function atualizarKPIs() {
     const semIntegracao = dadosFiltrados.filter(d => d._integracao === "Sem Integração").length;
 
     const fichasAbertas = dadosFiltrados.filter(item => {
-        const key = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
-        return localStorage.getItem(key) === "Aberta";
+        const res = resolverEstadoFicha(item._veiculoFormatado, item._dataExportacao, item._horaExportacao);
+        return res.estado === 'Aberta';
     }).length;
 
     document.querySelectorAll('#kpi-total').forEach(el => el.textContent = total.toLocaleString('pt-BR'));
@@ -692,24 +748,46 @@ function renderizarTabela() {
             badgeIntegracao = '<span class="text-amber-500 dark:text-amber-400 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Falha na Integração</span>';
         }
 
-        const keyFicha = `ficha_${item._veiculoFormatado}_${item._dataExportacao}`;
-        const estadoFicha = localStorage.getItem(keyFicha) || '';
+        const resFicha = resolverEstadoFicha(item._veiculoFormatado, item._dataExportacao, item._horaExportacao);
         
         let tdFichaConteudo = '';
-        if (estadoFicha === 'Aberta') {
+        if (resFicha.estado === 'Aberta') {
             tdFichaConteudo = `
-                <span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1 cursor-pointer btn-fechar-ficha" 
-                      data-veiculo="${item._veiculoFormatado}" 
-                      data-data="${item._dataExportacao}"
-                      title="Clique para fechar a ficha de manutenção">
-                    <i class="fa-solid fa-triangle-exclamation"></i>Aberta
-                </span>
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-black text-[10px] animate-pulse uppercase tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-triangle-exclamation"></i>Aberta
+                    </span>
+                    <button class="btn-fechar-ficha text-[10px] bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-1.5 py-0.5 rounded shadow transition-all duration-150 flex items-center gap-1"
+                            data-veiculo="${item._veiculoFormatado}"
+                            data-data="${item._dataExportacao}"
+                            data-hora="${item._horaExportacao}"
+                            data-idx="${resFicha.index}"
+                            title="Marcar Ficha como Fechada/Resolvida">
+                        <i class="fa-solid fa-check"></i> Fechar
+                    </button>
+                </div>
+            `;
+        } else if (resFicha.estado === 'Fechada') {
+            const f = resFicha.ticket;
+            tdFichaConteudo = `
+                <div class="flex items-center justify-center gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 font-bold text-[10px] flex items-center gap-1"
+                          title="Aberta em ${f.data_abertura} às ${f.hora_abertura} | Fechada em ${f.data_fechamento} às ${f.hora_fechamento}">
+                        <i class="fa-solid fa-circle-check"></i>Fechada
+                    </span>
+                    <button class="btn-limpar-ficha text-slate-400 hover:text-rose-500 transition-colors duration-150 ml-1"
+                            data-idx="${resFicha.index}"
+                            title="Excluir histórico deste registro">
+                        <i class="fa-solid fa-trash-can text-[11px]"></i>
+                    </button>
+                </div>
             `;
         } else {
             tdFichaConteudo = `
-                <input type="checkbox" class="chk-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
+                <input type="checkbox" class="chk-abrir-ficha cursor-pointer w-4 h-4 text-indigo-600 border-slate-300 dark:border-slate-700 rounded focus:ring-indigo-500 select-input"
                        data-veiculo="${item._veiculoFormatado}"
-                       data-data="${item._dataExportacao}">
+                       data-data="${item._dataExportacao}"
+                       data-hora="${item._horaExportacao}">
             `;
         }
 
@@ -739,35 +817,61 @@ function renderizarTabela() {
         corpo.appendChild(tr);
     });
 
-    // Evento para abrir a ficha de manutenção (Checkbox)
-    document.querySelectorAll('.chk-ficha').forEach(checkbox => {
+    // Evento para ABRIR Ficha (Checkbox)
+    document.querySelectorAll('.chk-abrir-ficha').forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
-            const v = e.target.getAttribute('data-veiculo');
-            const d = e.target.getAttribute('data-data');
-            const marcado = e.target.checked; 
-            const key = `ficha_${v}_${d}`;
-            
-            if (marcado) {
-                localStorage.setItem(key, "Aberta");
-            } else {
-                localStorage.removeItem(key);
+            if (e.target.checked) {
+                const v = e.target.getAttribute('data-veiculo');
+                const d = e.target.getAttribute('data-data');
+                const h = e.target.getAttribute('data-hora');
+                
+                const fichas = obterFichasManutencao();
+                fichas.push({
+                    veiculo: v,
+                    data_abertura: d,
+                    hora_abertura: h,
+                    data_fechamento: null,
+                    hora_fechamento: null
+                });
+                def_salvar(fichas);
+                atualizarKPIs();
+                renderizarTabela();
             }
-            atualizarKPIs();
-            renderizarTabela(); 
         });
     });
 
-    // Evento para fechar a ficha de manutenção ao clicar na pílula vermelha
-    document.querySelectorAll('.btn-fechar-ficha').forEach(badge => {
-        badge.addEventListener('click', (e) => {
+    // Evento para FECHAR Ficha
+    document.querySelectorAll('.btn-fechar-ficha').forEach(button => {
+        button.addEventListener('click', (e) => {
             const target = e.target.closest('.btn-fechar-ficha');
-            const v = target.getAttribute('data-veiculo');
             const d = target.getAttribute('data-data');
-            const key = `ficha_${v}_${d}`;
+            const h = target.getAttribute('data-hora');
+            const idx = parseInt(target.getAttribute('data-idx'));
             
-            localStorage.removeItem(key);
-            atualizarKPIs();
-            renderizarTabela();
+            const fichas = obterFichasManutencao();
+            if (fichas[idx]) {
+                fichas[idx].data_fechamento = d;
+                fichas[idx].hora_fechamento = h;
+                def_salvar(fichas);
+                atualizarKPIs();
+                renderizarTabela();
+            }
+        });
+    });
+
+    // Evento para LIMPAR Ficha (Deletar do Histórico)
+    document.querySelectorAll('.btn-limpar-ficha').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const target = e.target.closest('.btn-limpar-ficha');
+            const idx = parseInt(target.getAttribute('data-idx'));
+            
+            const fichas = obterFichasManutencao();
+            if (fichas[idx]) {
+                fichas.splice(idx, 1);
+                def_salvar(fichas);
+                atualizarKPIs();
+                renderizarTabela();
+            }
         });
     });
 
