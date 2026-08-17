@@ -135,7 +135,9 @@ def iniciar_automacao_flits():
     driver = None
     try:
         options = Options()
-        options.add_argument("--headless") # Executa em segundo plano sem abrir janela gráfica
+        options.add_argument("--headless")
+        options.add_argument("--width=1920")
+        options.add_argument("--height=1080")
         caminho_f = buscar_caminho_firefox()
         if caminho_f: options.binary_location = caminho_f
         options.set_preference("browser.download.folderList", 2)
@@ -169,36 +171,47 @@ def iniciar_automacao_flits():
 
         for sit_alvo in situacoes:
             for idx, emp_nome in enumerate(empresas, 1):
-                try:
-                    limpar_bloqueios_tela(driver)
-                    box_emp = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, '_containerOperation_')]")))
-                    driver.execute_script("arguments[0].click();", box_emp)
-                    time.sleep(1)
-                    ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
-                    time.sleep(2)
-
-                    box_sit = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')]")))
-                    driver.execute_script("arguments[0].click();", box_sit)
-                    time.sleep(1)
-                    ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
-                    time.sleep(1)
-
-                    btn_submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='button-submit']")))
-                    driver.execute_script("arguments[0].click();", btn_submit)
-                    time.sleep(8)
-
+                sucesso_download = False
+                tentativas = 0
+                
+                while not sucesso_download and tentativas < 2:
+                    tentativas += 1
                     try:
+                        limpar_bloqueios_tela(driver)
+                        
+                        # Garante que o painel de filtro esteja aberto
+                        filtros_abertos = driver.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')]")
+                        if not filtros_abertos or not filtros_abertos[0].is_displayed():
+                            btn_f_open = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::*")))
+                            driver.execute_script("arguments[0].click();", btn_f_open)
+                            time.sleep(1.5)
+
+                        box_emp = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, '_containerOperation_')]")))
+                        driver.execute_script("arguments[0].click();", box_emp)
+                        time.sleep(1)
+                        ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
+                        time.sleep(1.5)
+
+                        box_sit = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')]")))
+                        driver.execute_script("arguments[0].click();", box_sit)
+                        time.sleep(1)
+                        ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
+                        time.sleep(1)
+
+                        btn_submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='button-submit']")))
+                        driver.execute_script("arguments[0].click();", btn_submit)
+                        time.sleep(7)
+
                         btn_excel = wait.until(EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']")))
                         driver.execute_script("arguments[0].click();", btn_excel)
                         print(f"      - [{emp_nome}] ({sit_alvo}): Download OK.")
+                        sucesso_download = True
+                        time.sleep(2)
                     except Exception as e:
-                        print(f"      - [{emp_nome}] ({sit_alvo}): Falha no download - {e}")
-                    time.sleep(1.5)
-                except Exception:
-                    driver.refresh()
-                    time.sleep(5)
-                    btn_f_retry = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::*")))
-                    driver.execute_script("arguments[0].click();", btn_f_retry)
+                        if tentativas >= 2:
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Erro permanente - ignorando para continuar.")
+                        else:
+                            time.sleep(3)
 
         driver.quit()
         processar_e_unificar_arquivos()
