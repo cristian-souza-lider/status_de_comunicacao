@@ -126,16 +126,16 @@
     <main class="flex-1 p-4 md:p-6 space-y-6 w-full max-w-none">
 
         <!-- 1. Tabela de Registros -->
-        <section class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col card-container">
+        <section class="rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col card-container">
             <!-- Topo da Tabela -->
-            <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white dark:bg-slate-900">
-                <h3 class="text-base font-bold text-slate-700 dark:text-slate-100 flex items-center gap-1.5 title-color">
+            <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 card-header-dark">
+                <h3 class="text-base font-bold flex items-center gap-1.5 title-color">
                     <i class="fa-solid fa-table-list text-indigo-500"></i> Registros de Status de Comunicação
                 </h3>
             </div>
 
             <!-- Barra de Ocorrências Ativas -->
-            <div id="container-mini-cards" class="p-3 border-b border-slate-100 dark:border-slate-800 flex flex-wrap gap-2 items-center bg-slate-50/50 dark:bg-slate-900/60">
+            <div id="container-mini-cards" class="p-3 border-b border-slate-100 dark:border-slate-800 flex flex-wrap gap-2 items-center mini-cards-bar-dark">
                 <!-- Gerado dinamicamente via JS -->
             </div>
 
@@ -165,7 +165,7 @@
             </div>
 
             <!-- Paginação Reestruturada: Esquerda | Centro | Direita -->
-            <div class="p-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center bg-white dark:bg-slate-900 text-[11px] font-bold text-slate-700 dark:text-slate-300">
+            <div class="p-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center card-footer-dark text-[11px] font-bold text-slate-700 dark:text-slate-300">
                 <!-- Esquerda: Quantidade de Registros -->
                 <div class="w-full sm:w-1/3 text-left">
                     <span id="txt-total-registros">Exibindo 0 de 0 registros</span>

@@ -64,13 +64,32 @@ body:not(.dark) #tabela-analise th {
 
 /* --- TEMA ESCURO (DARK MODE) --- */
 body.dark {
-    background-color: #0b0f19 !important; /* Fundo Ultra Escuro */
+    background-color: #0b0f19 !important;
     color: #e2e8f0 !important;
 }
 
 body.dark .card-container {
-    background-color: #111827 !important; /* Card Cinza Azulado */
-    border-color: #1f2937 !important;
+    background-color: #111827 !important;
+    border-color: #1e293b !important;
+}
+
+/* Força fundo escuro nos cabeçalhos e rodapés da tabela */
+body.dark .card-header-dark,
+body.dark .card-footer-dark {
+    background-color: #111827 !important;
+    border-color: #1e293b !important;
+}
+
+body.dark .mini-cards-bar-dark {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+}
+
+/* Chips dos Mini Cards */
+body.dark #container-mini-cards div {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
 }
 
 body.dark .title-color { color: #f1f5f9 !important; }
