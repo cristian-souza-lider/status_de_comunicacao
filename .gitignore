@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.xls
+*.json
+!fichas_manutencao.json
+!datas.json
+!dados.json
+!dados-*.json
+.vscode/
+.env
+banco_dados.db
+*.pyc
+.venv/
