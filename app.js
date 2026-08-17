@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('filtro-linha').addEventListener('input', aplicarFiltros);
     document.getElementById('filtro-veiculo').addEventListener('input', aplicarFiltros);
     
+    const filtroTempoNC = document.getElementById('filtro-tempo-nc');
+    if (filtroTempoNC) filtroTempoNC.addEventListener('change', aplicarFiltros);
+    
     document.getElementById('pag-anterior').addEventListener('click', () => navegarPagina(-1));
     document.getElementById('pag-proximo').addEventListener('click', () => navegarPagina(1));
 
@@ -296,6 +299,15 @@ function processarDadosGerais() {
             }
         }
 
+        // Extrai as horas numéricas da descrição da Não Conformidade (ex: "Veículo sem transmissão 962h40min" -> 962)
+        let horasNC = 0;
+        if (ncOriginal) {
+            const match = ncOriginal.match(/(\d+)h/i);
+            if (match && match[1]) {
+                horasNC = parseInt(match[1], 10);
+            }
+        }
+
         return {
             ...item,
             _data: dataNormalizada,
@@ -310,6 +322,7 @@ function processarDadosGerais() {
             _status: statusCom,
             _ncOriginal: ncOriginal,
             _ncResumida: ncResumida,
+            _horasNC: horasNC,
             _gps: (gpsStatus == "1") ? "Válido" : "Inválido",
             _horaVal: formatarDataHoraValidador(horaValRaw),
             _integracao: calcularStatusIntegracao(item)
@@ -365,6 +378,9 @@ function atualizarOpcoesHora() {
 }
 
 function aplicarFiltros() {
+    const elTempoNC = document.getElementById('filtro-tempo-nc');
+    const minHorasNC = elTempoNC ? parseInt(elTempoNC.value, 10) || 0 : 0;
+
     const f = {
         data: document.getElementById('filtro-data').value,
         hora: document.getElementById('filtro-hora').value,
@@ -378,7 +394,8 @@ function aplicarFiltros() {
         status: document.getElementById('filtro-status').value,
         nc: document.getElementById('filtro-nao-conformidade').value,
         gps: document.getElementById('filtro-status-gps').value,
-        int: document.getElementById('filtro-integracao').value
+        int: document.getElementById('filtro-integracao').value,
+        minHorasNC: minHorasNC
     };
 
     dadosFiltrados = dadosProcessados.filter(d => {
@@ -395,6 +412,7 @@ function aplicarFiltros() {
         if (f.nc && d._ncResumida !== f.nc) return false;
         if (f.gps && d._gps !== f.gps) return false;
         if (f.int && d._integracao !== f.int) return false;
+        if (f.minHorasNC > 0 && d._horasNC < f.minHorasNC) return false;
         return true;
     });
 
@@ -512,6 +530,8 @@ function limparFiltros() {
         const el = document.getElementById(id);
         if(el) el.value = ""; 
     });
+    const elTempo = document.getElementById('filtro-tempo-nc');
+    if (elTempo) elTempo.value = "0";
     atualizarSelectSegmentos();
     aplicarFiltros();
 }

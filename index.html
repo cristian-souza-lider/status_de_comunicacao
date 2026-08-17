@@ -127,11 +127,27 @@
 
         <!-- 1. Tabela de Registros -->
         <section class="rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col card-container">
-            <!-- Topo da Tabela -->
+            <!-- Topo da Tabela com Filtro de Tempo de NC no Canto Direito -->
             <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 card-header-dark">
                 <h3 class="text-base font-bold flex items-center gap-1.5 title-color">
                     <i class="fa-solid fa-table-list text-indigo-500"></i> Registros de Status de Comunicação
                 </h3>
+                <div class="flex items-center gap-2">
+                    <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1 whitespace-nowrap">
+                        <i class="fa-solid fa-stopwatch text-amber-500"></i> Tempo NC:
+                    </label>
+                    <select id="filtro-tempo-nc" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input font-bold">
+                        <option value="0">Todos os Tempos</option>
+                        <option value="1">> 01h</option>
+                        <option value="2">> 02h</option>
+                        <option value="4">> 04h</option>
+                        <option value="8">> 08h</option>
+                        <option value="12">> 12h</option>
+                        <option value="24">> 24h (1 dia)</option>
+                        <option value="48">> 48h (2 dias)</option>
+                        <option value="72">> 72h (3 dias)</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Barra de Ocorrências Ativas -->
