@@ -228,18 +228,38 @@ function formatarDataHoraValidador(str) {
 
 function calcularStatusIntegracao(item) {
     const fab = item["Fabricante"] || "";
+    // Aplica-se exclusivamente aos validadores Autopass V2 e Prodata V2
     if (!(fab.includes("Autopass V2") || fab.includes("Prodata V2"))) return "Não Aplicável";
+    
     const horaValRaw = item["Hora Validador"] || "";
-    if (!horaValRaw || horaValRaw === "null") return "Sem Integração";
-    const dataExtração = item["Data"];
-    const horaExtração = item["Hora"];
+    if (!horaValRaw || horaValRaw === "" || horaValRaw === "null") return "Sem Integração";
+    
+    let dataExtracao = item["Data"] || "";
+    let horaExtracao = String(item["Hora"] || "").replace("h", "").trim();
+    
+    // Normaliza hora de extração com 2 dígitos (ex: "8" -> "08")
+    horaExtracao = horaExtracao.padStart(2, '0');
+
     try {
         const p = horaValRaw.split("T");
-        const dVal = p[0].split("-");
-        const dataValComp = `${dVal[2]}/${dVal[1]}/${dVal[0].substring(2)}`;
-        const horaValComp = parseInt(p[1].split(":")[0]) + "h";
-        return (dataValComp === dataExtração && horaValComp === horaExtração) ? "Em Dia" : "Falha na Integração";
-    } catch(e) { return "Erro no Dado"; }
+        const dVal = p[0].split("-"); // [YYYY, MM, DD]
+        
+        // Data formatada com 4 dígitos no ano: DD/MM/YYYY
+        const anoVal = dVal[0].length === 2 ? `20${dVal[0]}` : dVal[0];
+        const dataValComp = `${dVal[2]}/${dVal[1]}/${anoVal}`;
+        
+        // Hora formatada com 2 dígitos (ex: "08")
+        const horaValComp = p[1].split(":")[0].padStart(2, '0');
+
+        // Se a data e a hora coincidirem com a rodada de extração -> "Integrado"
+        if (dataValComp === dataExtracao && horaValComp === horaExtracao) {
+            return "Integrado";
+        } else {
+            return "Falha na Integração";
+        }
+    } catch(e) { 
+        return "Falha na Integração"; 
+    }
 }
 
 function processarDadosGerais() {
@@ -440,7 +460,7 @@ function renderizarTabela() {
             ? '<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Operando</span>'
             : '<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">Manutenção</span>';
 
-        const corInt = item._integracao === "Em Dia" ? "text-emerald-600" : (item._integracao === "Não Aplicável" ? "text-slate-400" : "text-rose-500");
+        const corInt = item._integracao === "Integrado" ? "text-emerald-500 font-bold" : (item._integracao === "Não Aplicável" ? "text-slate-400" : "text-rose-500 font-bold");
 
         tr.innerHTML = `
             <td>${item._data}</td>
