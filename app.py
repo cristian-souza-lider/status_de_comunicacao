@@ -200,13 +200,27 @@ def iniciar_automacao_flits():
 
                         btn_submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='button-submit']")))
                         driver.execute_script("arguments[0].click();", btn_submit)
-                        time.sleep(7)
+                        time.sleep(5)
 
-                        btn_excel = wait.until(EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']")))
-                        driver.execute_script("arguments[0].click();", btn_excel)
-                        print(f"      - [{emp_nome}] ({sit_alvo}): Download OK.")
-                        sucesso_download = True
-                        time.sleep(2)
+                        # Verifica se a tela retornou mensagem de "Nenhum dado/registro encontrado"
+                        sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
+                        if sem_dados and any(el.is_displayed() for el in sem_dados):
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
+                            sucesso_download = True
+                            continue
+
+                        # Se houver dados, localiza o botão de exportar
+                        try:
+                            btn_excel = WebDriverWait(driver, 5).until(
+                                EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']"))
+                            )
+                            driver.execute_script("arguments[0].click();", btn_excel)
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Download OK.")
+                            sucesso_download = True
+                            time.sleep(2)
+                        except Exception:
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
+                            sucesso_download = True
                     except Exception as e:
                         if tentativas >= 2:
                             print(f"      - [{emp_nome}] ({sit_alvo}): Erro permanente - ignorando para continuar.")
@@ -247,15 +261,24 @@ def processar_e_unificar_arquivos():
             try: df = pd.read_excel(arq)
             except: df = pd.read_html(arq)[0]
 
-            if not df.empty:
-                if "Empresa" in df.iloc[0].values:
-                    df.columns = df.iloc[0]
-                    df = df[1:]
-                elif "0" in df.columns or isinstance(df.columns[0], (int, float)):
-                    df.columns = df.iloc[0]
-                    df = df[1:]
+            # Descarta arquivos totalmente vazios
+            if df.empty or len(df) == 0:
+                os.remove(arq)
+                continue
+
+            if "Empresa" in df.iloc[0].values:
+                df.columns = df.iloc[0]
+                df = df[1:]
+            elif "0" in df.columns or isinstance(df.columns[0], (int, float)):
+                df.columns = df.iloc[0]
+                df = df[1:]
 
             df = df.fillna("")
+
+            # Descarta se após o cabeçalho não sobraram linhas de veículos
+            if df.empty or len(df) == 0:
+                os.remove(arq)
+                continue
             
             # Remove linhas de cabeçalho duplicadas
             if 'Empresa' in df.columns:
