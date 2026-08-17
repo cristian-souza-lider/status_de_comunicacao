@@ -537,12 +537,28 @@ function atualizarGraficos() {
     if (charts.segmento) charts.segmento.destroy();
     charts.segmento = new Chart(document.getElementById('chart-segmento'), config(gSeg.labels, gSeg.data, '#6366f1'));
 
-    // Gráfico Por Veículo: Ordenado decrescente com rolagem vertical
+    // Gráfico Por Veículo: Ranking com Cores Dinâmicas (Vermelho -> Laranja -> Verde)
     const rawVei = agrupar('_veiculo');
     const veiList = Object.keys(rawVei).map(k => ({ label: k, value: rawVei[k] }));
+    
+    // Ordena do maior (mais crítico) para o menor (menos crítico)
     veiList.sort((a, b) => b.value - a.value);
 
-    // Ajusta a altura da div interna com base na quantidade de veículos (24px por barra)
+    // Função que calcula a cor de cada barra proporcionalmente ao ranking
+    const gerarCoresGradiente = (total) => {
+        if (total <= 1) return ['#ef4444'];
+        return Array.from({ length: total }, (_, i) => {
+            const ratio = i / (total - 1); // 0 = mais crítico (topo), 1 = menos crítico (base)
+            if (ratio < 0.33) return '#ef4444'; // Vermelho (Top Críticos)
+            if (ratio < 0.66) return '#f97316'; // Laranja (Intermediário Alto)
+            if (ratio < 0.85) return '#eab308'; // Amarelo/Dourado (Intermediário Baixo)
+            return '#10b981';                   // Verde (Menos Não Conformidades)
+        });
+    };
+
+    const coresBarras = gerarCoresGradiente(veiList.length);
+
+    // Ajusta a altura da rolagem interna (24px por barra)
     const containerScroll = document.getElementById('container-scroll-veiculo');
     if (containerScroll) {
         const alturaCalculada = Math.max(160, veiList.length * 24);
@@ -551,8 +567,8 @@ function atualizarGraficos() {
 
     if (charts.veiculo) charts.veiculo.destroy();
     charts.veiculo = new Chart(
-        document.getElementById('chart-veiculo'), 
-        config(veiList.map(x => x.label), veiList.map(x => x.value), '#f43f5e')
+        document.getElementById('chart-veiculo'),
+        config(veiList.map(x => x.label), veiList.map(x => x.value), coresBarras)
     );
 
     const gEquip = agrupar('_equipamento');
