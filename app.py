@@ -157,17 +157,42 @@ def iniciar_automacao_flits():
         time.sleep(8)
         limpar_bloqueios_tela(driver)
 
-        menu = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='03'] | //div[@title='Monitoramento']")))
-        driver.execute_script("arguments[0].click();", menu)
-        time.sleep(2)
-        opcao_status = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'title') and text()='Status Comunicação']")))
-        driver.execute_script("arguments[0].click();", opcao_status)
-        time.sleep(6)
-        limpar_bloqueios_tela(driver)
+        # Navegação robusta ao menu Monitoramento -> Status Comunicação
+        try:
+            limpar_bloqueios_tela(driver)
+            menu = wait.until(EC.presence_of_element_located((
+                By.XPATH, "//div[@data-testid='03'] | //div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')]/ancestor::div[contains(@class, 'menu') or contains(@class, 'item')]"
+            )))
+            driver.execute_script("arguments[0].scrollIntoView(true);", menu)
+            time.sleep(1)
+            driver.execute_script("arguments[0].click();", menu)
+            time.sleep(3)
 
-        btn_f = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::*")))
-        driver.execute_script("arguments[0].click();", btn_f)
-        time.sleep(2)
+            limpar_bloqueios_tela(driver)
+            opcao_status = wait.until(EC.presence_of_element_located((
+                By.XPATH, "//div[contains(@class, 'title') and contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //div[text()='Status Comunicação']"
+            )))
+            driver.execute_script("arguments[0].scrollIntoView(true);", opcao_status)
+            time.sleep(1)
+            driver.execute_script("arguments[0].click();", opcao_status)
+            time.sleep(8)
+            limpar_bloqueios_tela(driver)
+
+            btn_f = wait.until(EC.element_to_be_clickable((
+                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
+            )))
+            driver.execute_script("arguments[0].click();", btn_f)
+            time.sleep(2)
+        except Exception as e_nav:
+            print(f"[Falha na Navegação do Menu] {e_nav} - Tentando acesso direto...")
+            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
+            time.sleep(8)
+            limpar_bloqueios_tela(driver)
+            btn_f = wait.until(EC.element_to_be_clickable((
+                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
+            )))
+            driver.execute_script("arguments[0].click();", btn_f)
+            time.sleep(2)
 
         for sit_alvo in situacoes:
             for idx, emp_nome in enumerate(empresas, 1):
