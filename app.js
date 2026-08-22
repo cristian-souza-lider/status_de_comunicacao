@@ -544,90 +544,127 @@ function atualizarGraficos() {
     const isDark = document.body.classList.contains('dark');
     const labelColor = isDark ? '#cbd5e1' : '#334155';
 
+    // Agrupa somando apenas registros com Não Conformidades
     const agrupar = (prop) => {
         const res = {};
-        dadosFiltrados.forEach(d => { if(d._ncResumida !== "Normal") { let val = d[prop] || "N/D"; res[val] = (res[val] || 0) + 1; } });
+        dadosFiltrados.forEach(d => {
+            if (d._ncResumida !== "Normal") {
+                let val = d[prop] || "N/D";
+                res[val] = (res[val] || 0) + 1;
+            }
+        });
         return { labels: Object.keys(res), data: Object.values(res) };
     };
 
-    const config = (labels, data, color) => ({
+    // Configuração padrão de Barras Horizontais (indexAxis: 'y')
+    const configBarraHorizontal = (labels, data, color) => ({
         type: 'bar',
-        data: { labels, datasets: [{ data, backgroundColor: color, borderRadius: 4, maxBarThickness: 25 }] },
-        options: { 
-            indexAxis: 'y', 
-            responsive: true, 
-            maintainAspectRatio: false, 
-            plugins: { 
-                legend: { display: false }, 
-                datalabels: { anchor: 'end', align: 'end', color: labelColor, font: { weight: 'bold', size: 10 }, formatter: Math.round } 
-            }, 
-            layout: { padding: { right: 30 } },
-            scales: { 
-                x: { display: false }, 
-                y: { ticks: { color: labelColor, font: { size: 9, weight: 'bold' } }, grid: { display: false } } 
-            } 
+        data: {
+            labels: labels,
+            datasets: [{
+                data: data,
+                backgroundColor: color,
+                borderRadius: 4,
+                maxBarThickness: 20
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    color: labelColor,
+                    font: { weight: 'bold', size: 10 },
+                    formatter: (val) => val > 0 ? val : ''
+                }
+            },
+            layout: { padding: { right: 35 } },
+            scales: {
+                x: { display: false },
+                y: {
+                    ticks: { color: labelColor, font: { size: 9, weight: 'bold' } },
+                    grid: { display: false }
+                }
+            }
         }
     });
 
+    // 1. Gráfico Por Empresa
     const gEmp = agrupar('_empresa');
     if (charts.empresa) charts.empresa.destroy();
-    charts.empresa = new Chart(document.getElementById('chart-empresa'), config(gEmp.labels, gEmp.data, '#10b981'));
+    charts.empresa = new Chart(document.getElementById('chart-empresa'), configBarraHorizontal(gEmp.labels, gEmp.data, '#10b981'));
 
+    // 2. Gráfico Por Segmento
     const gSeg = agrupar('_segmento');
     if (charts.segmento) charts.segmento.destroy();
-    charts.segmento = new Chart(document.getElementById('chart-segmento'), config(gSeg.labels, gSeg.data, '#6366f1'));
+    charts.segmento = new Chart(document.getElementById('chart-segmento'), configBarraHorizontal(gSeg.labels, gSeg.data, '#6366f1'));
 
-    // Gráfico Por Veículo: Ranking com Cores Dinâmicas (Vermelho -> Laranja -> Verde)
+    // 3. Gráfico Por Veículo (Barras Horizontais com Ranking Térmico)
     const rawVei = agrupar('_veiculo');
     const veiList = Object.keys(rawVei).map(k => ({ label: k, value: rawVei[k] }));
-    
-    // Ordena do maior (mais crítico) para o menor (menos crítico)
-    veiList.sort((a, b) => b.value - a.value);
+    veiList.sort((a, b) => b.value - a.value); // Ordena do maior para o menor
 
-    // Função que calcula a cor de cada barra proporcionalmente ao ranking
-    const gerarCoresGradiente = (total) => {
-        if (total <= 1) return ['#ef4444'];
-        return Array.from({ length: total }, (_, i) => {
-            const ratio = i / (total - 1); // 0 = mais crítico (topo), 1 = menos crítico (base)
-            if (ratio < 0.33) return '#ef4444'; // Vermelho (Top Críticos)
-            if (ratio < 0.66) return '#f97316'; // Laranja (Intermediário Alto)
-            if (ratio < 0.85) return '#eab308'; // Amarelo/Dourado (Intermediário Baixo)
-            return '#10b981';                   // Verde (Menos Não Conformidades)
-        });
-    };
+    const labelsVei = veiList.map(x => x.label);
+    const dataVei = veiList.map(x => x.value);
 
-    const coresBarras = gerarCoresGradiente(veiList.length);
+    // Geração dinâmica das cores térmicas por posição no ranking
+    const totalVei = veiList.length;
+    const coresVei = veiList.map((_, i) => {
+        if (totalVei <= 1) return '#ef4444';
+        const ratio = i / (totalVei - 1);
+        if (ratio < 0.30) return '#ef4444'; // Vermelho (Mais NC)
+        if (ratio < 0.60) return '#f97316'; // Laranja
+        if (ratio < 0.85) return '#eab308'; // Amarelo
+        return '#10b981';                   // Verde (Menos NC)
+    });
 
-    // Ajusta a altura da rolagem interna (24px por barra)
+    // Ajuste dinâmico da altura do container para habilitar o scroll vertical suave
     const containerScroll = document.getElementById('container-scroll-veiculo');
     if (containerScroll) {
-        const alturaCalculada = Math.max(160, veiList.length * 24);
+        const alturaMinima = 160;
+        const alturaPorBarra = 24;
+        const alturaCalculada = Math.max(alturaMinima, totalVei * alturaPorBarra);
         containerScroll.style.height = `${alturaCalculada}px`;
     }
 
     if (charts.veiculo) charts.veiculo.destroy();
-    charts.veiculo = new Chart(
-        document.getElementById('chart-veiculo'),
-        config(veiList.map(x => x.label), veiList.map(x => x.value), coresBarras)
-    );
+    charts.veiculo = new Chart(document.getElementById('chart-veiculo'), configBarraHorizontal(labelsVei, dataVei, coresVei));
 
+    // 4. Gráfico Por Equipamento
     const gEquip = agrupar('_equipamento');
     if (charts.equipamento) charts.equipamento.destroy();
-    charts.equipamento = new Chart(document.getElementById('chart-equipamento'), config(gEquip.labels, gEquip.data, '#f59e0b'));
+    charts.equipamento = new Chart(document.getElementById('chart-equipamento'), configBarraHorizontal(gEquip.labels, gEquip.data, '#f59e0b'));
 
+    // 5. Gráfico Por Faixa Horária
     const gHora = agrupar('_hora');
     if (charts.faixaHoraria) charts.faixaHoraria.destroy();
     charts.faixaHoraria = new Chart(document.getElementById('chart-faixa-horaria'), {
         type: 'line',
-        data: { labels: gHora.labels, datasets: [{ data: gHora.data, borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, tension: 0.4 }] },
-        options: { 
-            responsive: true, 
-            maintainAspectRatio: false, 
-            plugins: { legend: { display: false }, datalabels: { display: true, color: labelColor, align: 'top' } }, 
-            scales: { 
-                y: { beginAtZero: true, ticks: { color: labelColor } }, 
-                x: { ticks: { color: labelColor }, grid: { display: false } } 
-            } 
+        data: {
+            labels: gHora.labels,
+            datasets: [{
+                data: gHora.data,
+                borderColor: '#ef4444',
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: { display: true, color: labelColor, align: 'top', font: { weight: 'bold', size: 10 } }
+            },
+            scales: {
+                y: { beginAtZero: true, ticks: { color: labelColor } },
+                x: { ticks: { color: labelColor }, grid: { display: false } }
+            }
         }
     });
 }
