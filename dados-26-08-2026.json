@@ -112,7 +112,7 @@
         "Número do AVL": "97905",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h7min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -397,7 +397,7 @@
         "Número do AVL": "94045",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 16h0min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 16h8min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -577,7 +577,7 @@
         "Número do AVL": "93605",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h16min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h24min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -592,7 +592,7 @@
         "Número do AVL": "109353",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h27min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -742,7 +742,7 @@
         "Número do AVL": "122680",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 3h33min",
+        "Não Conformidade": "Veículo sem transmissão 3h41min",
         "GPS Status": "0",
         "Hora Validador": "2026-07-29T21:51:14",
         "Empresa": "VCCL",
@@ -757,7 +757,7 @@
         "Número do AVL": "124939",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h4min",
+        "Não Conformidade": "Veículo sem GPS válido 1h11min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1012,7 +1012,7 @@
         "Número do AVL": "97945",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h7min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h15min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1102,7 +1102,7 @@
         "Número do AVL": "97888",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h0min",
+        "Não Conformidade": "Veículo sem GPS válido 2h8min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1237,7 +1237,7 @@
         "Número do AVL": "94072",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 12h38min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h46min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1267,7 +1267,7 @@
         "Número do AVL": "97726",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h17min",
+        "Não Conformidade": "Veículo sem GPS válido 1h25min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1432,7 +1432,7 @@
         "Número do AVL": "97347",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h13min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h20min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1447,7 +1447,7 @@
         "Número do AVL": "97934",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 22h31min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 22h39min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1462,8 +1462,8 @@
         "Número do AVL": "97738",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h6min",
-        "GPS Status": "1",
+        "Não Conformidade": "Veículo sem GPS válido 1h5min",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
@@ -1591,7 +1591,7 @@
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "",
+        "Linha": "350-ESTAÇÃO FRANCO DA ROCHA - JD. PRETÓRIA ALTO",
         "Prefixo": "00465",
         "Situação Veículo": "Operando",
         "Número do AVL": "97755",
@@ -1687,7 +1687,7 @@
         "Número do AVL": "109337",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h20min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -1882,9 +1882,9 @@
         "Número do AVL": "55282",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 28h40min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 28h48min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1899,7 +1899,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1914,7 +1914,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:14",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1929,7 +1929,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1944,7 +1944,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1959,7 +1959,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:16",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1972,9 +1972,9 @@
         "Número do AVL": "57120",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h2min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h9min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -1989,7 +1989,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2004,7 +2004,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2019,7 +2019,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2034,7 +2034,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:38:00",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2049,7 +2049,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2079,7 +2079,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:09",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2094,7 +2094,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2109,7 +2109,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2124,7 +2124,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:32",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2139,7 +2139,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2154,7 +2154,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2169,7 +2169,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:45",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2184,14 +2184,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "138-OSASCO (MUNHOZ JR) - SÃO PAULO (METRO VILA MADALENA)",
         "Prefixo": "20022",
         "Situação Veículo": "Operando",
         "Número do AVL": "54853",
@@ -2199,7 +2199,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:41",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2214,7 +2214,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:23",
+        "Hora Validador": "2026-08-26T15:37:20",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2229,7 +2229,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:38:05",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2244,7 +2244,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2259,7 +2259,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:45",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2274,7 +2274,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:14",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2289,7 +2289,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2304,7 +2304,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2319,7 +2319,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:14",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2334,7 +2334,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:18",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2349,7 +2349,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:36:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2364,7 +2364,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2379,7 +2379,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2394,7 +2394,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2409,7 +2409,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:54",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2424,7 +2424,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2439,7 +2439,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:16",
+        "Hora Validador": "2026-08-26T15:37:16",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2454,7 +2454,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:01",
+        "Hora Validador": "2026-08-26T15:38:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2469,7 +2469,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2484,7 +2484,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:34",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2499,7 +2499,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:14",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2544,7 +2544,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2574,7 +2574,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2589,7 +2589,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2604,7 +2604,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:28",
+        "Hora Validador": "2026-08-26T15:37:24",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2619,7 +2619,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2664,7 +2664,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:37",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2679,7 +2679,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:27",
+        "Hora Validador": "2026-08-26T15:37:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2694,7 +2694,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2709,7 +2709,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:38:00",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2724,7 +2724,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2739,7 +2739,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2752,9 +2752,9 @@
         "Número do AVL": "59278",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h41min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h49min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:23",
+        "Hora Validador": "2026-08-26T15:37:25",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2769,7 +2769,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:38:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2784,7 +2784,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2799,7 +2799,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:54",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2814,7 +2814,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2829,14 +2829,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:38:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "322-BARUERI (PARQUE IMPERIAL) - SÃO PAULO (PINHEIROS)",
         "Prefixo": "20088",
         "Situação Veículo": "Operando",
         "Número do AVL": "59052",
@@ -2844,7 +2844,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:17",
+        "Hora Validador": "2026-08-26T15:37:19",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2859,7 +2859,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:14",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2874,7 +2874,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2889,7 +2889,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2904,7 +2904,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:39",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2919,7 +2919,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2934,7 +2934,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2949,7 +2949,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2964,7 +2964,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2979,7 +2979,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -2994,7 +2994,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:16",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3009,7 +3009,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:04",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3023,8 +3023,8 @@
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "GPS Status": "0",
+        "Hora Validador": "2026-08-26T15:36:03",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3039,7 +3039,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:31",
+        "Hora Validador": "2026-08-26T15:37:32",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3054,7 +3054,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:29",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3069,7 +3069,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:34",
+        "Hora Validador": "2026-08-26T15:37:31",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3084,7 +3084,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3099,7 +3099,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:03",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3114,7 +3114,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:11",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3129,7 +3129,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:26",
+        "Hora Validador": "2026-08-26T15:37:27",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3144,7 +3144,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3159,7 +3159,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3174,7 +3174,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3189,7 +3189,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3204,7 +3204,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:13",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3217,9 +3217,9 @@
         "Número do AVL": "58352",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 17h57min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 18h5min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:35",
+        "Hora Validador": "2026-08-26T15:37:31",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3232,9 +3232,9 @@
         "Número do AVL": "59730",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h52min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h59min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3249,7 +3249,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:05",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3264,7 +3264,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:33",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3279,7 +3279,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3294,7 +3294,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:25",
+        "Hora Validador": "2026-08-26T15:37:26",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3309,7 +3309,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:28:53",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3324,7 +3324,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:22",
+        "Hora Validador": "2026-08-26T15:37:24",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3339,7 +3339,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3354,7 +3354,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:06",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3369,7 +3369,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3384,7 +3384,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:41",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3399,7 +3399,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3414,7 +3414,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:22",
+        "Hora Validador": "2026-08-26T15:37:24",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3429,7 +3429,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:18",
+        "Hora Validador": "2026-08-26T15:37:19",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3444,7 +3444,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3459,7 +3459,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3474,7 +3474,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:42",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3489,7 +3489,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3504,7 +3504,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:36:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3519,7 +3519,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3534,7 +3534,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3547,9 +3547,9 @@
         "Número do AVL": "58929",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 24h2min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 24h10min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:03",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3564,7 +3564,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:43",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3579,7 +3579,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:16",
+        "Hora Validador": "2026-08-26T15:37:18",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3594,7 +3594,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3609,7 +3609,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:13",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3624,7 +3624,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3639,7 +3639,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:48",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3654,7 +3654,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:12",
+        "Hora Validador": "2026-08-26T15:37:12",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3669,7 +3669,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3684,7 +3684,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:34",
+        "Hora Validador": "2026-08-26T15:34:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3699,7 +3699,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3729,7 +3729,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3744,7 +3744,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3757,9 +3757,9 @@
         "Número do AVL": "59014",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 18h8min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 18h16min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:34",
+        "Hora Validador": "2026-08-26T15:30:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3774,7 +3774,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3789,7 +3789,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:38",
+        "Hora Validador": "2026-08-26T15:34:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3804,7 +3804,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3817,7 +3817,7 @@
         "Número do AVL": "55526",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h57min",
+        "Não Conformidade": "Veículo sem GPS válido 2h5min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T13:32:39",
         "Empresa": "AVUL",
@@ -3834,7 +3834,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:03",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3849,7 +3849,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:33",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3864,7 +3864,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3879,7 +3879,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3894,7 +3894,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3909,7 +3909,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3922,9 +3922,9 @@
         "Número do AVL": "59516",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h33min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h41min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:20:56",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3939,7 +3939,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:18:41",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3954,7 +3954,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3969,7 +3969,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:39",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3984,7 +3984,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:28:59",
+        "Hora Validador": "2026-08-26T15:38:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -3999,7 +3999,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4014,7 +4014,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:38:04",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4042,16 +4042,16 @@
         "Número do AVL": "58743",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 18h42min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 18h50min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:30:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "352-SANTANA DE PARNAÍBA (CIDADE SÃO PEDRO) - SAO PAULO ( LAPA )",
+        "Linha": "565-SANTANA DE PARNAÍBA ( CIDADE SÃO PEDRO- GLEBA C) - SÃO PAULO (LAPA)",
         "Prefixo": "20463",
         "Situação Veículo": "Operando",
         "Número do AVL": "54892",
@@ -4059,7 +4059,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4074,7 +4074,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4089,7 +4089,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4104,7 +4104,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:38:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4119,7 +4119,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:17:00",
+        "Hora Validador": "2026-08-26T15:38:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4134,7 +4134,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4149,7 +4149,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:37",
+        "Hora Validador": "2026-08-26T15:32:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4164,7 +4164,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4179,7 +4179,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:48",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4194,7 +4194,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4209,7 +4209,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4224,7 +4224,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:38:05",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4239,7 +4239,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:14",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4254,7 +4254,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4269,7 +4269,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4284,7 +4284,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4299,7 +4299,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:54",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4314,7 +4314,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:17",
+        "Hora Validador": "2026-08-26T15:37:48",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4329,7 +4329,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:22",
+        "Hora Validador": "2026-08-26T15:37:24",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4344,7 +4344,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:17:22",
+        "Hora Validador": "2026-08-26T15:37:22",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4359,7 +4359,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:31",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4372,9 +4372,9 @@
         "Número do AVL": "60314",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h41min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h49min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:34",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4389,7 +4389,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4402,9 +4402,9 @@
         "Número do AVL": "59793",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h3min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h11min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:01",
+        "Hora Validador": "2026-08-26T15:36:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4419,7 +4419,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:19:24",
+        "Hora Validador": "2026-08-26T15:37:23",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4434,7 +4434,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4449,7 +4449,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4464,7 +4464,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4479,7 +4479,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:37",
+        "Hora Validador": "2026-08-26T15:37:39",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4494,7 +4494,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4509,7 +4509,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4524,7 +4524,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:17:42",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4539,7 +4539,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4569,7 +4569,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4584,7 +4584,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4599,7 +4599,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:04",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4614,7 +4614,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4629,7 +4629,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:04",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4644,7 +4644,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4659,7 +4659,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:16",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4674,7 +4674,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:12",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4689,7 +4689,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4702,9 +4702,9 @@
         "Número do AVL": "59032",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h30min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h38min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:18:15",
+        "Hora Validador": "2026-08-26T15:37:15",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4719,7 +4719,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:28",
+        "Hora Validador": "2026-08-26T15:37:25",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4734,7 +4734,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:37:29",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4749,7 +4749,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4764,7 +4764,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4779,7 +4779,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4794,7 +4794,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4809,7 +4809,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:22",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4824,7 +4824,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:19:22",
+        "Hora Validador": "2026-08-26T15:37:25",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4837,9 +4837,9 @@
         "Número do AVL": "58319",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h22min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h30min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:35:12",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4854,7 +4854,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:47",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4869,7 +4869,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:32",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4884,7 +4884,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:41",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4897,9 +4897,9 @@
         "Número do AVL": "54893",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 29h34min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 29h42min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:31:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4914,7 +4914,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4929,7 +4929,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:04",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4944,7 +4944,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4959,7 +4959,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4974,7 +4974,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:38:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -4989,7 +4989,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5004,7 +5004,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5019,7 +5019,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5034,7 +5034,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5049,7 +5049,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5064,7 +5064,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5079,7 +5079,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5094,7 +5094,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5109,7 +5109,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:45",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5124,7 +5124,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:58",
+        "Hora Validador": "2026-08-26T15:31:29",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5139,7 +5139,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5154,7 +5154,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:31",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5169,7 +5169,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5184,7 +5184,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5199,7 +5199,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5214,7 +5214,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:46",
+        "Hora Validador": "2026-08-26T15:37:48",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5229,7 +5229,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5244,7 +5244,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5259,7 +5259,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5274,7 +5274,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:38:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5289,7 +5289,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5304,7 +5304,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5319,7 +5319,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:04",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5334,7 +5334,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5349,7 +5349,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:16",
+        "Hora Validador": "2026-08-26T15:37:18",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5364,7 +5364,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5379,7 +5379,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:25",
+        "Hora Validador": "2026-08-26T15:37:26",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5394,7 +5394,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5407,7 +5407,7 @@
         "Número do AVL": "59045",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 7h36min",
+        "Não Conformidade": "Veículo sem GPS válido 7h44min",
         "GPS Status": "0",
         "Hora Validador": "2026-08-26T07:54:06",
         "Empresa": "AVUL",
@@ -5424,7 +5424,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:38:05",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5439,7 +5439,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:27",
+        "Hora Validador": "2026-08-26T15:37:25",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5454,7 +5454,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:22",
+        "Hora Validador": "2026-08-26T15:37:24",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5469,7 +5469,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5484,7 +5484,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5499,14 +5499,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:18",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "324-SANTANA DE PARNAÍBA (COLINAS DA ANHANGUERA) -BARUERI(PARQUE IMPERIAL)",
         "Prefixo": "20588",
         "Situação Veículo": "Operando",
         "Número do AVL": "55062",
@@ -5514,7 +5514,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:11",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5529,7 +5529,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:47",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5544,7 +5544,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5559,7 +5559,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:29",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5572,7 +5572,7 @@
         "Número do AVL": "59490",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 5h29min",
+        "Não Conformidade": "Veículo sem transmissão 5h37min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T09:50:28",
         "Empresa": "AVUL",
@@ -5589,7 +5589,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:29",
+        "Hora Validador": "2026-08-26T15:37:31",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5604,7 +5604,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:38:00",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5619,7 +5619,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5634,7 +5634,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5649,7 +5649,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:12",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5664,7 +5664,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5679,7 +5679,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5694,7 +5694,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:47",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5709,7 +5709,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:54",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5722,9 +5722,9 @@
         "Número do AVL": "58782",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 30h2min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 30h10min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:33",
+        "Hora Validador": "2026-08-26T15:36:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5739,7 +5739,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5754,20 +5754,20 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:12",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "439-BARUERI (ALPHAVILLE) - SÃO PAULO (MERC. PIRITUBA)",
         "Prefixo": "20640",
         "Situação Veículo": "Operando",
         "Número do AVL": "58232",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 4h15min",
+        "Não Conformidade": "Veículo sem transmissão 4h23min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T11:14:36",
         "Empresa": "AVUL",
@@ -5784,7 +5784,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:16",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5799,7 +5799,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:06",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5814,7 +5814,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5829,7 +5829,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5844,7 +5844,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5859,7 +5859,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:45",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5874,7 +5874,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:47",
+        "Hora Validador": "2026-08-26T15:37:48",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5889,7 +5889,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5904,7 +5904,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:57",
+        "Hora Validador": "2026-08-26T15:38:03",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5919,14 +5919,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:46",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "052-OSASCO (JARDIM ELVIRA) - SÃO PAULO (LAPA)",
         "Prefixo": "20651",
         "Situação Veículo": "Operando",
         "Número do AVL": "55816",
@@ -5934,7 +5934,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:30",
+        "Hora Validador": "2026-08-26T15:37:16",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5949,7 +5949,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5964,7 +5964,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5979,7 +5979,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -5994,7 +5994,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6009,7 +6009,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6024,7 +6024,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:36:09",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6039,7 +6039,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6054,7 +6054,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:12",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6069,7 +6069,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6084,7 +6084,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6099,7 +6099,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6114,7 +6114,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:39",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6129,7 +6129,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6144,7 +6144,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:59",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6159,7 +6159,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:39",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6174,7 +6174,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:13",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6189,7 +6189,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6202,9 +6202,9 @@
         "Número do AVL": "58702",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 19h31min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 19h39min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:20:18",
+        "Hora Validador": "2026-08-26T15:37:16",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6219,7 +6219,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:30",
+        "Hora Validador": "2026-08-26T15:37:32",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6234,7 +6234,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6249,7 +6249,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:25",
+        "Hora Validador": "2026-08-26T15:37:32",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6264,7 +6264,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6279,7 +6279,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:33",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6294,7 +6294,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6322,9 +6322,9 @@
         "Número do AVL": "57644",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 25h9min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 25h17min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:09",
+        "Hora Validador": "2026-08-26T15:37:06",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6339,7 +6339,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:36",
+        "Hora Validador": "2026-08-26T15:37:35",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6369,7 +6369,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:54",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6384,7 +6384,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6399,7 +6399,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:12",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6414,7 +6414,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6429,7 +6429,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:25",
+        "Hora Validador": "2026-08-26T15:37:21",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6444,7 +6444,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6459,7 +6459,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:43",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6474,7 +6474,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:21",
+        "Hora Validador": "2026-08-26T15:37:22",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6489,7 +6489,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6504,7 +6504,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6519,7 +6519,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:44",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6534,7 +6534,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6549,7 +6549,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:09",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6564,7 +6564,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6579,7 +6579,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:15",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6594,7 +6594,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6609,7 +6609,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6624,7 +6624,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:37:31",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6639,7 +6639,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:01",
+        "Hora Validador": "2026-08-26T15:37:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6654,7 +6654,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6669,7 +6669,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:36",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6684,7 +6684,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:37",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6699,7 +6699,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:50",
+        "Hora Validador": "2026-08-26T15:36:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6714,7 +6714,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6729,7 +6729,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6744,7 +6744,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6759,22 +6759,22 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "439-BARUERI (ALPHAVILLE) - SÃO PAULO (MERC. PIRITUBA)",
         "Prefixo": "20708",
         "Situação Veículo": "Operando",
         "Número do AVL": "59384",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 18h48min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 18h55min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:28",
+        "Hora Validador": "2026-08-26T15:37:29",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6789,7 +6789,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6804,7 +6804,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:52",
+        "Hora Validador": "2026-08-26T15:37:51",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6819,7 +6819,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6834,7 +6834,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:01",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6849,7 +6849,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:39",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6864,7 +6864,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:46",
+        "Hora Validador": "2026-08-26T15:37:53",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6879,14 +6879,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:05",
+        "Hora Validador": "2026-08-26T15:37:36",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "303-BARUERI (PARQUE IMPERIAL) - OSASCO (VILA YARA)",
         "Prefixo": "20716",
         "Situação Veículo": "Operando",
         "Número do AVL": "58560",
@@ -6894,7 +6894,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:26",
+        "Hora Validador": "2026-08-26T15:37:27",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6909,7 +6909,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6924,7 +6924,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:34",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6939,7 +6939,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:47",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6954,7 +6954,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:45",
+        "Hora Validador": "2026-08-26T15:37:42",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6969,7 +6969,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:38:00",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6982,9 +6982,9 @@
         "Número do AVL": "58606",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 17h44min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 17h51min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:11",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -6999,7 +6999,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:00",
+        "Hora Validador": "2026-08-26T15:37:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7014,7 +7014,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:09",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7029,7 +7029,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:55",
+        "Hora Validador": "2026-08-26T15:37:56",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7044,7 +7044,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7059,7 +7059,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:02",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7072,7 +7072,7 @@
         "Número do AVL": "59432",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h22min",
+        "Não Conformidade": "Veículo sem GPS válido 1h30min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T14:07:47",
         "Empresa": "AVUL",
@@ -7089,7 +7089,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:49",
+        "Hora Validador": "2026-08-26T15:37:50",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7104,7 +7104,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:28:56",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7119,7 +7119,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:44",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7134,7 +7134,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:32",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7149,7 +7149,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7164,7 +7164,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7179,7 +7179,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:00",
+        "Hora Validador": "2026-08-26T15:37:01",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7194,7 +7194,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:08",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7207,7 +7207,7 @@
         "Número do AVL": "59429",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 28h13min",
+        "Não Conformidade": "Veículo sem transmissão 28h21min",
         "GPS Status": "0",
         "Hora Validador": "2026-08-25T19:02:56",
         "Empresa": "AVUL",
@@ -7224,7 +7224,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7239,7 +7239,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:09",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7254,7 +7254,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:53",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7269,7 +7269,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:06",
+        "Hora Validador": "2026-08-26T15:37:07",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7284,7 +7284,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:01",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7299,14 +7299,14 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:45",
+        "Hora Validador": "2026-08-26T15:37:46",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
     },
     {
         "Segmento": "Urubupungá",
-        "Linha": "",
+        "Linha": "231-OSASCO ( JARDIM ELVIRA) - SÃO PAULO (METRO ARMÊNIA)",
         "Prefixo": "20779",
         "Situação Veículo": "Operando",
         "Número do AVL": "60263",
@@ -7314,7 +7314,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:51",
+        "Hora Validador": "2026-08-26T15:37:52",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7329,7 +7329,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:03",
+        "Hora Validador": "2026-08-26T15:37:29",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7344,7 +7344,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:48",
+        "Hora Validador": "2026-08-26T15:37:49",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7359,7 +7359,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:01",
+        "Hora Validador": "2026-08-26T15:37:58",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7374,7 +7374,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:11",
+        "Hora Validador": "2026-08-26T15:37:43",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7389,7 +7389,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:54",
+        "Hora Validador": "2026-08-26T15:37:55",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7404,7 +7404,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:41",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7417,7 +7417,7 @@
         "Número do AVL": "56795",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h14min",
+        "Não Conformidade": "Veículo sem GPS válido 1h22min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T15:22:34",
         "Empresa": "AVUL",
@@ -7434,7 +7434,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:01",
+        "Hora Validador": "2026-08-26T15:38:02",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7447,9 +7447,9 @@
         "Número do AVL": "59946",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h4min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h12min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:37",
+        "Hora Validador": "2026-08-26T15:37:33",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7464,7 +7464,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:07",
+        "Hora Validador": "2026-08-26T15:37:38",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7479,7 +7479,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:59",
+        "Hora Validador": "2026-08-26T15:37:30",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7492,9 +7492,9 @@
         "Número do AVL": "57881",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 30h23min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 30h31min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:29",
+        "Hora Validador": "2026-08-26T15:37:25",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7509,7 +7509,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:29:56",
+        "Hora Validador": "2026-08-26T15:37:57",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7524,7 +7524,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:10",
+        "Hora Validador": "2026-08-26T15:37:40",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -7612,7 +7612,7 @@
         "Número do AVL": "112749",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 111h14min",
+        "Não Conformidade": "Veículo sem transmissão 111h22min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -7672,7 +7672,7 @@
         "Número do AVL": "97243",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 6h35min",
+        "Não Conformidade": "Veículo sem GPS válido 6h43min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -7762,7 +7762,7 @@
         "Número do AVL": "93360",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h27min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -7852,7 +7852,7 @@
         "Número do AVL": "93554",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h13min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h20min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -7921,7 +7921,7 @@
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
-        "Linha": "900-CONJUNTO MARIA LUIZA - JARDIM MURIANO",
+        "Linha": "980-PONUNDUVA - JD. MURIANO.",
         "Prefixo": "00843",
         "Situação Veículo": "Operando",
         "Número do AVL": "93371",
@@ -8017,7 +8017,7 @@
         "Número do AVL": "112751",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h24min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h32min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -8287,7 +8287,7 @@
         "Número do AVL": "93535",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h1min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h9min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -8393,7 +8393,7 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
@@ -8723,7 +8723,7 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "0",
+        "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
@@ -8797,7 +8797,7 @@
         "Número do AVL": "117560",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h16min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h24min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -8857,7 +8857,7 @@
         "Número do AVL": "96567",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h35min",
+        "Não Conformidade": "Veículo sem GPS válido 1h43min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -8977,7 +8977,7 @@
         "Número do AVL": "122665",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 21h29min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 21h37min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -9023,7 +9023,7 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "0",
+        "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
@@ -9050,6 +9050,21 @@
         "Prefixo": "00255",
         "Situação Veículo": "Operando",
         "Número do AVL": "121845",
+        "Fabricante": "Quanta Duo",
+        "Status": "Com Comunicação",
+        "Não Conformidade": "",
+        "GPS Status": "1",
+        "Hora Validador": "",
+        "Empresa": "AVUL",
+        "Data": "26/08/2026",
+        "Hora": "15h"
+    },
+    {
+        "Segmento": "Urubupungá Municipal Osasco",
+        "Linha": "017-PORTAL D'OESTE II - VILA YARA",
+        "Prefixo": "00256",
+        "Situação Veículo": "Operando",
+        "Número do AVL": "121839",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
@@ -9668,7 +9683,7 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "0",
+        "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "26/08/2026",
@@ -9802,7 +9817,7 @@
         "Número do AVL": "97236",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 4h27min",
+        "Não Conformidade": "Veículo sem GPS válido 4h35min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10207,7 +10222,7 @@
         "Número do AVL": "94757",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h29min",
+        "Não Conformidade": "Veículo sem GPS válido 1h37min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10327,7 +10342,7 @@
         "Número do AVL": "117074",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h20min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h28min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10441,7 +10456,7 @@
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "",
+        "Linha": "810-JD. ISAURA- EMPRESARIAL TAMBORÉ - CIRCULAR",
         "Prefixo": "00820",
         "Situação Veículo": "Operando",
         "Número do AVL": "94584",
@@ -10546,13 +10561,13 @@
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "810-JD. ISAURA- EMPRESARIAL TAMBORÉ - CIRCULAR",
+        "Linha": "870-CHACARA DAS GARÇAS - CENTRO DE PARNAÍBA",
         "Prefixo": "00828",
         "Situação Veículo": "Operando",
         "Número do AVL": "93560",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 6h27min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 6h35min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10567,7 +10582,7 @@
         "Número do AVL": "93392",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 10h54min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 11h2min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10582,7 +10597,7 @@
         "Número do AVL": "97311",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 5h8min",
+        "Não Conformidade": "Veículo sem GPS válido 5h16min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10651,7 +10666,7 @@
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "860-CONJ. SÃO BENEDITO / CIDADE SÃO PEDRO - COLINAS DA ANHAGUERA",
+        "Linha": "",
         "Prefixo": "00856",
         "Situação Veículo": "Operando",
         "Número do AVL": "93705",
@@ -10741,7 +10756,7 @@
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "870-CHACARA DAS GARÇAS - CENTRO DE PARNAÍBA",
+        "Linha": "",
         "Prefixo": "00884",
         "Situação Veículo": "Operando",
         "Número do AVL": "109313",
@@ -10786,7 +10801,7 @@
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "",
+        "Linha": "860-CONJ. SÃO BENEDITO / CIDADE SÃO PEDRO - COLINAS DA ANHAGUERA",
         "Prefixo": "00887",
         "Situação Veículo": "Operando",
         "Número do AVL": "97301",
@@ -10807,7 +10822,7 @@
         "Número do AVL": "93381",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h27min",
         "GPS Status": "1",
         "Hora Validador": "2026-07-29T22:16:16",
         "Empresa": "AVUL",
@@ -10837,7 +10852,7 @@
         "Número do AVL": "97244",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h19min",
+        "Não Conformidade": "Veículo sem GPS válido 2h26min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -10854,7 +10869,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:17",
+        "Hora Validador": "2026-08-26T15:38:24",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10869,7 +10884,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:49",
+        "Hora Validador": "2026-08-26T15:38:56",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10884,7 +10899,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:49",
+        "Hora Validador": "2026-08-26T15:38:55",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10899,7 +10914,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:46",
+        "Hora Validador": "2026-08-26T15:38:43",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10914,7 +10929,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:05",
+        "Hora Validador": "2026-08-26T15:39:07",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10929,7 +10944,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:13",
+        "Hora Validador": "2026-08-26T15:38:44",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10944,7 +10959,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:04",
+        "Hora Validador": "2026-08-26T15:39:05",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10959,7 +10974,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:53",
+        "Hora Validador": "2026-08-26T15:38:54",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10974,7 +10989,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:12",
+        "Hora Validador": "2026-08-26T15:38:13",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -10989,7 +11004,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:52",
+        "Hora Validador": "2026-08-26T15:38:54",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11004,7 +11019,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:55",
+        "Hora Validador": "2026-08-26T15:38:57",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11019,7 +11034,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:57",
+        "Hora Validador": "2026-08-26T15:38:53",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11034,7 +11049,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:12",
+        "Hora Validador": "2026-08-26T15:38:43",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11049,7 +11064,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:46",
+        "Hora Validador": "2026-08-26T15:38:47",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11064,7 +11079,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:01",
+        "Hora Validador": "2026-08-26T15:39:03",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11079,7 +11094,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:30",
+        "Hora Validador": "2026-08-26T15:38:31",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11094,7 +11109,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:10",
+        "Hora Validador": "2026-08-26T15:39:12",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11109,7 +11124,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:53",
+        "Hora Validador": "2026-08-26T15:38:49",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11124,7 +11139,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:02",
+        "Hora Validador": "2026-08-26T15:39:09",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11139,7 +11154,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:02",
+        "Hora Validador": "2026-08-26T15:39:04",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11154,7 +11169,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:11",
+        "Hora Validador": "2026-08-26T15:39:08",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11169,7 +11184,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:25",
+        "Hora Validador": "2026-08-26T15:36:25",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11184,7 +11199,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:58",
+        "Hora Validador": "2026-08-26T15:38:59",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11199,7 +11214,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:07",
+        "Hora Validador": "2026-08-26T15:39:09",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11214,7 +11229,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:11",
+        "Hora Validador": "2026-08-26T15:39:07",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11229,7 +11244,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:49",
+        "Hora Validador": "2026-08-26T15:38:50",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11244,7 +11259,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:07",
+        "Hora Validador": "2026-08-26T15:39:08",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11259,7 +11274,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:08",
+        "Hora Validador": "2026-08-26T15:38:44",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11289,7 +11304,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:02",
+        "Hora Validador": "2026-08-26T15:39:04",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11304,7 +11319,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:59",
+        "Hora Validador": "2026-08-26T15:38:56",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11319,7 +11334,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:11",
+        "Hora Validador": "2026-08-26T15:38:42",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11334,7 +11349,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:01",
+        "Hora Validador": "2026-08-26T15:38:59",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11349,7 +11364,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:51",
+        "Hora Validador": "2026-08-26T15:38:53",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11362,7 +11377,7 @@
         "Número do AVL": "56749",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h2min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h10min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T15:29:16",
         "Empresa": "VCCL",
@@ -11379,7 +11394,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:13",
+        "Hora Validador": "2026-08-26T15:38:44",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11394,7 +11409,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:17",
+        "Hora Validador": "2026-08-26T15:38:48",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11409,7 +11424,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:46",
+        "Hora Validador": "2026-08-26T15:38:54",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11439,7 +11454,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:08",
+        "Hora Validador": "2026-08-26T15:39:10",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11454,7 +11469,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:32",
+        "Hora Validador": "2026-08-26T15:38:34",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11469,7 +11484,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:04",
+        "Hora Validador": "2026-08-26T15:36:03",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11484,7 +11499,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:08",
+        "Hora Validador": "2026-08-26T15:38:38",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11497,9 +11512,9 @@
         "Número do AVL": "57017",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h50min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h58min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:24:53",
+        "Hora Validador": "2026-08-26T15:38:54",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11514,7 +11529,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:08",
+        "Hora Validador": "2026-08-26T15:39:10",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11529,7 +11544,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:11",
+        "Hora Validador": "2026-08-26T15:38:36",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11544,7 +11559,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:28:37",
+        "Hora Validador": "2026-08-26T15:39:05",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11557,7 +11572,7 @@
         "Número do AVL": "57101",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h0min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h8min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T15:30:34",
         "Empresa": "VCCL",
@@ -11574,7 +11589,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:02",
+        "Hora Validador": "2026-08-26T15:35:00",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11589,7 +11604,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:03",
+        "Hora Validador": "2026-08-26T15:39:04",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11604,7 +11619,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:52",
+        "Hora Validador": "2026-08-26T15:38:54",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11619,7 +11634,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:26:31",
+        "Hora Validador": "2026-08-26T15:38:34",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11709,7 +11724,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:08",
+        "Hora Validador": "2026-08-26T15:39:08",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11724,7 +11739,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:12",
+        "Hora Validador": "2026-08-26T15:39:12",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11739,7 +11754,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:01",
+        "Hora Validador": "2026-08-26T15:39:02",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11754,7 +11769,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:56",
+        "Hora Validador": "2026-08-26T15:38:56",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11769,7 +11784,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:15",
+        "Hora Validador": "2026-08-26T15:38:45",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11784,7 +11799,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:42",
+        "Hora Validador": "2026-08-26T15:38:42",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11799,7 +11814,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:48",
+        "Hora Validador": "2026-08-26T15:38:48",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11814,7 +11829,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:51",
+        "Hora Validador": "2026-08-26T15:38:52",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11829,7 +11844,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:07",
+        "Hora Validador": "2026-08-26T15:39:08",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11844,7 +11859,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:31:09",
+        "Hora Validador": "2026-08-26T15:39:10",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11859,7 +11874,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:25",
+        "Hora Validador": "2026-08-26T15:38:25",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11874,7 +11889,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:57",
+        "Hora Validador": "2026-08-26T15:38:58",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11887,9 +11902,9 @@
         "Número do AVL": "582",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h35min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h43min",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:30:31",
+        "Hora Validador": "2026-08-26T15:38:32",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -11977,7 +11992,7 @@
         "Número do AVL": "94064",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 381h27min",
+        "Não Conformidade": "Veículo sem transmissão 381h35min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -11992,7 +12007,7 @@
         "Número do AVL": "94048",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 53h17min",
+        "Não Conformidade": "Veículo sem transmissão 53h25min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -12007,7 +12022,7 @@
         "Número do AVL": "111923",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 91h14min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 91h22min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -12022,7 +12037,7 @@
         "Número do AVL": "97919",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 17h22min",
+        "Não Conformidade": "Veículo sem GPS válido 17h30min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -12037,7 +12052,7 @@
         "Número do AVL": "64716",
         "Fabricante": "Prodata V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 74h2min",
+        "Não Conformidade": "Veículo sem transmissão 74h10min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-23T13:29:32",
         "Empresa": "VCCL",
@@ -12052,7 +12067,7 @@
         "Número do AVL": "122678",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 91h10min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 91h17min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -12067,7 +12082,7 @@
         "Número do AVL": "97944",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 10h8min",
+        "Não Conformidade": "Veículo sem transmissão 10h16min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
@@ -12082,7 +12097,7 @@
         "Número do AVL": "58334",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 150h30min",
+        "Não Conformidade": "Veículo sem transmissão 150h38min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-20T09:01:10",
         "Empresa": "AVUL",
@@ -12097,7 +12112,7 @@
         "Número do AVL": "58437",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 17h12min",
+        "Não Conformidade": "Veículo sem transmissão 17h20min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-25T22:19:29",
         "Empresa": "AVUL",
@@ -12112,7 +12127,7 @@
         "Número do AVL": "58374",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 87h31min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 87h39min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T15:30:47",
         "Empresa": "AVUL",
@@ -12142,7 +12157,7 @@
         "Número do AVL": "58425",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 5h13min",
+        "Não Conformidade": "Veículo sem transmissão 5h21min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-26T10:18:28",
         "Empresa": "AVUL",
@@ -12172,7 +12187,7 @@
         "Número do AVL": "93719",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 14h36min",
+        "Não Conformidade": "Veículo sem GPS válido 14h44min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -12187,22 +12202,7 @@
         "Número do AVL": "93380",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 35h53min",
-        "GPS Status": "1",
-        "Hora Validador": "",
-        "Empresa": "AVUL",
-        "Data": "26/08/2026",
-        "Hora": "15h"
-    },
-    {
-        "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "017-PORTAL D'OESTE II - VILA YARA",
-        "Prefixo": "00256",
-        "Situação Veículo": "Em Manutenção",
-        "Número do AVL": "121839",
-        "Fabricante": "Quanta Duo",
-        "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem transmissão 36h1min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -12217,7 +12217,7 @@
         "Número do AVL": "93627",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 125h14min",
+        "Não Conformidade": "Veículo sem transmissão 125h22min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -12232,7 +12232,7 @@
         "Número do AVL": "97734",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 64h48min",
+        "Não Conformidade": "Veículo sem transmissão 64h56min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -12247,7 +12247,7 @@
         "Número do AVL": "97326",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 8h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 8h19min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
@@ -12262,7 +12262,7 @@
         "Número do AVL": "54913",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 25h24min",
+        "Não Conformidade": "Veículo sem transmissão 25h32min",
         "GPS Status": "1",
         "Hora Validador": "2026-08-25T14:09:03",
         "Empresa": "VCCL",
@@ -12277,7 +12277,7 @@
         "Número do AVL": "55126",
         "Fabricante": "Autopass V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 881h25min",
+        "Não Conformidade": "Veículo sem transmissão 881h33min",
         "GPS Status": "1",
         "Hora Validador": "2026-02-25T18:40:06",
         "Empresa": "VCCL",
@@ -12294,7 +12294,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:32:20",
+        "Hora Validador": "2026-08-26T15:40:21",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
@@ -12309,7 +12309,7 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-08-26T15:32:53",
+        "Hora Validador": "2026-08-26T15:40:53",
         "Empresa": "VCCL",
         "Data": "26/08/2026",
         "Hora": "15h"
