@@ -442,6 +442,11 @@ html, body {
   cursor: pointer;
 }
 
+.select-clean option {
+  background-color: var(--bg-card, #121a2b);
+  color: var(--text-main, #f1f5f9);
+}
+
 .table-container {
   overflow-x: auto;
   border-radius: 8px;
