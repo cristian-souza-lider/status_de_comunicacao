@@ -272,6 +272,7 @@ def processar_e_unificar_arquivos():
     now = datetime.now()
     data_extracao = now.strftime("%d/%m/%Y")
     hora_extracao = now.strftime("%Hh")
+    hora_minuto_extracao = now.strftime("%H:%M")
     
     segmentos_avul = ["Urubupungá", "Urubupungá Municipal Osasco", "Urubupungá Municipal Santana", "Urubupungá Municipal Cajamar"]
 
@@ -322,6 +323,7 @@ def processar_e_unificar_arquivos():
             for registro in lista_registros:
                 registro["Data"] = data_extracao
                 registro["Hora"] = hora_extracao
+                registro["Hora_Extracao"] = hora_minuto_extracao
             
             dados_totais.extend(lista_registros)
             os.remove(arq)

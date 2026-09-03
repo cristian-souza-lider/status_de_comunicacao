@@ -219,8 +219,18 @@ function carregarDados(dataEsp) {
             aplicarFiltros();
 
             if (txtAtualizado) {
-                const ultHora = dadosOriginais.length > 0 ? dadosOriginais[dadosOriginais.length - 1]["Hora"] || "" : "";
-                txtAtualizado.textContent = `Atualizado às ${ultHora || new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'})}`;
+                let horaExibicao = "";
+                if (dadosOriginais.length > 0) {
+                    const ultimoItem = dadosOriginais[dadosOriginais.length - 1];
+                    // Prioriza o campo com minutos (Hora_Extracao) se existir
+                    horaExibicao = ultimoItem["Hora_Extracao"] || ultimoItem["Hora"] || "";
+                }
+                
+                if (!horaExibicao) {
+                    horaExibicao = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+                }
+
+                txtAtualizado.textContent = `Atualizado às ${horaExibicao}`;
             }
         })
         .catch(err => {
