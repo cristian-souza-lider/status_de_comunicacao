@@ -14,6 +14,18 @@ let linhasPorPagina = 10;
 Chart.register(ChartDataLabels);
 let charts = { empresa: null, segmento: null, veiculo: null, equipamento: null, faixaHoraria: null };
 
+// Filtro Cruzado Interativo dos Gráficos
+let filtroGraficoAtivo = { tipo: null, valor: null };
+
+function alternarFiltroGrafico(tipo, valor) {
+    if (filtroGraficoAtivo.tipo === tipo && filtroGraficoAtivo.valor === valor) {
+        filtroGraficoAtivo = { tipo: null, valor: null }; // Desmarca se clicar de novo
+    } else {
+        filtroGraficoAtivo = { tipo, valor }; // Aplica o filtro
+    }
+    aplicarFiltros();
+}
+
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 let fichasManutencaoGlobal = [];
 
@@ -419,6 +431,15 @@ function aplicarFiltros() {
         if (f.gps && d._gps !== f.gps) return false;
         if (f.int && d._integracao !== f.int) return false;
         if (f.minHorasNC > 0 && d._horasNC < f.minHorasNC) return false;
+
+        // Filtros Cruzados dos Gráficos
+        if (filtroGraficoAtivo.tipo) {
+            if (filtroGraficoAtivo.tipo === 'empresa' && d._empresa !== filtroGraficoAtivo.valor) return false;
+            if (filtroGraficoAtivo.tipo === 'segmento' && d._segmento !== filtroGraficoAtivo.valor) return false;
+            if (filtroGraficoAtivo.tipo === 'veiculo' && d._veiculo !== filtroGraficoAtivo.valor) return false;
+            if (filtroGraficoAtivo.tipo === 'equipamento' && d._equipamento !== filtroGraficoAtivo.valor) return false;
+        }
+
         return true;
     });
 
@@ -595,19 +616,97 @@ function limparFiltros() {
     colunaOrdenada = '_data';
     ordemAscendente = false;
 
+    filtroGraficoAtivo = { tipo: null, valor: null };
+
     atualizarSelectSegmentos();
     aplicarFiltros();
 }
 
 // =====================================================================
-// GRÁFICOS
+// GRÁFICOS OTIMIZADOS E INTERATIVOS COM DATA LABELS
 // =====================================================================
+
+function obterCorBarra(tipo, valor, corPadrao) {
+    if (!filtroGraficoAtivo.tipo) return corPadrao;
+    if (filtroGraficoAtivo.tipo === tipo && filtroGraficoAtivo.valor === valor) {
+        return corPadrao;
+    }
+    return 'rgba(148, 163, 184, 0.25)'; // Barra inativa fica translúcida
+}
+
+function criarBarraHorizontalInterativa(canvasId, chartInst, itens, config) {
+    if (chartInst) chartInst.destroy();
+    const ctx = document.getElementById(canvasId)?.getContext('2d');
+    if (!ctx) return null;
+
+    const labels = itens.map(i => i.label);
+    const data = itens.map(i => i.value);
+    const cores = itens.map(i => obterCorBarra(config.tipoFiltro, i.label, i.color || config.cor));
+
+    return new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels.length > 0 ? labels : ['Sem NC'],
+            datasets: [{
+                data: data.length > 0 ? data : [0],
+                backgroundColor: cores.length > 0 ? cores : [config.cor],
+                borderRadius: 5,
+                barPercentage: 0.75,
+                categoryPercentage: 0.85
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            onClick: (e, elements) => {
+                if (!elements || elements.length === 0) return;
+                const idx = elements[0].index;
+                if (itens[idx]) {
+                    alternarFiltroGrafico(config.tipoFiltro, itens[idx].label);
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        title: (items) => itens[items[0].dataIndex]?.label || '',
+                        label: (item) => ` Ocorrências: ${item.raw}`
+                    }
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'start',
+                    color: '#ffffff',
+                    font: { weight: 'bold', size: 10 },
+                    formatter: (val) => (val > 0 ? val : '')
+                }
+            },
+            scales: {
+                x: { display: false, grid: { display: false } },
+                y: {
+                    ticks: {
+                        color: config.corTexto,
+                        font: { size: 9, weight: '600' },
+                        callback: function(val) {
+                            const l = this.getLabelForValue(val);
+                            return l && l.length > 20 ? l.substr(0, 20) + '...' : l;
+                        }
+                    },
+                    grid: { display: false }
+                }
+            }
+        }
+    });
+}
 
 function atualizarGraficos() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const labelColor = isDark ? '#94a3b8' : '#475569';
 
-    const agrupar = (prop) => {
+    // Agrupador auxiliar
+    const agruparItens = (prop, limite = 0) => {
         const res = {};
         dadosFiltrados.forEach(d => {
             if (d._ncResumida !== "Normal") {
@@ -615,70 +714,35 @@ function atualizarGraficos() {
                 res[val] = (res[val] || 0) + 1;
             }
         });
-        return { labels: Object.keys(res), data: Object.values(res) };
+        let lista = Object.keys(res).map(k => ({ label: k, value: res[k] }));
+        lista.sort((a, b) => b.value - a.value);
+        return limite > 0 ? lista.slice(0, limite) : lista;
     };
 
-    const configBarraHorizontal = (labels, data, color) => ({
-        type: 'bar',
-        data: {
-            labels: labels.length > 0 ? labels : ['Sem NC'],
-            datasets: [{
-                data: data.length > 0 ? data : [0],
-                backgroundColor: color,
-                borderRadius: 4
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true },
-                datalabels: {
-                    anchor: 'end',
-                    align: 'start',
-                    color: '#ffffff',
-                    font: { weight: 'bold', size: 10 },
-                    formatter: (val) => val > 0 ? val : ''
-                }
-            },
-            scales: {
-                x: { display: false, grid: { display: false } },
-                y: {
-                    ticks: { color: labelColor, font: { size: 9, weight: 'bold' } },
-                    grid: { display: false }
-                }
-            }
-        }
+    // 1. Empresa (Esmeralda)
+    const dadosEmp = agruparItens('_empresa');
+    charts.empresa = criarBarraHorizontalInterativa('chart-empresa', charts.empresa, dadosEmp, {
+        cor: '#10b981', corTexto: labelColor, tipoFiltro: 'empresa'
     });
 
-    // 1. Empresa
-    const gEmp = agrupar('_empresa');
-    if (charts.empresa) charts.empresa.destroy();
-    charts.empresa = new Chart(document.getElementById('chart-empresa'), configBarraHorizontal(gEmp.labels, gEmp.data, '#10b981'));
+    // 2. Segmento (Índigo)
+    const dadosSeg = agruparItens('_segmento');
+    charts.segmento = criarBarraHorizontalInterativa('chart-segmento', charts.segmento, dadosSeg, {
+        cor: '#6366f1', corTexto: labelColor, tipoFiltro: 'segmento'
+    });
 
-    // 2. Segmento
-    const gSeg = agrupar('_segmento');
-    if (charts.segmento) charts.segmento.destroy();
-    charts.segmento = new Chart(document.getElementById('chart-segmento'), configBarraHorizontal(gSeg.labels, gSeg.data, '#6366f1'));
+    // 3. Veículo (Ranking Térmico com Scroll Suave)
+    const dadosVei = agruparItens('_veiculo');
+    const totalVei = dadosVei.length;
 
-    // 3. Veículo (Ranking Térmico)
-    const rawVei = agrupar('_veiculo');
-    const veiList = Object.keys(rawVei).map(k => ({ label: k, value: rawVei[k] }));
-    veiList.sort((a, b) => b.value - a.value);
-
-    const labelsVei = veiList.map(x => x.label);
-    const dataVei = veiList.map(x => x.value);
-    const totalVei = veiList.length;
-
-    const coresVei = veiList.map((_, i) => {
-        if (totalVei <= 1) return '#ef4444';
+    // Aplica paleta térmica nos veículos
+    dadosVei.forEach((item, i) => {
+        if (totalVei <= 1) { item.color = '#ef4444'; return; }
         const ratio = i / (totalVei - 1);
-        if (ratio < 0.30) return '#ef4444';
-        if (ratio < 0.60) return '#f97316';
-        if (ratio < 0.85) return '#eab308';
-        return '#10b981';
+        if (ratio < 0.30) item.color = '#ef4444';      // Vermelho (Mais falhas)
+        else if (ratio < 0.60) item.color = '#f97316'; // Laranja
+        else if (ratio < 0.85) item.color = '#eab308'; // Amarelo
+        else item.color = '#10b981';                   // Verde (Menos falhas)
     });
 
     const containerScroll = document.getElementById('container-scroll-veiculo');
@@ -688,42 +752,65 @@ function atualizarGraficos() {
         containerScroll.style.height = `${alturaCalculada}px`;
     }
 
-    if (charts.veiculo) charts.veiculo.destroy();
-    charts.veiculo = new Chart(document.getElementById('chart-veiculo'), configBarraHorizontal(labelsVei, dataVei, coresVei));
+    charts.veiculo = criarBarraHorizontalInterativa('chart-veiculo', charts.veiculo, dadosVei, {
+        cor: '#ef4444', corTexto: labelColor, tipoFiltro: 'veiculo'
+    });
 
-    // 4. Equipamento
-    const gEquip = agrupar('_equipamento');
-    if (charts.equipamento) charts.equipamento.destroy();
-    charts.equipamento = new Chart(document.getElementById('chart-equipamento'), configBarraHorizontal(gEquip.labels, gEquip.data, '#f59e0b'));
+    // 4. Equipamento (Âmbar)
+    const dadosEquip = agruparItens('_equipamento');
+    charts.equipamento = criarBarraHorizontalInterativa('chart-equipamento', charts.equipamento, dadosEquip, {
+        cor: '#f59e0b', corTexto: labelColor, tipoFiltro: 'equipamento'
+    });
 
-    // 5. Faixa Horária
-    const gHora = agrupar('_hora');
-    if (charts.faixaHoraria) charts.faixaHoraria.destroy();
-    charts.faixaHoraria = new Chart(document.getElementById('chart-faixa-horaria'), {
-        type: 'line',
-        data: {
-            labels: gHora.labels.length > 0 ? gHora.labels : ['Sem dados'],
-            datasets: [{
-                data: gHora.data.length > 0 ? gHora.data : [0],
-                borderColor: '#ef4444',
-                backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                fill: true,
-                tension: 0.35
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                datalabels: { display: true, color: labelColor, align: 'top', font: { weight: 'bold', size: 10 } }
-            },
-            scales: {
-                y: { display: false, grid: { display: false } },
-                x: { ticks: { color: labelColor, font: { size: 10 } }, grid: { display: false } }
-            }
+    // 5. Linha Temporal: Faixa Horária
+    const resHora = {};
+    dadosFiltrados.forEach(d => {
+        if (d._ncResumida !== "Normal") {
+            let h = d._hora || "N/D";
+            resHora[h] = (resHora[h] || 0) + 1;
         }
     });
+    const horasOrdenadas = Object.keys(resHora).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    const dataHora = horasOrdenadas.map(h => resHora[h]);
+
+    if (charts.faixaHoraria) charts.faixaHoraria.destroy();
+    const ctxHora = document.getElementById('chart-faixa-horaria')?.getContext('2d');
+    if (ctxHora) {
+        charts.faixaHoraria = new Chart(ctxHora, {
+            type: 'line',
+            data: {
+                labels: horasOrdenadas.length > 0 ? horasOrdenadas : ['Sem dados'],
+                datasets: [{
+                    data: dataHora.length > 0 ? dataHora : [0],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.12)',
+                    fill: true,
+                    tension: 0.35,
+                    pointBackgroundColor: '#ef4444',
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    datalabels: {
+                        display: true,
+                        color: labelColor,
+                        align: 'top',
+                        font: { weight: 'bold', size: 10 },
+                        formatter: (val) => val > 0 ? val : ''
+                    }
+                },
+                scales: {
+                    y: { display: false, grid: { display: false } },
+                    x: { ticks: { color: labelColor, font: { size: 10, weight: '600' } }, grid: { display: false } }
+                }
+            }
+        });
+    }
 }
 
 function atualizarMiniCards() {
