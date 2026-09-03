@@ -178,7 +178,7 @@
       <div class="kpi-card">
         <div class="kpi-icon blue"><i class="ph ph-bus"></i></div>
         <div class="kpi-info">
-          <span class="kpi-label">Total Veículos</span>
+          <span class="kpi-label">Total de Veículos</span>
           <span class="kpi-value" id="kpi-total">0</span>
         </div>
       </div>
@@ -241,7 +241,7 @@
       <div class="kpi-card highlight-orange">
         <div class="kpi-icon orange"><i class="ph ph-warning-octagon"></i></div>
         <div class="kpi-info">
-          <span class="kpi-label">Falha Int.</span>
+          <span class="kpi-label">Falha Integração</span>
           <span class="kpi-value" id="kpi-falha-integracao">0</span>
         </div>
       </div>
@@ -270,7 +270,7 @@
 
         <div class="toolbar-right">
           <div class="toolbar-input-group">
-            <label for="filtro-tempo-nc"><i class="ph ph-timer"></i> Tempo NC:</label>
+            <label for="filtro-tempo-nc"><i class="ph ph-timer"></i> Tempo de Não Conformidade:</label>
             <select id="filtro-tempo-nc" class="select-clean">
               <option value="0">Todos os Tempos</option>
               <option value="1">> 01h</option>
@@ -326,7 +326,7 @@
 
         <div class="footer-right">
           <label for="input-linhas-pagina">Linhas por página:</label>
-          <input type="number" id="input-linhas-pagina" value="10" min="1" max="5000">
+          <input type="number" id="input-linhas-pagina" value="17" min="1" max="5000">
         </div>
       </div>
     </section>
@@ -335,7 +335,7 @@
     <section class="charts-bottom-grid" style="grid-template-columns: repeat(4, 1fr);">
       <div class="chart-card">
         <div class="chart-header">
-          <h3><i class="ph ph-buildings"></i> NC por Empresa</h3>
+          <h3><i class="ph ph-buildings"></i> Total de Não Conformidades por Empresa</h3>
         </div>
         <div class="chart-body" style="height: 220px;">
           <canvas id="chart-empresa"></canvas>
@@ -344,7 +344,7 @@
 
       <div class="chart-card">
         <div class="chart-header">
-          <h3><i class="ph ph-tree-structure"></i> NC por Segmento</h3>
+          <h3><i class="ph ph-tree-structure"></i> Total de Não Conformidades por Segmento</h3>
         </div>
         <div class="chart-body" style="height: 220px;">
           <canvas id="chart-segmento"></canvas>
@@ -353,7 +353,7 @@
 
       <div class="chart-card">
         <div class="chart-header">
-          <h3><i class="ph ph-bus"></i> NC por Veículo (Scroll)</h3>
+          <h3><i class="ph ph-bus"></i> Total de Não Conformidades por Veículo</h3>
         </div>
         <div class="chart-body" style="height: 220px; overflow-y: auto;">
           <div id="container-scroll-veiculo" style="height: 160px; position: relative;">
@@ -364,7 +364,7 @@
 
       <div class="chart-card">
         <div class="chart-header">
-          <h3><i class="ph ph-cpu"></i> NC por Equipamento</h3>
+          <h3><i class="ph ph-cpu"></i> Total de Não Conformidades por Equipamento</h3>
         </div>
         <div class="chart-body" style="height: 220px;">
           <canvas id="chart-equipamento"></canvas>

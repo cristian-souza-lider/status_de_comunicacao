@@ -9,7 +9,7 @@ let listaDatasDisponiveis = [];
 let colunaOrdenada = '_data';
 let ordemAscendente = false; // Data mais recente primeiro
 let paginaAtual = 1;
-let linhasPorPagina = 10;
+let linhasPorPagina = 17;
 
 Chart.register(ChartDataLabels);
 let charts = { empresa: null, segmento: null, veiculo: null, equipamento: null, faixaHoraria: null };
