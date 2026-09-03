@@ -1,320 +1,396 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-full">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Status de Comunicação</title>
-    <!-- Tailwind CSS para design responsivo e fluido -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js para gráficos estatísticos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Plugin ChartDataLabels para exibir os valores dentro das barras -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-    <!-- FontAwesome para ícones do sistema -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de Status de Comunicação</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ícones Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Chart.js e Plugin DataLabels -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col transition-colors duration-200">
+<body>
 
-    <!-- CONTAINER FIXO NO TOPO (Header + Filtros) -->
-    <div class="sticky top-0 z-50 w-full bg-slate-50 dark:bg-[#0b0f19] border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
-        
-        <!-- Header Unificado em Linha Única -->
-        <header class="bg-slate-900 text-white shadow-lg py-3 px-6 flex items-center justify-between w-full border-b border-slate-800 text-xs md:text-sm">
-            <div class="flex items-center gap-3 flex-wrap">
-                <span class="text-base font-bold tracking-tight text-white whitespace-nowrap">Análise de Status de Comunicação</span>
-                <span class="hidden xl:inline text-slate-500">|</span>
-                <span class="hidden lg:inline text-slate-300 font-medium whitespace-nowrap">CMI Tráfego - Urubupungá e Viação Cidade Caieiras, empresas do Grupo NSO</span>
-                <span class="hidden xl:inline text-slate-500">|</span>
-                <span class="hidden md:inline text-slate-400 whitespace-nowrap">
-                    <i class="fa-solid fa-circle-info mr-1 text-slate-500"></i> Extraído do sistema Flits, a cada 15 minutos.
-                </span>
-            </div>
-            <!-- Controles Reordenados: Botão Atualizar -> Info Atualização -> Alternância de Tema -->
-            <div class="flex items-center gap-4 flex-shrink-0">
-                <button id="btn-atualizar" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-1.5 px-4 rounded shadow transition flex items-center gap-1.5 text-xs">
-                    <i class="fa-solid fa-rotate" id="icon-reload"></i> Atualizar
-                </button>
-                <span id="txt-atualizado-em" class="text-xs text-slate-300 font-mono font-bold">Carregando dados...</span>
-                <button id="btn-tema" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition" title="Alternar Tema">
-                    <i class="fa-solid fa-moon text-sm" id="icon-tema"></i>
-                </button>
-                <button id="btn-fullscreen" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition" title="Tela Cheia">
-                    <i class="fa-solid fa-expand text-sm" id="icon-fullscreen"></i>
-                </button>
-            </div>
-        </header>
-
-        <!-- Seção de Filtros (Ocupando 100% do box horizontal) -->
-        <section class="p-4 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-sm card-container">
-            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-100 dark:border-slate-800">
-                <h2 class="text-xs font-bold text-slate-700 flex items-center gap-1.5 title-color">
-                    <i class="fa-solid fa-filter text-indigo-600"></i> Filtros de Pesquisa
-                </h2>
-                <button id="btn-limpar-filtros" class="text-[11px] text-rose-600 hover:text-rose-500 font-bold flex items-center gap-1 transition">
-                    <i class="fa-solid fa-filter-circle-xmark"></i> Limpar Filtros
-                </button>
-            </div>
-
-            <!-- Filtros distribuídos para preencher o box de forma dinâmica -->
-            <div class="flex w-full items-end gap-2 overflow-x-auto pb-1 scrollbar-thin">
-                <div class="grow shrink-0 min-w-[75px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Data</label>
-                    <select id="filtro-data" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[60px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Hora</label>
-                    <select id="filtro-hora" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[80px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Empresa</label>
-                    <select id="filtro-empresa" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
-                        <option value="">Todas</option>
-                        <option value="AVUL">AVUL</option>
-                        <option value="VCCL">VCCL</option>
-                    </select>
-                </div>
-                <div class="grow-2 shrink-0 min-w-[150px] max-w-[220px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Segmento</label>
-                    <select id="filtro-segmento" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full truncate font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[75px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Linha</label>
-                    <input type="text" id="filtro-linha" placeholder="Ex: 021" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
-                </div>
-                <div class="grow shrink-0 min-w-[75px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Veículo</label>
-                    <input type="text" id="filtro-veiculo" placeholder="Ex: 00314" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
-                </div>
-                <div class="grow shrink-0 min-w-[95px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Condição</label>
-                    <select id="filtro-condicao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold">
-                        <option value="">Todas</option>
-                        <option value="Escalado">Escalado</option>
-                        <option value="Sem Escala">Sem Escala</option>
-                    </select>
-                </div>
-                <div class="grow shrink-0 min-w-[110px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Situação</label>
-                    <select id="filtro-situacao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[100px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Equipamento</label>
-                    <select id="filtro-equipamento" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[120px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Status</label>
-                    <select id="filtro-status" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow-2 shrink-0 min-w-[130px] max-w-[200px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Não Conformidade</label>
-                    <select id="filtro-nao-conformidade" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full truncate font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[95px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Status GPS</label>
-                    <select id="filtro-status-gps" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-                <div class="grow shrink-0 min-w-[115px]">
-                    <label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase mb-0.5">Integração</label>
-                    <select id="filtro-integracao" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input w-full font-bold"></select>
-                </div>
-            </div>
-        </section>
+  <!-- 1. Barra Superior Fixa -->
+  <header class="top-nav">
+    <div class="nav-left">
+      <div class="brand">
+        <i class="ph ph-broadcast"></i>
+        <span>Análise de Status de Comunicação - CMI Tráfego | Urubupungá e Viação Cidade Caieiras</span>
+      </div>
     </div>
 
-    <!-- ÁREA DE ROLAGEM DINÂMICA (Tabela e Dashboard) -->
-    <main class="flex-1 p-4 md:p-6 space-y-6 w-full max-w-none">
+    <div class="actions">
+      <button id="btn-atualizar" class="btn-refresh" title="Recarregar Dados">
+        <i class="ph ph-arrows-clockwise" id="icon-reload"></i>
+        <span>Atualizar</span>
+      </button>
+      <span id="txt-atualizado-em" class="status-badge-time">Carregando dados...</span>
+      <button id="btn-tema" class="icon-btn" title="Alternar Tema">
+        <i class="ph ph-sun" id="icon-tema"></i>
+      </button>
+      <button id="btn-fullscreen" class="icon-btn" title="Tela Cheia">
+        <i class="ph ph-arrows-out" id="icon-fullscreen"></i>
+      </button>
+    </div>
+  </header>
 
-        <!-- 1. Tabela de Registros -->
-        <section class="rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col card-container">
-            <!-- Topo da Tabela com Filtro de Tempo de NC no Canto Direito -->
-            <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 card-header-dark">
-                <h3 class="text-base font-bold flex items-center gap-1.5 title-color">
-                    <i class="fa-solid fa-table-list text-indigo-500"></i> Registros de Status de Comunicação
-                </h3>
-                <div class="flex items-center gap-2">
-                    <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1 whitespace-nowrap">
-                        <i class="fa-solid fa-stopwatch text-amber-500"></i> Tempo NC:
-                    </label>
-                    <select id="filtro-tempo-nc" class="border rounded p-1 text-xs outline-none focus:ring-1 focus:ring-indigo-500 select-input font-bold">
-                        <option value="0">Todos os Tempos</option>
-                        <option value="1">> 01h</option>
-                        <option value="2">> 02h</option>
-                        <option value="4">> 04h</option>
-                        <option value="8">> 08h</option>
-                        <option value="12">> 12h</option>
-                        <option value="24">> 24h (1 dia)</option>
-                        <option value="48">> 48h (2 dias)</option>
-                        <option value="72">> 72h (3 dias)</option>
-                    </select>
-                </div>
-            </div>
+  <!-- 2. Barra de Filtros Horizontal com Borrachinhas Individuais -->
+  <section class="top-filters-bar">
+    <!-- Data -->
+    <div class="filter-item" style="min-width: 100px; flex: 0.8;">
+      <label>
+        <span class="label-title"><i class="ph ph-calendar"></i> Data</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-data" title="Limpar Data"></i>
+      </label>
+      <select id="filtro-data"></select>
+    </div>
 
-            <!-- Barra de Ocorrências Ativas -->
-            <div id="container-mini-cards" class="p-3 border-b border-slate-100 dark:border-slate-800 flex flex-wrap gap-2 items-center mini-cards-bar-dark">
-                <!-- Gerado dinamicamente via JS -->
-            </div>
+    <!-- Hora -->
+    <div class="filter-item" style="min-width: 80px; flex: 0.6;">
+      <label>
+        <span class="label-title"><i class="ph ph-clock"></i> Hora</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-hora" title="Limpar Hora"></i>
+      </label>
+      <select id="filtro-hora"></select>
+    </div>
 
-            <!-- Tabela Compacta -->
-            <div class="overflow-x-auto">
-                <table class="w-full text-center border-collapse table-fixed" id="tabela-analise">
-                    <thead>
-                        <tr class="bg-slate-900 text-white text-[11px] font-bold uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_data">Data <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_hora">Hora <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_linha">Linha <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_veiculo">Veículo <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_situacao">Situação <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_equipamento">Equipamento <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_status">Status <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_ncOriginal">Não Conformidade <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_gps">Status GPS <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_horaVal">Hora Estado Validador <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="cursor-pointer select-none text-center border-r border-slate-700" data-sort="_integracao">Integração <i class="fa-solid fa-sort ml-0.5 opacity-40"></i></th>
-                            <th class="select-none text-center">Ficha de Manutenção</th>
-                        </tr>
-                    </thead>
-                    <tbody id="corpo-tabela" class="divide-y divide-slate-100 dark:divide-slate-800 text-xs font-semibold">
-                        <!-- Gerado Dinamicamente -->
-                    </tbody>
-                </table>
-            </div>
+    <!-- Empresa -->
+    <div class="filter-item" style="min-width: 90px; flex: 0.7;">
+      <label>
+        <span class="label-title"><i class="ph ph-buildings"></i> Empresa</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-empresa" title="Limpar Empresa"></i>
+      </label>
+      <select id="filtro-empresa">
+        <option value="">Todas</option>
+        <option value="AVUL">AVUL</option>
+        <option value="VCCL">VCCL</option>
+      </select>
+    </div>
 
-            <!-- Paginação Reestruturada: Esquerda | Centro | Direita -->
-            <div class="p-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center card-footer-dark text-[11px] font-bold text-slate-700 dark:text-slate-300">
-                <!-- Esquerda: Quantidade de Registros -->
-                <div class="w-full sm:w-1/3 text-left">
-                    <span id="txt-total-registros">Exibindo 0 de 0 registros</span>
-                </div>
-                
-                <!-- Centro: Quantidade de Páginas e Botões -->
-                <div class="w-full sm:w-1/3 flex justify-center items-center gap-3 py-2 sm:py-0">
-                    <button id="pag-anterior" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-30">Anterior</button>
-                    <span id="txt-pag-atual" class="min-w-[80px] text-center">Pág. 1 de 1</span>
-                    <button id="pag-proximo" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-30">Próximo</button>
-                </div>
+    <!-- Segmento -->
+    <div class="filter-item" style="min-width: 140px; flex: 1.2;">
+      <label>
+        <span class="label-title"><i class="ph ph-tree-structure"></i> Segmento</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-segmento" title="Limpar Segmento"></i>
+      </label>
+      <select id="filtro-segmento"></select>
+    </div>
 
-                <!-- Direita: Exibição de linhas por página -->
-                <div class="w-full sm:w-1/3 flex justify-end items-center gap-2">
-                    <span>Exibir</span>
-                    <input type="number" id="input-linhas-pagina" value="10" min="1" max="100" class="w-12 border border-slate-300 rounded p-0.5 text-center text-xs outline-none focus:ring-1 focus:ring-indigo-500 font-bold select-input">
-                    <span>linhas por página</span>
-                </div>
-            </div>
-        </section>
+    <!-- Linha -->
+    <div class="filter-item" style="min-width: 80px; flex: 0.6;">
+      <label>
+        <span class="label-title"><i class="ph ph-path"></i> Linha</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-linha" title="Limpar Linha"></i>
+      </label>
+      <input type="text" id="filtro-linha" placeholder="Ex: 021" autocomplete="off">
+    </div>
 
-        <!-- 2. Dashboard KPIs Distribuídos 9x1 -->
-        <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Total Veículos</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-total" class="text-xl font-black text-slate-800 number-color">0</span>
-                    <i class="fa-solid fa-bus text-slate-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-emerald-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-wider">Operando</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-operando" class="text-xl font-black text-emerald-700">0</span>
-                    <i class="fa-solid fa-circle-play text-emerald-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-amber-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-amber-600 uppercase tracking-wider">Manutenção</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-manutencao" class="text-xl font-black text-amber-700">0</span>
-                    <i class="fa-solid fa-screwdriver-wrench text-amber-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-indigo-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-indigo-600 uppercase tracking-wider">Escalados</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-escalados" class="text-xl font-black text-indigo-700">0</span>
-                    <i class="fa-solid fa-calendar-check text-indigo-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-rose-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-rose-600 uppercase tracking-wider">Sem Escala</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-sem-escala" class="text-xl font-black text-rose-700">0</span>
-                    <i class="fa-solid fa-calendar-xmark text-rose-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-teal-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-teal-600 uppercase tracking-wider">GPS Válido</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-gps-valido" class="text-xl font-black text-teal-700">0</span>
-                    <i class="fa-solid fa-location-dot text-teal-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-slate-400 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">GPS Inválido</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-gps-invalido" class="text-xl font-black text-slate-600">0</span>
-                    <i class="fa-solid fa-location-pin-lock text-slate-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-orange-500 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-orange-600 uppercase tracking-wider">Falha Int.</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-falha-integracao" class="text-xl font-black text-orange-700">0</span>
-                    <i class="fa-solid fa-triangle-exclamation text-orange-400 text-sm"></i>
-                </div>
-            </div>
-            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-l-4 border-l-rose-600 flex flex-col justify-between card-container">
-                <span class="text-[9px] font-bold text-rose-600 uppercase tracking-wider">Ficha Aberta</span>
-                <div class="flex items-baseline justify-between mt-1">
-                    <span id="kpi-fichas-abertas" class="text-xl font-black text-rose-800">0</span>
-                    <i class="fa-solid fa-folder-open text-rose-400 text-sm"></i>
-                </div>
-            </div>
-        </section>
+    <!-- Veículo -->
+    <div class="filter-item" style="min-width: 85px; flex: 0.65;">
+      <label>
+        <span class="label-title"><i class="ph ph-bus"></i> Veículo</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-veiculo" title="Limpar Veículo"></i>
+      </label>
+      <input type="text" id="filtro-veiculo" placeholder="Ex: 00314" autocomplete="off">
+    </div>
 
-        <!-- 3. Gráficos -->
-        <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 card-container">
-            <h3 class="text-sm font-bold text-slate-700 mb-4 flex items-center gap-1.5 title-color">
-                <i class="fa-solid fa-chart-pie text-indigo-600"></i> Distribuição Estatística de Não Conformidades
-            </h3>
-            
-            <div class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 chart-box">
-                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 block text-center">Por Empresa</span>
-                        <div class="h-40 w-full"><canvas id="chart-empresa"></canvas></div>
-                    </div>
-                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 chart-box">
-                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 block text-center">Por Segmento</span>
-                        <div class="h-40 w-full"><canvas id="chart-segmento"></canvas></div>
-                    </div>
-                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 chart-box flex flex-col">
-                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-2 block text-center">Por Veículo</span>
-                        <div class="h-40 w-full overflow-y-auto pr-1">
-                            <div id="container-scroll-veiculo" class="w-full relative" style="height: 160px;">
-                                <canvas id="chart-veiculo"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-50 p-3 rounded border border-slate-100 dark:border-slate-800 chart-box">
-                        <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 block text-center">Por Equipamento</span>
-                        <div class="h-40 w-full"><canvas id="chart-equipamento"></canvas></div>
-                    </div>
-                </div>
-                <div class="bg-slate-50 p-4 rounded border border-slate-100 dark:border-slate-800 chart-box">
-                    <span class="text-[10px] font-bold text-slate-500 uppercase mb-3 block text-center">Por Faixa Horária</span>
-                    <div class="h-64 w-full"><canvas id="chart-faixa-horaria"></canvas></div>
-                </div>
-            </div>
-        </section>
+    <!-- Condição -->
+    <div class="filter-item" style="min-width: 100px; flex: 0.8;">
+      <label>
+        <span class="label-title"><i class="ph ph-calendar-check"></i> Condição</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-condicao" title="Limpar Condição"></i>
+      </label>
+      <select id="filtro-condicao">
+        <option value="">Todas</option>
+        <option value="Escalado">Escalado</option>
+        <option value="Sem Escala">Sem Escala</option>
+      </select>
+    </div>
 
-    </main>
+    <!-- Situação -->
+    <div class="filter-item" style="min-width: 100px; flex: 0.8;">
+      <label>
+        <span class="label-title"><i class="ph ph-activity"></i> Situação</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-situacao" title="Limpar Situação"></i>
+      </label>
+      <select id="filtro-situacao"></select>
+    </div>
 
-    <footer class="bg-slate-950 text-slate-500 py-3 px-6 flex flex-col sm:flex-row justify-between items-center text-xs border-t border-slate-900 mt-auto w-full font-semibold">
-        <p>© 2026 - Grupo NSO S.A. Todos os direitos reservados.</p>
-        <p class="mt-1 sm:mt-0 text-slate-400 font-bold hover:text-indigo-400 transition duration-150">
-            <i class="fa-solid fa-code mr-1"></i> Desenvolvido por Cristian Oliveira de Souza
-        </p>
-    </footer>
+    <!-- Equipamento -->
+    <div class="filter-item" style="min-width: 110px; flex: 0.9;">
+      <label>
+        <span class="label-title"><i class="ph ph-cpu"></i> Equipamento</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-equipamento" title="Limpar Equipamento"></i>
+      </label>
+      <select id="filtro-equipamento"></select>
+    </div>
 
-    <script src="app.js?v=4"></script>
+    <!-- Status -->
+    <div class="filter-item" style="min-width: 100px; flex: 0.8;">
+      <label>
+        <span class="label-title"><i class="ph ph-traffic-signal"></i> Status</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-status" title="Limpar Status"></i>
+      </label>
+      <select id="filtro-status"></select>
+    </div>
+
+    <!-- Não Conformidade -->
+    <div class="filter-item" style="min-width: 130px; flex: 1.1;">
+      <label>
+        <span class="label-title"><i class="ph ph-warning-circle"></i> Não Conformidade</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-nao-conformidade" title="Limpar NC"></i>
+      </label>
+      <select id="filtro-nao-conformidade"></select>
+    </div>
+
+    <!-- Status GPS -->
+    <div class="filter-item" style="min-width: 90px; flex: 0.7;">
+      <label>
+        <span class="label-title"><i class="ph ph-navigation-arrow"></i> GPS</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-status-gps" title="Limpar GPS"></i>
+      </label>
+      <select id="filtro-status-gps"></select>
+    </div>
+
+    <!-- Integração -->
+    <div class="filter-item" style="min-width: 100px; flex: 0.8;">
+      <label>
+        <span class="label-title"><i class="ph ph-plugs-connected"></i> Integração</span>
+        <i class="ph ph-eraser btn-clear-single" data-target="filtro-integracao" title="Limpar Integração"></i>
+      </label>
+      <select id="filtro-integracao"></select>
+    </div>
+
+    <div class="filter-actions">
+      <button id="btn-limpar-filtros" class="btn-clear" title="Limpar Todos os Filtros">
+        <i class="ph ph-arrow-counter-clockwise"></i> Limpar
+      </button>
+    </div>
+  </section>
+
+  <!-- 3. Seção Fixa dos 9 Cartões KPIs em Linha Única -->
+  <section class="kpis-fixed-wrapper">
+    <div class="kpis-grid kpis-grid-9">
+      <!-- 1. Total Veículos -->
+      <div class="kpi-card">
+        <div class="kpi-icon blue"><i class="ph ph-bus"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Total Veículos</span>
+          <span class="kpi-value" id="kpi-total">0</span>
+        </div>
+      </div>
+
+      <!-- 2. Operando -->
+      <div class="kpi-card highlight-green">
+        <div class="kpi-icon green"><i class="ph ph-play-circle"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Operando</span>
+          <span class="kpi-value" id="kpi-operando">0</span>
+        </div>
+      </div>
+
+      <!-- 3. Manutenção -->
+      <div class="kpi-card">
+        <div class="kpi-icon yellow"><i class="ph ph-wrench"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Manutenção</span>
+          <span class="kpi-value" id="kpi-manutencao">0</span>
+        </div>
+      </div>
+
+      <!-- 4. Escalados -->
+      <div class="kpi-card">
+        <div class="kpi-icon purple"><i class="ph ph-calendar-check"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Escalados</span>
+          <span class="kpi-value" id="kpi-escalados">0</span>
+        </div>
+      </div>
+
+      <!-- 5. Sem Escala -->
+      <div class="kpi-card">
+        <div class="kpi-icon red"><i class="ph ph-calendar-x"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Sem Escala</span>
+          <span class="kpi-value" id="kpi-sem-escala">0</span>
+        </div>
+      </div>
+
+      <!-- 6. GPS Válido -->
+      <div class="kpi-card">
+        <div class="kpi-icon cyan"><i class="ph ph-map-pin"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">GPS Válido</span>
+          <span class="kpi-value" id="kpi-gps-valido">0</span>
+        </div>
+      </div>
+
+      <!-- 7. GPS Inválido -->
+      <div class="kpi-card">
+        <div class="kpi-icon gray"><i class="ph ph-map-pin-line"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">GPS Inválido</span>
+          <span class="kpi-value" id="kpi-gps-invalido">0</span>
+        </div>
+      </div>
+
+      <!-- 8. Falha Integração -->
+      <div class="kpi-card highlight-orange">
+        <div class="kpi-icon orange"><i class="ph ph-warning-octagon"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Falha Int.</span>
+          <span class="kpi-value" id="kpi-falha-integracao">0</span>
+        </div>
+      </div>
+
+      <!-- 9. Ficha Aberta -->
+      <div class="kpi-card highlight-red">
+        <div class="kpi-icon red"><i class="ph ph-folder-notch-open"></i></div>
+        <div class="kpi-info">
+          <span class="kpi-label">Ficha Aberta</span>
+          <span class="kpi-value" id="kpi-fichas-abertas">0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Área Rolável: Tabela + Gráficos -->
+  <main class="dashboard-scrollable-area">
+    
+    <!-- Tabela de Registros -->
+    <section class="table-section">
+      <div class="table-toolbar">
+        <div class="toolbar-left">
+          <h3>Registros de Status de Comunicação</h3>
+          <div id="container-mini-cards" class="mini-situacao-cards"></div>
+        </div>
+
+        <div class="toolbar-right">
+          <div class="toolbar-input-group">
+            <label for="filtro-tempo-nc"><i class="ph ph-timer"></i> Tempo NC:</label>
+            <select id="filtro-tempo-nc" class="select-clean">
+              <option value="0">Todos os Tempos</option>
+              <option value="1">> 01h</option>
+              <option value="2">> 02h</option>
+              <option value="4">> 04h</option>
+              <option value="8">> 08h</option>
+              <option value="12">> 12h</option>
+              <option value="24">> 24h (1 dia)</option>
+              <option value="48">> 48h (2 dias)</option>
+              <option value="72">> 72h (3 dias)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="tabela-analise">
+          <thead>
+            <tr id="table-headers">
+              <th class="sortable" data-sort="_data">Data <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_hora">Hora <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_linha">Linha <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_veiculo">Veículo <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_situacao">Situação <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_equipamento">Equipamento <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_status">Status <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_ncOriginal">Não Conformidade <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_gps">Status GPS <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_horaVal">Hora Validador <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th class="sortable" data-sort="_integracao">Integração <i class="ph ph-caret-up-down sort-icon"></i></th>
+              <th>Ficha de Manutenção</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <tr>
+              <td colspan="12" style="text-align: center; padding: 2rem;">Carregando registros...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Rodapé da Tabela -->
+      <div class="pagination-footer">
+        <div class="footer-left">
+          <span id="txt-total-registros">Exibindo 0 de 0 registros</span>
+        </div>
+
+        <div class="footer-center">
+          <button id="pag-anterior" class="btn-pagination" disabled><i class="ph ph-caret-left"></i> Anterior</button>
+          <span id="txt-pag-atual">Página 1 de 1</span>
+          <button id="pag-proximo" class="btn-pagination" disabled>Próxima <i class="ph ph-caret-right"></i></button>
+        </div>
+
+        <div class="footer-right">
+          <label for="input-linhas-pagina">Linhas por página:</label>
+          <input type="number" id="input-linhas-pagina" value="10" min="1" max="5000">
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráficos Superiores (4 Colunas) -->
+    <section class="charts-bottom-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3><i class="ph ph-buildings"></i> NC por Empresa</h3>
+        </div>
+        <div class="chart-body" style="height: 220px;">
+          <canvas id="chart-empresa"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3><i class="ph ph-tree-structure"></i> NC por Segmento</h3>
+        </div>
+        <div class="chart-body" style="height: 220px;">
+          <canvas id="chart-segmento"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3><i class="ph ph-bus"></i> NC por Veículo (Scroll)</h3>
+        </div>
+        <div class="chart-body" style="height: 220px; overflow-y: auto;">
+          <div id="container-scroll-veiculo" style="height: 160px; position: relative;">
+            <canvas id="chart-veiculo"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3><i class="ph ph-cpu"></i> NC por Equipamento</h3>
+        </div>
+        <div class="chart-body" style="height: 220px;">
+          <canvas id="chart-equipamento"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráfico Inferior: Faixa Horária (100% Largura) -->
+    <section class="chart-full-width-section" style="margin-top: 0;">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3><i class="ph ph-chart-line"></i> Evolução das Não Conformidades por Faixa Horária</h3>
+        </div>
+        <div class="chart-body" style="height: 250px;">
+          <canvas id="chart-faixa-horaria"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="portal-footer">
+    <p class="footer-author">© 2026 - Grupo NSO S.A. &bull; Desenvolvido por <strong>Cristian Oliveira de Souza</strong></p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
