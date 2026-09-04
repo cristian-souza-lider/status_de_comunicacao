@@ -117,6 +117,16 @@ def enviar_para_github(nome_dados_dia_local):
             print("[Git] Sincronização automática OK.")
     except Exception as e: print(f"[Git - Erro] {e}")
 
+def aguardar_conclusao_download(pasta_download, timeout=15):
+    """Aguarda até que não existam arquivos temporários (.part ou .crdownload) e haja arquivo novo."""
+    fim = time.time() + timeout
+    while time.time() < fim:
+        arquivos_temp = glob.glob(os.path.join(pasta_download, "*.part")) + glob.glob(os.path.join(pasta_download, "*.crdownload"))
+        if not arquivos_temp:
+            return True
+        time.sleep(0.5)
+    return False    
+
 # =====================================================================
 #                 ROTINA DE AUTOMAÇÃO FLITS
 # =====================================================================
@@ -234,15 +244,33 @@ def iniciar_automacao_flits():
                             sucesso_download = True
                             continue
 
-                        # Se houver dados, localiza o botão de exportar
+                        # Se houver dados, localiza o botão de exportar e valida o arquivo
                         try:
+                            arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                            
                             btn_excel = WebDriverWait(driver, 5).until(
                                 EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']"))
                             )
                             driver.execute_script("arguments[0].click();", btn_excel)
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Download OK.")
+                            
+                            aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
+                            time.sleep(1.5)
+
+                            arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                            novos_arquivos = list(arquivos_depois - arquivos_antes)
+
+                            if novos_arquivos:
+                                arq_novo = novos_arquivos[0]
+                                tamanho = os.path.getsize(arq_novo)
+                                if tamanho == 0:
+                                    print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio).")
+                                    os.remove(arq_novo)
+                                else:
+                                    print(f"      - [{emp_nome}] ({sit_alvo}): Download OK ({tamanho} bytes).")
+                            else:
+                                print(f"      - [{emp_nome}] ({sit_alvo}): Download disparado, mas nenhum arquivo gerado.")
+
                             sucesso_download = True
-                            time.sleep(2)
                         except Exception:
                             print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
                             sucesso_download = True
@@ -336,7 +364,11 @@ def processar_e_unificar_arquivos():
             
             dados_totais.extend(lista_registros)
             os.remove(arq)
-        except Exception as e: print(f"Erro processar {arq}: {e}")
+        except Exception as e:
+            tamanho = os.path.getsize(arq) if os.path.exists(arq) else 0
+            nome_arq = os.path.basename(arq)
+            print(f"[Falha de Leitura] Arquivo '{nome_arq}' (Tamanho: {tamanho} bytes) gerou o erro: {e}")
+            if os.path.exists(arq): os.remove(arq)
 
     if not dados_totais: return
 
