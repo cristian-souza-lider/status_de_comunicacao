@@ -265,6 +265,7 @@ def iniciar_automacao_flits():
 # =====================================================================
 
 def processar_e_unificar_arquivos():
+    time.sleep(2) # Aguarda a conclusão da escrita dos downloads no disco
     arquivos = glob.glob(os.path.join(DOWNLOAD_DIR, "*.xlsx")) + glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls"))
     if not arquivos: return
     
@@ -283,6 +284,14 @@ def processar_e_unificar_arquivos():
     ]
 
     for arq in arquivos:
+        # Se o arquivo tiver 0 bytes (vazio), remove e ignora
+        try:
+            if not os.path.exists(arq) or os.path.getsize(arq) == 0:
+                if os.path.exists(arq): os.remove(arq)
+                continue
+        except Exception:
+            continue
+
         try:
             try: df = pd.read_excel(arq)
             except: df = pd.read_html(arq)[0]
