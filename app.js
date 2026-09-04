@@ -700,8 +700,7 @@ function criarBarraHorizontalInterativa(canvasId, chartInst, itens, config) {
                         color: config.corTexto,
                         font: { size: 9, weight: '600' },
                         callback: function(val) {
-                            const l = this.getLabelForValue(val);
-                            return l && l.length > 20 ? l.substr(0, 20) + '...' : l;
+                            return this.getLabelForValue(val);
                         }
                     },
                     grid: { display: false }
