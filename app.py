@@ -211,21 +211,32 @@ def iniciar_automacao_flits():
                             driver.execute_script("arguments[0].click();", btn_f_open)
                             time.sleep(1.5)
 
-                        box_emp = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, '_containerOperation_')]")))
+                        # 1. Seleção de Empresa (Multi-Seletores Robustos)
+                        box_emp = wait.until(EC.presence_of_element_located((
+                            By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                        )))
+                        driver.execute_script("arguments[0].scrollIntoView(true);", box_emp)
+                        time.sleep(0.5)
                         driver.execute_script("arguments[0].click();", box_emp)
                         time.sleep(1)
                         ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
                         time.sleep(1.5)
 
-                        box_sit = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')]")))
+                        # 2. Seleção de Situação
+                        box_sit = wait.until(EC.presence_of_element_located((
+                            By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                        )))
                         driver.execute_script("arguments[0].click();", box_sit)
                         time.sleep(1)
                         ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
                         time.sleep(1)
 
-                        btn_submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='button-submit']")))
+                        # 3. Botão Pesquisar / Submit
+                        btn_submit = wait.until(EC.element_to_be_clickable((
+                            By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
+                        )))
                         driver.execute_script("arguments[0].click();", btn_submit)
-                        time.sleep(5)
+                        time.sleep(6)
 
                         # GERENCIAMENTO DE MULTI-GUIAS:
                         # Se o sistema abriu uma nova guia após o submit, muda o foco para ela
@@ -279,14 +290,17 @@ def iniciar_automacao_flits():
                             time.sleep(1)
 
                     except Exception as e:
-                        # Em caso de falha, garante o fechamento de abas extras e retorno à principal
                         if len(driver.window_handles) > 1 and driver.current_window_handle != aba_principal:
-                            driver.close()
-                            driver.switch_to.window(aba_principal)
+                            try:
+                                driver.close()
+                                driver.switch_to.window(aba_principal)
+                            except Exception: pass
 
+                        erro_resumido = str(e).split('\n')[0]
                         if tentativas >= 2:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Erro permanente - ignorando para continuar.")
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Falha definitiva: {erro_resumido}")
                         else:
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Tentativa 1 falhou ({erro_resumido}), tentando novamente...")
                             time.sleep(3)
                 
                 while not sucesso_download and tentativas < 2:
