@@ -203,13 +203,106 @@ def iniciar_automacao_flits():
         except Exception as e_btn:
             print(f"     [Aviso Filtro] Botao de filtro nao precisou ser clicado ou falhou: {e_btn}")
 
-        # Guarda o identificador da aba principal de controle
-        aba_principal = driver.current_window_handle
-
         for sit_alvo in situacoes:
             for idx, emp_nome in enumerate(empresas, 1):
                 sucesso_download = False
                 tentativas = 0
+                
+                while not sucesso_download and tentativas < 2:
+                    tentativas += 1
+                    try:
+                        limpar_bloqueios_tela(driver)
+
+                        # 1. Localiza e abre o painel de filtros na aba atual
+                        btn_f = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
+                            By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
+                        )))
+                        driver.execute_script("arguments[0].click();", btn_f)
+                        time.sleep(1.5)
+
+                        # 2. Seleciona a Empresa
+                        box_emp = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
+                            By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                        )))
+                        driver.execute_script("arguments[0].click();", box_emp)
+                        time.sleep(1)
+                        ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
+                        time.sleep(1.5)
+
+                        # 3. Seleciona a Situação
+                        box_sit = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
+                            By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                        )))
+                        driver.execute_script("arguments[0].click();", box_sit)
+                        time.sleep(1)
+                        ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
+                        time.sleep(1)
+
+                        # Guarda as abas antes de submeter
+                        abas_antes = driver.window_handles
+
+                        # 4. Clica em Pesquisar
+                        btn_submit = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
+                            By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
+                        )))
+                        driver.execute_script("arguments[0].click();", btn_submit)
+                        time.sleep(6)
+
+                        # 5. GERENCIAMENTO DE NOVA GUIA: Se abriu uma nova aba, migra para ela e fecha a antiga
+                        abas_depois = driver.window_handles
+                        if len(abas_depois) > len(abas_antes):
+                            aba_antiga = driver.current_window_handle
+                            aba_nova = [a for a in abas_depois if a not in abas_antes][0]
+                            
+                            # Fecha a aba antiga
+                            driver.switch_to.window(aba_antiga)
+                            driver.close()
+                            
+                            # Foca na nova aba e aguarda carregar
+                            driver.switch_to.window(aba_nova)
+                            time.sleep(6)
+                            limpar_bloqueios_tela(driver)
+
+                        # 6. Verifica se há registros para download
+                        sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
+                        if sem_dados and any(el.is_displayed() for el in sem_dados):
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
+                            sucesso_download = True
+                        else:
+                            try:
+                                arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                                
+                                btn_excel = WebDriverWait(driver, 6).until(
+                                    EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']"))
+                                )
+                                driver.execute_script("arguments[0].click();", btn_excel)
+                                
+                                aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
+                                time.sleep(1.5)
+
+                                arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                                novos_arquivos = list(arquivos_depois - arquivos_antes)
+
+                                if novos_arquivos:
+                                    arq_novo = novos_arquivos[0]
+                                    tamanho = os.path.getsize(arq_novo)
+                                    if tamanho == 0:
+                                        print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio).")
+                                        os.remove(arq_novo)
+                                    else:
+                                        print(f"      - [{emp_nome}] ({sit_alvo}): Download OK ({tamanho} bytes).")
+                                else:
+                                    print(f"      - [{emp_nome}] ({sit_alvo}): Download disparado, mas nenhum arquivo gerado.")
+
+                                sucesso_download = True
+                            except Exception:
+                                print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
+                                sucesso_download = True
+
+                    except Exception as e:
+                        erro_resumido = str(e).split('\n')[0]
+                        print(f"      - [{emp_nome}] ({sit_alvo}): Erro na tentativa {tentativas}: {erro_resumido}")
+                        time.sleep(3)
                 
                 while not sucesso_download and tentativas < 2:
                     tentativas += 1
