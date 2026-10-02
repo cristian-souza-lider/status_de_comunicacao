@@ -146,8 +146,6 @@ def iniciar_automacao_flits():
     try:
         options = Options()
         # options.add_argument("--headless")
-        options.add_argument("--width=1920")
-        options.add_argument("--height=1080")
         caminho_f = buscar_caminho_firefox()
         if caminho_f: options.binary_location = caminho_f
         options.set_preference("browser.download.folderList", 2)
@@ -157,7 +155,7 @@ def iniciar_automacao_flits():
         
         service = Service(executable_path=GECKODRIVER_PATH)
         driver = webdriver.Firefox(service=service, options=options)
-        driver.minimize_window()
+        driver.maximize_window()
         wait = WebDriverWait(driver, 35)
 
         print("     [1/4] Acessando tela de login...")
@@ -165,43 +163,16 @@ def iniciar_automacao_flits():
         wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
         driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
         driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
-        print("     [2/4] Login submetido, aguardando carregamento inicial...")
+        print("     [2/4] Login submetido, aguardando carregamento...")
         time.sleep(10)
         limpar_bloqueios_tela(driver)
 
-        # 1. Tenta clique direto no menu lateral "Monitoramento"
-        print("     [3/4] Navegando para Monitoramento -> Status de Comunicacao...")
-        try:
-            # Localiza o ícone/menu lateral de Monitoramento (ant-menu ou data-testid)
-            menu_monit = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
-                By.XPATH, "//*[contains(@data-testid, '03') or @title='Monitoramento' or contains(text(), 'Monitoramento') or .//*[local-name()='svg' and contains(@data-icon, 'desktop')]]"
-            )))
-            driver.execute_script("arguments[0].click();", menu_monit)
-            time.sleep(2)
+        print("     [3/4] Navegando para Status de Comunicacao...")
+        driver.get("https://flits.cittati.com.br/monitoring/status-communication")
+        time.sleep(8)
+        limpar_bloqueios_tela(driver)
 
-            opcao_status = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
-                By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'status-communication')]"
-            )))
-            driver.execute_script("arguments[0].click();", opcao_status)
-            time.sleep(6)
-            limpar_bloqueios_tela(driver)
-        except Exception as e_click:
-            print(f"     [Aviso Menu] Clique no menu lateral falhou ({e_click}), redirecionando via URL direta...")
-            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-            time.sleep(8)
-            limpar_bloqueios_tela(driver)
-
-        # Abertura do painel de filtros
-        print("     [4/4] Localizando botao de filtros...")
-        try:
-            btn_f = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((
-                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter') or contains(@class, 'ant-btn')]"
-            )))
-            driver.execute_script("arguments[0].click();", btn_f)
-            time.sleep(2)
-            print("     -> Painel de filtros aberto com sucesso.")
-        except Exception as e_btn:
-            print(f"     [Aviso Filtro] Botao de filtro nao precisou ser clicado ou falhou: {e_btn}")
+        print("     [4/4] Iniciando extracoes...")
 
         for sit_alvo in situacoes:
             for idx, emp_nome in enumerate(empresas, 1):
@@ -213,14 +184,14 @@ def iniciar_automacao_flits():
                     try:
                         limpar_bloqueios_tela(driver)
 
-                        # 1. Localiza e abre o painel de filtros na aba atual
+                        # 1. Abre o painel de filtros
                         btn_f = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
                             By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
                         )))
                         driver.execute_script("arguments[0].click();", btn_f)
                         time.sleep(1.5)
 
-                        # 2. Seleciona a Empresa
+                        # 2. Seleciona Empresa
                         box_emp = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
                             By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
                         )))
@@ -229,7 +200,7 @@ def iniciar_automacao_flits():
                         ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
                         time.sleep(1.5)
 
-                        # 3. Seleciona a Situação
+                        # 3. Seleciona Situação
                         box_sit = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
                             By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
                         )))
@@ -238,32 +209,27 @@ def iniciar_automacao_flits():
                         ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
                         time.sleep(1)
 
-                        # Guarda as abas antes de submeter
                         abas_antes = driver.window_handles
 
-                        # 4. Clica em Pesquisar
+                        # 4. Submete a pesquisa
                         btn_submit = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
                             By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
                         )))
                         driver.execute_script("arguments[0].click();", btn_submit)
                         time.sleep(6)
 
-                        # 5. GERENCIAMENTO DE NOVA GUIA: Se abriu uma nova aba, migra para ela e fecha a antiga
+                        # 5. Se abriu nova guia, migra o foco e fecha a anterior
                         abas_depois = driver.window_handles
                         if len(abas_depois) > len(abas_antes):
                             aba_antiga = driver.current_window_handle
                             aba_nova = [a for a in abas_depois if a not in abas_antes][0]
-                            
-                            # Fecha a aba antiga
                             driver.switch_to.window(aba_antiga)
                             driver.close()
-                            
-                            # Foca na nova aba e aguarda carregar
                             driver.switch_to.window(aba_nova)
                             time.sleep(6)
                             limpar_bloqueios_tela(driver)
 
-                        # 6. Verifica se há registros para download
+                        # 6. Verifica se retornou registros
                         sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
                         if sem_dados and any(el.is_displayed() for el in sem_dados):
                             print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
@@ -303,185 +269,6 @@ def iniciar_automacao_flits():
                         erro_resumido = str(e).split('\n')[0]
                         print(f"      - [{emp_nome}] ({sit_alvo}): Erro na tentativa {tentativas}: {erro_resumido}")
                         time.sleep(3)
-                
-                while not sucesso_download and tentativas < 2:
-                    tentativas += 1
-                    try:
-                        # Garante que o Selenium esteja na aba principal antes de iniciar o filtro
-                        if driver.current_window_handle != aba_principal:
-                            driver.switch_to.window(aba_principal)
-                        
-                        limpar_bloqueios_tela(driver)
-                        
-                        # Garante que o painel de filtro esteja aberto
-                        filtros_abertos = driver.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')]")
-                        if not filtros_abertos or not filtros_abertos[0].is_displayed():
-                            btn_f_open = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::*")))
-                            driver.execute_script("arguments[0].click();", btn_f_open)
-                            time.sleep(1.5)
-
-                        # 1. Seleção de Empresa (Multi-Seletores Robustos)
-                        box_emp = wait.until(EC.presence_of_element_located((
-                            By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
-                        )))
-                        driver.execute_script("arguments[0].scrollIntoView(true);", box_emp)
-                        time.sleep(0.5)
-                        driver.execute_script("arguments[0].click();", box_emp)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
-                        time.sleep(1.5)
-
-                        # 2. Seleção de Situação
-                        box_sit = wait.until(EC.presence_of_element_located((
-                            By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
-                        )))
-                        driver.execute_script("arguments[0].click();", box_sit)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
-                        time.sleep(1)
-
-                        # 3. Botão Pesquisar / Submit
-                        btn_submit = wait.until(EC.element_to_be_clickable((
-                            By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
-                        )))
-                        driver.execute_script("arguments[0].click();", btn_submit)
-                        time.sleep(6)
-
-                        # GERENCIAMENTO DE MULTI-GUIAS:
-                        # Se o sistema abriu uma nova guia após o submit, muda o foco para ela
-                        todas_abas = driver.window_handles
-                        if len(todas_abas) > 1:
-                            # Foca na última aba aberta
-                            driver.switch_to.window(todas_abas[-1])
-                            time.sleep(3)
-                            limpar_bloqueios_tela(driver)
-
-                        # Verifica se na tela ativa retornou mensagem de sem dados
-                        sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
-                        if sem_dados and any(el.is_displayed() for el in sem_dados):
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
-                            sucesso_download = True
-                        else:
-                            try:
-                                arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                                
-                                btn_excel = WebDriverWait(driver, 6).until(
-                                    EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']"))
-                                )
-                                driver.execute_script("arguments[0].click();", btn_excel)
-                                
-                                aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
-                                time.sleep(1.5)
-
-                                arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                                novos_arquivos = list(arquivos_depois - arquivos_antes)
-
-                                if novos_arquivos:
-                                    arq_novo = novos_arquivos[0]
-                                    tamanho = os.path.getsize(arq_novo)
-                                    if tamanho == 0:
-                                        print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio).")
-                                        os.remove(arq_novo)
-                                    else:
-                                        print(f"      - [{emp_nome}] ({sit_alvo}): Download OK ({tamanho} bytes).")
-                                else:
-                                    print(f"      - [{emp_nome}] ({sit_alvo}): Download disparado, mas nenhum arquivo gerado.")
-
-                                sucesso_download = True
-                            except Exception:
-                                print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
-                                sucesso_download = True
-
-                        # LIMPEZA DE ABAS: Se estiver em uma aba secundária, fecha e volta para a principal
-                        if len(driver.window_handles) > 1 and driver.current_window_handle != aba_principal:
-                            driver.close()
-                            driver.switch_to.window(aba_principal)
-                            time.sleep(1)
-
-                    except Exception as e:
-                        if len(driver.window_handles) > 1 and driver.current_window_handle != aba_principal:
-                            try:
-                                driver.close()
-                                driver.switch_to.window(aba_principal)
-                            except Exception: pass
-
-                        erro_resumido = str(e).split('\n')[0]
-                        if tentativas >= 2:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Falha definitiva: {erro_resumido}")
-                        else:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Tentativa 1 falhou ({erro_resumido}), tentando novamente...")
-                            time.sleep(3)
-                
-                while not sucesso_download and tentativas < 2:
-                    tentativas += 1
-                    try:
-                        limpar_bloqueios_tela(driver)
-                        
-                        # Garante que o painel de filtro esteja aberto
-                        filtros_abertos = driver.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')]")
-                        if not filtros_abertos or not filtros_abertos[0].is_displayed():
-                            btn_f_open = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::*")))
-                            driver.execute_script("arguments[0].click();", btn_f_open)
-                            time.sleep(1.5)
-
-                        box_emp = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, '_containerOperation_')]")))
-                        driver.execute_script("arguments[0].click();", box_emp)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
-                        time.sleep(1.5)
-
-                        box_sit = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')]")))
-                        driver.execute_script("arguments[0].click();", box_sit)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
-                        time.sleep(1)
-
-                        btn_submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-testid='button-submit']")))
-                        driver.execute_script("arguments[0].click();", btn_submit)
-                        time.sleep(5)
-
-                        # Verifica se a tela retornou mensagem de "Nenhum dado/registro encontrado"
-                        sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
-                        if sem_dados and any(el.is_displayed() for el in sem_dados):
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
-                            sucesso_download = True
-                            continue
-
-                        # Se houver dados, localiza o botão de exportar e valida o arquivo
-                        try:
-                            arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                            
-                            btn_excel = WebDriverWait(driver, 5).until(
-                                EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel']"))
-                            )
-                            driver.execute_script("arguments[0].click();", btn_excel)
-                            
-                            aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
-                            time.sleep(1.5)
-
-                            arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                            novos_arquivos = list(arquivos_depois - arquivos_antes)
-
-                            if novos_arquivos:
-                                arq_novo = novos_arquivos[0]
-                                tamanho = os.path.getsize(arq_novo)
-                                if tamanho == 0:
-                                    print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio).")
-                                    os.remove(arq_novo)
-                                else:
-                                    print(f"      - [{emp_nome}] ({sit_alvo}): Download OK ({tamanho} bytes).")
-                            else:
-                                print(f"      - [{emp_nome}] ({sit_alvo}): Download disparado, mas nenhum arquivo gerado.")
-
-                            sucesso_download = True
-                        except Exception:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
-                            sucesso_download = True
-                    except Exception as e:
-                        if tentativas >= 2:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Erro permanente - ignorando para continuar.")
-                        else:
-                            time.sleep(3)
 
         driver.quit()
         processar_e_unificar_arquivos()
