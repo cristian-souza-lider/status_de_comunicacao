@@ -145,7 +145,7 @@ def iniciar_automacao_flits():
     driver = None
     try:
         options = Options()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument("--width=1920")
         options.add_argument("--height=1080")
         caminho_f = buscar_caminho_firefox()
