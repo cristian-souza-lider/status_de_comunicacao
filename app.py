@@ -160,49 +160,32 @@ def iniciar_automacao_flits():
         driver.minimize_window()
         wait = WebDriverWait(driver, 35)
 
+        print("     [1/4] Acessando tela de login...")
         driver.get(URL_FLITS)
         wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
         driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
         driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
+        print("     [2/4] Login submetido, aguardando carregamento...")
         time.sleep(8)
         limpar_bloqueios_tela(driver)
 
-        # Navegação robusta ao menu Monitoramento -> Status Comunicação
+        # Redirecionamento direto para a tela de Status de Comunicação
+        print("     [3/4] Abrindo tela de Status de Comunicacao...")
+        driver.get("https://flits.cittati.com.br/monitoring/status-communication")
+        time.sleep(8)
+        limpar_bloqueios_tela(driver)
+
+        # Abertura do painel de filtros
+        print("     [4/4] Localizando botao de filtros...")
         try:
-            limpar_bloqueios_tela(driver)
-            menu = wait.until(EC.presence_of_element_located((
-                By.XPATH, "//div[@data-testid='03'] | //div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')]/ancestor::div[contains(@class, 'menu') or contains(@class, 'item')]"
-            )))
-            driver.execute_script("arguments[0].scrollIntoView(true);", menu)
-            time.sleep(1)
-            driver.execute_script("arguments[0].click();", menu)
-            time.sleep(3)
-
-            limpar_bloqueios_tela(driver)
-            opcao_status = wait.until(EC.presence_of_element_located((
-                By.XPATH, "//div[contains(@class, 'title') and contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //div[text()='Status Comunicação']"
-            )))
-            driver.execute_script("arguments[0].scrollIntoView(true);", opcao_status)
-            time.sleep(1)
-            driver.execute_script("arguments[0].click();", opcao_status)
-            time.sleep(8)
-            limpar_bloqueios_tela(driver)
-
-            btn_f = wait.until(EC.element_to_be_clickable((
-                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
+            btn_f = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((
+                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter') or contains(@class, 'ant-btn')]"
             )))
             driver.execute_script("arguments[0].click();", btn_f)
             time.sleep(2)
-        except Exception as e_nav:
-            print(f"[Falha na Navegação do Menu] {e_nav} - Tentando acesso direto...")
-            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-            time.sleep(8)
-            limpar_bloqueios_tela(driver)
-            btn_f = wait.until(EC.element_to_be_clickable((
-                By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
-            )))
-            driver.execute_script("arguments[0].click();", btn_f)
-            time.sleep(2)
+            print("     -> Painel de filtros aberto com sucesso.")
+        except Exception as e_btn:
+            print(f"     [Aviso Filtro] Botao de filtro nao precisou ser clicado ou falhou: {e_btn}")
 
         # Guarda o identificador da aba principal de controle
         aba_principal = driver.current_window_handle
