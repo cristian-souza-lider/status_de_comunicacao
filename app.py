@@ -165,15 +165,31 @@ def iniciar_automacao_flits():
         wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
         driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
         driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
-        print("     [2/4] Login submetido, aguardando carregamento...")
-        time.sleep(8)
+        print("     [2/4] Login submetido, aguardando carregamento inicial...")
+        time.sleep(10)
         limpar_bloqueios_tela(driver)
 
-        # Redirecionamento direto para a tela de Status de Comunicação
-        print("     [3/4] Abrindo tela de Status de Comunicacao...")
-        driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-        time.sleep(8)
-        limpar_bloqueios_tela(driver)
+        # 1. Tenta clique direto no menu lateral "Monitoramento"
+        print("     [3/4] Navegando para Monitoramento -> Status de Comunicacao...")
+        try:
+            # Localiza o ícone/menu lateral de Monitoramento (ant-menu ou data-testid)
+            menu_monit = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
+                By.XPATH, "//*[contains(@data-testid, '03') or @title='Monitoramento' or contains(text(), 'Monitoramento') or .//*[local-name()='svg' and contains(@data-icon, 'desktop')]]"
+            )))
+            driver.execute_script("arguments[0].click();", menu_monit)
+            time.sleep(2)
+
+            opcao_status = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
+                By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'status-communication')]"
+            )))
+            driver.execute_script("arguments[0].click();", opcao_status)
+            time.sleep(6)
+            limpar_bloqueios_tela(driver)
+        except Exception as e_click:
+            print(f"     [Aviso Menu] Clique no menu lateral falhou ({e_click}), redirecionando via URL direta...")
+            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
+            time.sleep(8)
+            limpar_bloqueios_tela(driver)
 
         # Abertura do painel de filtros
         print("     [4/4] Localizando botao de filtros...")
