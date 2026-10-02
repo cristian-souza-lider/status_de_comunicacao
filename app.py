@@ -167,10 +167,34 @@ def iniciar_automacao_flits():
         time.sleep(10)
         limpar_bloqueios_tela(driver)
 
-        print("     [3/4] Navegando para Status de Comunicacao...")
-        driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-        time.sleep(8)
-        limpar_bloqueios_tela(driver)
+        print("     [3/4] Navegando via menu lateral para Status de Comunicacao...")
+        try:
+            # 1. Se a barra lateral estiver recolhida, clica na seta laranja do topo esquerdo para expandir
+            btn_expande = driver.find_elements(By.CSS_SELECTOR, "button.ant-btn-primary, div._containerExpand_")
+            if btn_expande and btn_expande[0].is_displayed():
+                driver.execute_script("arguments[0].click();", btn_expande[0])
+                time.sleep(1)
+
+            # 2. Clica no ícone de Monitoramento na barra lateral esquerda (segundo ícone da barra azul)
+            menu_monit = wait.until(EC.element_to_be_clickable((
+                By.XPATH, "//div[@data-testid='03'] | //li[contains(@class, 'ant-menu-submenu')] | //div[contains(@class, 'menuItem')][2] | //*[local-name()='svg' and contains(@class, 'monitoring')]/parent::*"
+            )))
+            driver.execute_script("arguments[0].click();", menu_monit)
+            time.sleep(2)
+
+            # 3. Clica no submenu "Status Comunicação"
+            opcao_status = wait.until(EC.element_to_be_clickable((
+                By.XPATH, "//span[contains(text(), 'Status Comunicação')] | //div[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')]"
+            )))
+            driver.execute_script("arguments[0].click();", opcao_status)
+            time.sleep(7)
+            limpar_bloqueios_tela(driver)
+            print("     -> Tela de Status de Comunicacao carregada com sucesso.")
+        except Exception as e_menu:
+            print(f"     [Aviso] Falha no clique do menu: {e_menu}. Tentando recarregar...")
+            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
+            time.sleep(10)
+            limpar_bloqueios_tela(driver)
 
         print("     [4/4] Iniciando extracoes...")
 
