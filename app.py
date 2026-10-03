@@ -6,16 +6,20 @@ import logging
 import subprocess
 import shutil
 import stat
+import sqlite3
 from datetime import datetime, timedelta
 from threading import Thread, Lock
 import pandas as pd
 from flask import Flask, jsonify, send_from_directory, request
 from dotenv import load_dotenv
-# Carrega as variáveis do arquivo .env
-load_dotenv()
-import sqlite3
 
-# Define a pasta do projeto primeiro
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# =====================================================================
+#             CONFIGURAÇÕES GERAIS E BANCO DE DADOS
+# =====================================================================
+
 LOCAL_PROJETO_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(LOCAL_PROJETO_DIR, "banco_dados.db")
 
@@ -50,21 +54,19 @@ from selenium.webdriver.support import expected_conditions as EC
 # Inicializa o Flask
 app = Flask(__name__, static_folder='.', template_folder='.')
 
-# Configurações de pastas dinâmicas (relativas ao arquivo app.py)
-LOCAL_PROJETO_DIR = os.path.dirname(os.path.abspath(__file__))
+# Configurações de pastas e credenciais
 user_home = os.path.expanduser("~")
 DOWNLOAD_DIR = os.path.join(user_home, "OneDrive - Nossa Senhora do Ó Participações S.A", "Status em Python")
 GECKODRIVER_PATH = os.path.join(LOCAL_PROJETO_DIR, "geckodriver.exe")
 
-# Credenciais protegidas via variáveis de ambiente (.env)
 USUARIO_FLITS = os.getenv("USUARIO_FLITS", "")
 SENHA_FLITS = os.getenv("SENHA_FLITS", "")
 URL_FLITS = "https://flits.cittati.com.br/login"
 
-# Lock de controle
+# Lock de controle de execução única
 executando_lock = Lock()
 
-# Mapeamento de meses
+# Mapeamento de meses em português
 MESES_PT_REV = {
     "Janeiro": "01", "Fevereiro": "02", "Março": "03", "Abril": "04",
     "Maio": "05", "Junho": "06", "Julho": "07", "Agosto": "08",
@@ -103,29 +105,32 @@ def limpar_bloqueios_tela(driver):
         driver.execute_script("document.querySelectorAll('.ant-modal-wrap, .ant-modal-mask').forEach(el => el.style.display = 'none');")
     except: pass
 
-def enviar_para_github(nome_dados_dia_local):
-    try:
-        print("[Git] Sincronizando com GitHub...")
-        # Mantém apenas a versão mais recente dos dados no Git para não inflar o histórico .git
-        arquivos_para_adicionar = ["app.py", "app.js", "index.html", "style.css", "datas.json", "dados.json", nome_dados_dia_local]
-        existentes = [a for a in arquivos_para_adicionar if os.path.exists(os.path.join(LOCAL_PROJETO_DIR, a))]
-        subprocess.run(["git", "add"] + existentes, cwd=LOCAL_PROJETO_DIR, check=True)
-        status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
-        if status.stdout.strip():
-            subprocess.run(["git", "commit", "-m", f"Automacao Flits: {datetime.now().strftime('%d/%m %H:%M')}"], cwd=LOCAL_PROJETO_DIR, check=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
-            print("[Git] Sincronização automática OK.")
-    except Exception as e: print(f"[Git - Erro] {e}")
-
 def aguardar_conclusao_download(pasta_download, timeout=15):
-    """Aguarda até que não existam arquivos temporários (.part ou .crdownload) e haja arquivo novo."""
     fim = time.time() + timeout
     while time.time() < fim:
         arquivos_temp = glob.glob(os.path.join(pasta_download, "*.part")) + glob.glob(os.path.join(pasta_download, "*.crdownload"))
         if not arquivos_temp:
             return True
         time.sleep(0.5)
-    return False    
+    return False
+
+def enviar_para_github(nome_dados_dia_local):
+    try:
+        print("[Git] Sincronizando com GitHub...")
+        arquivos_para_adicionar = ["app.py", "app.js", "index.html", "style.css", "datas.json", "dados.json", nome_dados_dia_local]
+        existentes = [a for a in arquivos_para_adicionar if os.path.exists(os.path.join(LOCAL_PROJETO_DIR, a))]
+        
+        # Puxa atualizações remotas antes do push
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+        subprocess.run(["git", "add"] + existentes, cwd=LOCAL_PROJETO_DIR, check=True)
+        
+        status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
+        if status.stdout.strip():
+            subprocess.run(["git", "commit", "-m", f"Automacao Flits: {datetime.now().strftime('%d/%m %H:%M')}"], cwd=LOCAL_PROJETO_DIR, check=True)
+            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
+            print("[Git] Sincronização automática OK.")
+    except Exception as e: 
+        print(f"[Git - Erro] {e}")
 
 # =====================================================================
 #                 ROTINA DE AUTOMAÇÃO FLITS
@@ -158,7 +163,7 @@ def iniciar_automacao_flits():
         driver.maximize_window()
         wait = WebDriverWait(driver, 30)
 
-        # 1. Autenticação e Acesso Inicial (5 segundos + limpeza de pop-ups)
+        # 1. Autenticação e Acesso Inicial
         print("     [1/4] Acessando tela de login...")
         driver.get(URL_FLITS)
         wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
@@ -168,7 +173,7 @@ def iniciar_automacao_flits():
         time.sleep(5)
         limpar_bloqueios_tela(driver)
 
-        # 2. Navegação: Monitoramento -> Status Comunicação (com fallback)
+        # 2. Navegação inicial: Monitoramento -> Status Comunicação
         print("     [3/4] Navegando para Monitoramento -> Status Comunicacao...")
         try:
             menu_monit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
@@ -190,9 +195,9 @@ def iniciar_automacao_flits():
             time.sleep(6)
             limpar_bloqueios_tela(driver)
 
-        print("     [4/4] Iniciando loop de extracoes com navegacao por empresa...")
+        print("     [4/4] Iniciando loop de extracoes...")
 
-        # 1. Abre a gaveta de filtros verificando se o campo de SITUAÇÃO está visível
+        # Funções internas do ciclo de exportação
         def abrir_gaveta_filtro(drv, forcar=False):
             limpar_bloqueios_tela(drv)
             campos_situacao = drv.find_elements(By.XPATH, "//div[@data-testid='Select-situation'] | //label[contains(text(), 'Situação')] | //button[@data-testid='button-submit']")
@@ -243,7 +248,7 @@ def iniciar_automacao_flits():
             drv.execute_script("arguments[0].click();", btn_submit)
             time.sleep(6)
 
-            # Tratamento de Múltiplas Abas (se houver abertura de nova guia)
+            # Tratamento de Múltiplas Abas
             abas_depois = drv.window_handles
             if len(abas_depois) > len(abas_antes):
                 aba_antiga = drv.current_window_handle
@@ -284,7 +289,6 @@ def iniciar_automacao_flits():
                 except Exception:
                     print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
 
-        # 2. Identifica a empresa atual lendo EXCLUSIVAMENTE dentro de .context-select
         def identificar_empresa_ativa(drv, lista_empresas):
             try:
                 el = drv.find_element(By.XPATH, "//div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')]")
@@ -295,18 +299,14 @@ def iniciar_automacao_flits():
             except Exception: pass
             return lista_empresas[0]
 
-
-        # 3. Altera a Empresa interagindo ESTRITAMENTE com o componente .context-select (rc_select_1)
         def selecionar_empresa(drv, nome):
             limpar_bloqueios_tela(drv)
-            # Clica no container exato do seletor de empresa do cabeçalho
             box_emp = WebDriverWait(drv, 10).until(EC.element_to_be_clickable((
                 By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
             )))
             drv.execute_script("arguments[0].click();", box_emp)
             time.sleep(0.8)
 
-            # Localiza o input de busca estritamente dentro de .context-select
             inp = WebDriverWait(drv, 6).until(EC.presence_of_element_located((
                 By.XPATH, "//div[contains(@class, 'context-select')]//input[@type='search']"
             )))
@@ -314,17 +314,17 @@ def iniciar_automacao_flits():
             inp.send_keys(Keys.BACKSPACE)
             time.sleep(0.3)
             inp.send_keys(nome)
-            time.sleep(1.2)
+            time.sleep(1.5)
             inp.send_keys(Keys.ENTER)
             time.sleep(2)
-            limpar_bloqueios_tela(driver)
+            limpar_bloqueios_tela(drv)
 
+        # Identifica a empresa inicial já aberta na tela
         empresa_inicial = identificar_empresa_ativa(driver, empresas)
         empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
         print(f"     -> Empresa inicial detectada: [{empresa_inicial}]")
 
-        primeira_execucao = True
-
+        # Loop Sequencial por Empresa
         for idx, emp_nome in enumerate(empresas_ordenadas):
             try:
                 print(f"\n     === [{idx + 1}/{len(empresas_ordenadas)}] Empresa: {emp_nome} ===")
@@ -339,7 +339,7 @@ def iniciar_automacao_flits():
                 selecionar_situacao(driver, "Em Manutenção")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
 
-                # 3. APÓS BAIXAR EM MANUTENÇÃO: Seleciona a próxima empresa e clica em Monitoramento -> Status Comunicação
+                # 3. APÓS BAIXAR EM MANUTENÇÃO: Seleciona próxima empresa e clica em Monitoramento -> Status Comunicação
                 if idx + 1 < len(empresas_ordenadas):
                     proxima_empresa = empresas_ordenadas[idx + 1]
                     print(f"\n     -> Selecionando nova Empresa: [{proxima_empresa}]...")
@@ -363,7 +363,7 @@ def iniciar_automacao_flits():
 # =====================================================================
 
 def processar_e_unificar_arquivos():
-    time.sleep(2) # Aguarda a conclusão da escrita dos downloads no disco
+    time.sleep(2)
     arquivos = glob.glob(os.path.join(DOWNLOAD_DIR, "*.xlsx")) + glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls"))
     if not arquivos: return
     
@@ -371,18 +371,16 @@ def processar_e_unificar_arquivos():
     now = datetime.now()
     data_extracao = now.strftime("%d/%m/%Y")
     hora_extracao = now.strftime("%Hh")
-    hora_minuto_extracao = now.strftime("%H:%M")
+    hora_minuto_extracao = now.strftime("%Hh%M")
     
     segmentos_avul = ["Urubupungá", "Urubupungá Municipal Osasco", "Urubupungá Municipal Santana", "Urubupungá Municipal Cajamar"]
 
-    # COLUNAS QUE DEVEM SER REMOVIDAS
     colunas_para_ignorar = [
         "Placa", "Firmware do AVUL", "Firmware do AVL", "Último Gps", "Último GPS", 
         "Última transmissão", "Última Transmissão GP", "Ponto", "Validador Status"
     ]
 
     for arq in arquivos:
-        # Se o arquivo tiver 0 bytes (vazio), remove e ignora
         try:
             if not os.path.exists(arq) or os.path.getsize(arq) == 0:
                 if os.path.exists(arq): os.remove(arq)
@@ -394,7 +392,6 @@ def processar_e_unificar_arquivos():
             try: df = pd.read_excel(arq)
             except: df = pd.read_html(arq)[0]
 
-            # Descarta arquivos totalmente vazios
             if df.empty or len(df) == 0:
                 os.remove(arq)
                 continue
@@ -408,22 +405,15 @@ def processar_e_unificar_arquivos():
 
             df = df.fillna("")
 
-            # Descarta se após o cabeçalho não sobraram linhas de veículos
             if df.empty or len(df) == 0:
                 os.remove(arq)
                 continue
             
-            # Remove linhas de cabeçalho duplicadas
             if 'Empresa' in df.columns:
                 df = df[df['Empresa'] != 'Empresa']
-                
-                # 1. Renomeia "Empresa" para "Segmento"
                 df = df.rename(columns={'Empresa': 'Segmento'})
-                
-                # 2. Cria a nova coluna "Empresa" (AVUL/VCCL)
                 df['Empresa'] = df['Segmento'].apply(lambda x: "AVUL" if x in segmentos_avul else "VCCL")
 
-            # 3. DESCARTA AS COLUNAS SOLICITADAS
             df = df.drop(columns=[c for c in colunas_para_ignorar if c in df.columns])
             
             lista_registros = df.to_dict(orient='records')
@@ -452,7 +442,6 @@ def processar_e_unificar_arquivos():
     nome_json = f"dados-{now.strftime('%d-%m-%Y')}.json"
     caminho_local = os.path.join(LOCAL_PROJETO_DIR, nome_json)
 
-    # 1. ACÚMULO INTELIGENTE: Mescla registros do dia sem duplicar a mesma hora/veículo
     registros_consolidados = []
     if os.path.exists(caminho_local):
         try:
@@ -461,7 +450,6 @@ def processar_e_unificar_arquivos():
         except Exception:
             registros_consolidados = []
 
-    # Remove registros da mesma hora (se for uma re-execução) e anexa a nova extração
     registros_consolidados = [r for r in registros_consolidados if not (r.get("Data") == data_extracao and r.get("Hora") == hora_extracao)]
     registros_consolidados.extend(dados_totais)
 
@@ -484,12 +472,17 @@ def processar_e_unificar_arquivos():
 
     enviar_para_github(nome_json)
 
+# =====================================================================
+#                         ROTAS DO FLASK
+# =====================================================================
+
 @app.route('/')
 def index(): return send_from_directory('.', 'index.html')
 @app.route('/app.js')
 def serve_js(): return send_from_directory('.', 'app.js')
 @app.route('/style.css')
 def serve_css(): return send_from_directory('.', 'style.css')
+
 @app.route('/fichas_manutencao.json')
 def serve_fichas():
     with sqlite3.connect(DB_PATH) as conn:
@@ -531,12 +524,17 @@ def fechar_ficha_item():
         ''', (data_fc, hora_fc, ficha_id))
         conn.commit()
     return jsonify({"status": "sucesso"})
+
 @app.route('/datas.json')
 def serve_datas(): return send_from_directory('.', 'datas.json')
 @app.route('/dados.json')
 def serve_dados(): return send_from_directory('.', 'dados.json')
 @app.route('/dados-<data_str>.json')
 def serve_dados_hist(data_str): return send_from_directory('.', f"dados-{data_str}.json")
+
+# =====================================================================
+#                     EXECUÇÃO E AGENDAMENTO
+# =====================================================================
 
 def executar_com_bloqueio(origem="Manual"):
     if not executando_lock.locked():
