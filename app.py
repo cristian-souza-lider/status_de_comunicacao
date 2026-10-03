@@ -192,11 +192,11 @@ def iniciar_automacao_flits():
 
         print("     [4/4] Iniciando loop de extracoes com navegacao por empresa...")
 
-        # Funções auxiliares do fluxo
+        # 1. Abre a gaveta de filtros verificando se o campo de SITUAÇÃO está visível
         def abrir_gaveta_filtro(drv, forcar=False):
             limpar_bloqueios_tela(drv)
-            campos = drv.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]")
-            if forcar or not campos or not campos[0].is_displayed():
+            campos_situacao = drv.find_elements(By.XPATH, "//div[@data-testid='Select-situation'] | //label[contains(text(), 'Situação')] | //button[@data-testid='button-submit']")
+            if forcar or not campos_situacao or not campos_situacao[0].is_displayed():
                 try:
                     btn_f = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
                         By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
@@ -284,10 +284,10 @@ def iniciar_automacao_flits():
                 except Exception:
                     print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
 
-        # Identifica a empresa atualmente selecionada no seletor global do cabeçalho
+        # 2. Identifica a empresa atual lendo EXCLUSIVAMENTE dentro de .context-select
         def identificar_empresa_ativa(drv, lista_empresas):
             try:
-                el = drv.find_element(By.XPATH, "//div[contains(@class, 'context-options')]//span[contains(@class, 'ant-select-selection-item')] | //div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')]")
+                el = drv.find_element(By.XPATH, "//div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')]")
                 txt = el.text.strip()
                 for emp in lista_empresas:
                     if emp.lower() in txt.lower() or txt.lower() in emp.lower():
@@ -295,26 +295,29 @@ def iniciar_automacao_flits():
             except Exception: pass
             return lista_empresas[0]
 
-        # Seleciona a nova empresa usando o campo context-options / context-select
+
+        # 3. Altera a Empresa interagindo ESTRITAMENTE com o componente .context-select (rc_select_1)
         def selecionar_empresa(drv, nome):
             limpar_bloqueios_tela(drv)
-            # 1. Clica no seletor global de empresa do cabeçalho (.context-options .context-select)
+            # Clica no container exato do seletor de empresa do cabeçalho
             box_emp = WebDriverWait(drv, 10).until(EC.element_to_be_clickable((
-                By.XPATH, "//div[contains(@class, 'context-options')]//div[contains(@class, 'ant-select-selector')] | //div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
+                By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
             )))
             drv.execute_script("arguments[0].click();", box_emp)
-            time.sleep(1)
+            time.sleep(0.8)
 
-            # 2. Digita o nome da nova empresa no campo de busca e pressiona ENTER
-            inps = drv.find_elements(By.XPATH, "//div[contains(@class, 'context-options')]//input[@type='search'] | //input[contains(@class, 'ant-select-selection-search-input')]")
-            if inps and inps[0].is_displayed():
-                inps[0].send_keys(nome)
-                time.sleep(1)
-                inps[0].send_keys(Keys.ENTER)
-            else:
-                ActionChains(drv).send_keys(nome).pause(1.2).send_keys(Keys.ENTER).perform()
+            # Localiza o input de busca estritamente dentro de .context-select
+            inp = WebDriverWait(drv, 6).until(EC.presence_of_element_located((
+                By.XPATH, "//div[contains(@class, 'context-select')]//input[@type='search']"
+            )))
+            inp.send_keys(Keys.CONTROL + "a")
+            inp.send_keys(Keys.BACKSPACE)
+            time.sleep(0.3)
+            inp.send_keys(nome)
+            time.sleep(1.2)
+            inp.send_keys(Keys.ENTER)
             time.sleep(2)
-            limpar_bloqueios_tela(drv)
+            limpar_bloqueios_tela(driver)
 
         empresa_inicial = identificar_empresa_ativa(driver, empresas)
         empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
