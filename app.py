@@ -150,7 +150,7 @@ def iniciar_automacao_flits():
     driver = None
     try:
         options = Options()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         caminho_f = buscar_caminho_firefox()
         if caminho_f: options.binary_location = caminho_f
         options.set_preference("browser.download.folderList", 2)
