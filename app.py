@@ -225,18 +225,19 @@ def iniciar_automacao_flits():
                     time.sleep(1.5)
 
                     arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                    novos_arquivos = list(arquivos_depois - arquivos_antes)
+                    novos_arquivos = sorted(list(arquivos_depois - arquivos_antes), key=os.path.getmtime, reverse=True)
 
                     if novos_arquivos:
                         arq_novo = novos_arquivos[0]
                         tamanho = os.path.getsize(arq_novo)
                         if tamanho == 0:
                             print(f"      - [{emp_nome}] ({situacao_nome}): Arquivo vazio de 0 bytes descartado.", flush=True)
-                            os.remove(arq_novo)
+                            try: os.remove(arq_novo)
+                            except Exception: pass
                         else:
                             print(f"      - [{emp_nome}] ({situacao_nome}): Download OK ({tamanho} bytes).", flush=True)
                     else:
-                        print(f"      - [{emp_nome}] ({situacao_nome}): Download disparado, mas nenhum arquivo gravado.", flush=True)
+                        print(f"      - [{emp_nome}] ({situacao_nome}): Sem novos arquivos gerados.", flush=True)
                 except Exception as e_down:
                     print(f"      - [{emp_nome}] ({situacao_nome}): Botao de exportacao nao localizado ou tabela vazia ({e_down}).", flush=True)
 
