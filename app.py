@@ -214,23 +214,25 @@ def iniciar_automacao_flits():
         def navegar_monitoramento_status(drv):
             limpar_bloqueios_tela(drv)
             try:
+                # Clica apenas em Monitoramento
                 menu_monit = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
                     By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
                 )))
                 drv.execute_script("arguments[0].click();", menu_monit)
-                time.sleep(2)
+                time.sleep(1.5)
 
+                # Clica apenas em Status Comunicação
                 opcao_status = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
-                    By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')]"
+                    By.XPATH, "//span[contains(text(), 'Status Comunicação')] | //div[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'communicationStatus')]"
                 )))
                 drv.execute_script("arguments[0].click();", opcao_status)
-                time.sleep(6)
+                time.sleep(5)
                 limpar_bloqueios_tela(drv)
-                print("     -> Tela de Status de Comunicacao aberta com sucesso.", flush=True)
+                print("     -> Tela de Status de Comunicacao aberta na guia ativa.", flush=True)
             except Exception as e_nav:
                 print(f"     [Aviso Navegacao] Carregando URL direta: {e_nav}", flush=True)
                 drv.get("https://flits.cittati.com.br/monitoring/communicationStatus")
-                time.sleep(8)
+                time.sleep(6)
                 limpar_bloqueios_tela(drv)
 
         # 3. Seleciona Situação (Operando / Em Manutenção) clicando diretamente na opção
