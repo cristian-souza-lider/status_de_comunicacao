@@ -213,22 +213,23 @@ def iniciar_automacao_flits():
         def navegar_monitoramento_status(drv):
             limpar_bloqueios_tela(drv)
             try:
-                menu_monit = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
+                menu_monit = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
                     By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
                 )))
                 drv.execute_script("arguments[0].click();", menu_monit)
-                time.sleep(1.5)
+                time.sleep(2)
 
-                opcao_status = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
+                opcao_status = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
                     By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'status-communication')]"
                 )))
                 drv.execute_script("arguments[0].click();", opcao_status)
-                time.sleep(5)
+                time.sleep(6)
                 limpar_bloqueios_tela(drv)
+                print("     -> Tela de Status de Comunicacao aberta na guia ativa.")
             except Exception as e_nav:
                 print(f"     [Aviso Navegacao] Recarregando tela de Status: {e_nav}")
                 drv.get("https://flits.cittati.com.br/monitoring/status-communication")
-                time.sleep(6)
+                time.sleep(8)
                 limpar_bloqueios_tela(drv)
 
         def selecionar_situacao(drv, sit):
@@ -301,6 +302,10 @@ def iniciar_automacao_flits():
 
         def selecionar_empresa(drv, nome):
             limpar_bloqueios_tela(drv)
+            abas_antes = drv.window_handles
+            aba_atual = drv.current_window_handle
+
+            # Clica no container do seletor de empresa do cabeçalho
             box_emp = WebDriverWait(drv, 10).until(EC.element_to_be_clickable((
                 By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
             )))
@@ -315,40 +320,28 @@ def iniciar_automacao_flits():
             time.sleep(0.3)
             inp.send_keys(nome)
             time.sleep(1.5)
-            inp.send_keys(Keys.ENTER)
-            time.sleep(2)
-            limpar_bloqueios_tela(drv)
 
-        # Identifica a empresa inicial já aberta na tela
-        empresa_inicial = identificar_empresa_ativa(driver, empresas)
-        empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
-        print(f"     -> Empresa inicial detectada: [{empresa_inicial}]")
-
-        # Loop Sequencial por Empresa
-        for idx, emp_nome in enumerate(empresas_ordenadas):
+            # Tenta clicar diretamente na opção filtrada da lista suspensa ou envia ENTER
             try:
-                print(f"\n     === [{idx + 1}/{len(empresas_ordenadas)}] Empresa: {emp_nome} ===")
+                opcao = WebDriverWait(drv, 3).until(EC.element_to_be_clickable((
+                    By.XPATH, f"//div[contains(@class, 'ant-select-dropdown')]//div[contains(@class, 'ant-select-item-option-content') and (contains(text(), '{nome}') or contains(., '{nome}'))]"
+                )))
+                drv.execute_script("arguments[0].click();", opcao)
+            except Exception:
+                inp.send_keys(Keys.ENTER)
+            
+            time.sleep(3)
 
-                # 1. SITUAÇÃO "Operando" + PESQUISAR + DOWNLOAD
-                abrir_gaveta_filtro(driver)
-                selecionar_situacao(driver, "Operando")
-                submeter_pesquisa_e_exportar(driver, emp_nome, "Operando")
-
-                # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR + DOWNLOAD
-                abrir_gaveta_filtro(driver, forcar=True)
-                selecionar_situacao(driver, "Em Manutenção")
-                submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
-
-                # 3. APÓS BAIXAR EM MANUTENÇÃO: Seleciona próxima empresa e clica em Monitoramento -> Status Comunicação
-                if idx + 1 < len(empresas_ordenadas):
-                    proxima_empresa = empresas_ordenadas[idx + 1]
-                    print(f"\n     -> Selecionando nova Empresa: [{proxima_empresa}]...")
-                    selecionar_empresa(driver, proxima_empresa)
-                    print("     -> Clicando em Monitoramento -> Status Comunicacao...")
-                    navegar_monitoramento_status(driver)
-
-            except Exception as e_emp:
-                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}")
+            # GERENCIAMENTO DE GUIAS: Migra para a nova guia aberta e fecha a anterior
+            abas_depois = drv.window_handles
+            if len(abas_depois) > len(abas_antes):
+                aba_nova = [a for a in abas_depois if a not in abas_antes][0]
+                drv.switch_to.window(aba_atual)
+                drv.close()
+                drv.switch_to.window(aba_nova)
+                time.sleep(5)
+                limpar_bloqueios_tela(drv)
+                print(f"     -> Foco migrado com sucesso para a nova guia da empresa: [{nome}]")
 
         driver.quit()
         processar_e_unificar_arquivos()
