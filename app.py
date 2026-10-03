@@ -190,11 +190,29 @@ def iniciar_automacao_flits():
             time.sleep(6)
             limpar_bloqueios_tela(driver)
 
-        print("     [4/4] Iniciando loop de extracoes (14 combinacoes)...")
+        print("     [4/4] Iniciando loop de extracoes...")
 
-        # 4. Loop das Empresas e Situações
-        for sit_alvo in situacoes:
-            for idx, emp_nome in enumerate(empresas, 1):
+        # Função auxiliar para detectar a empresa atualmente carregada na tela
+        def identificar_empresa_ativa(drv, lista_empresas):
+            try:
+                elementos = drv.find_elements(By.XPATH, "//span[contains(@class, 'ant-select-selection-item')] | //div[contains(@class, '_containerOperation_')] | //header//* | //div[contains(@class, 'header')]//*")
+                for el in elementos:
+                    txt = el.text.strip()
+                    for emp in lista_empresas:
+                        if emp.lower() in txt.lower() or (len(txt) > 6 and txt.lower() in emp.lower()):
+                            return emp
+            except Exception: pass
+            return lista_empresas[0]
+
+        # Identifica a empresa atual e a coloca no início da fila
+        empresa_inicial = identificar_empresa_ativa(driver, empresas)
+        empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
+        print(f"     -> Empresa inicial detectada: [{empresa_inicial}]")
+
+        primeira_execucao = True
+
+        for emp_nome in empresas_ordenadas:
+            for sit_alvo in situacoes:
                 sucesso_download = False
                 tentativas = 0
                 
@@ -203,7 +221,7 @@ def iniciar_automacao_flits():
                     try:
                         limpar_bloqueios_tela(driver)
 
-                        # Verifica se os campos estão visíveis; se NÃO estiverem, clica no botão de filtro (funil)
+                        # Se os campos de filtro não estiverem visíveis, clica no botão de filtro (funil)
                         campos_emp = driver.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]")
                         if not campos_emp or not campos_emp[0].is_displayed():
                             try:
@@ -214,16 +232,17 @@ def iniciar_automacao_flits():
                                 time.sleep(1.5)
                             except Exception: pass
 
-                        # Preenchimento da Empresa
-                        box_emp = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
-                            By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
-                        )))
-                        driver.execute_script("arguments[0].click();", box_emp)
-                        time.sleep(0.8)
-                        ActionChains(driver).send_keys(emp_nome).pause(1.2).send_keys(Keys.ENTER).perform()
-                        time.sleep(1.2)
+                        # Só digita o nome da empresa se NÃO for a primeira execução da empresa inicial (que já está na tela)
+                        if not (primeira_execucao and emp_nome == empresa_inicial):
+                            box_emp = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
+                                By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                            )))
+                            driver.execute_script("arguments[0].click();", box_emp)
+                            time.sleep(0.8)
+                            ActionChains(driver).send_keys(emp_nome).pause(1.2).send_keys(Keys.ENTER).perform()
+                            time.sleep(1.2)
 
-                        # Preenchimento da Situação
+                        # Preenchimento da Situação (Operando / Em Manutenção)
                         box_sit = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
                             By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
                         )))
@@ -234,16 +253,14 @@ def iniciar_automacao_flits():
 
                         abas_antes = driver.window_handles
 
-                        # Submissão (Pesquisar)
+                        # Submete a pesquisa
                         btn_submit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
                             By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
                         )))
                         driver.execute_script("arguments[0].click();", btn_submit)
-                        
-                        # Aguarda 6 segundos para a tabela processar a resposta
                         time.sleep(6)
 
-                        # 5. Tratamento de Múltiplas Abas (se houver nova guia)
+                        # Tratamento de Múltiplas Abas (se houver troca de guia)
                         abas_depois = driver.window_handles
                         if len(abas_depois) > len(abas_antes):
                             aba_antiga = driver.current_window_handle
@@ -254,7 +271,7 @@ def iniciar_automacao_flits():
                             time.sleep(4)
                             limpar_bloqueios_tela(driver)
 
-                        # 6. Verificação de Dados e Download do Excel
+                        # Verificação de registros e download
                         sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
                         if sem_dados and any(el.is_displayed() for el in sem_dados):
                             print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
@@ -289,6 +306,8 @@ def iniciar_automacao_flits():
                             except Exception:
                                 print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
                                 sucesso_download = True
+
+                        primeira_execucao = False
 
                     except Exception as e:
                         erro_resumido = str(e).split('\n')[0]
