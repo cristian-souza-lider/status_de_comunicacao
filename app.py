@@ -156,48 +156,43 @@ def iniciar_automacao_flits():
         service = Service(executable_path=GECKODRIVER_PATH)
         driver = webdriver.Firefox(service=service, options=options)
         driver.maximize_window()
-        wait = WebDriverWait(driver, 35)
+        wait = WebDriverWait(driver, 30)
 
+        # 1. Autenticação e Acesso Inicial (5 segundos + limpeza de pop-ups)
         print("     [1/4] Acessando tela de login...")
         driver.get(URL_FLITS)
         wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
         driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
         driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
-        print("     [2/4] Login submetido, aguardando carregamento...")
-        time.sleep(10)
+        print("     [2/4] Login submetido, aguardando 5s e limpando pop-ups...")
+        time.sleep(5)
         limpar_bloqueios_tela(driver)
 
-        print("     [3/4] Navegando via menu lateral para Status de Comunicacao...")
+        # 2. Navegação: Monitoramento -> Status Comunicação (com fallback)
+        print("     [3/4] Navegando para Monitoramento -> Status Comunicacao...")
         try:
-            # 1. Se a barra lateral estiver recolhida, clica na seta laranja do topo esquerdo para expandir
-            btn_expande = driver.find_elements(By.CSS_SELECTOR, "button.ant-btn-primary, div._containerExpand_")
-            if btn_expande and btn_expande[0].is_displayed():
-                driver.execute_script("arguments[0].click();", btn_expande[0])
-                time.sleep(1)
-
-            # 2. Clica no ícone de Monitoramento na barra lateral esquerda (segundo ícone da barra azul)
-            menu_monit = wait.until(EC.element_to_be_clickable((
-                By.XPATH, "//div[@data-testid='03'] | //li[contains(@class, 'ant-menu-submenu')] | //div[contains(@class, 'menuItem')][2] | //*[local-name()='svg' and contains(@class, 'monitoring')]/parent::*"
+            menu_monit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
+                By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
             )))
             driver.execute_script("arguments[0].click();", menu_monit)
             time.sleep(2)
 
-            # 3. Clica no submenu "Status Comunicação"
-            opcao_status = wait.until(EC.element_to_be_clickable((
-                By.XPATH, "//span[contains(text(), 'Status Comunicação')] | //div[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')]"
+            opcao_status = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
+                By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')]"
             )))
             driver.execute_script("arguments[0].click();", opcao_status)
-            time.sleep(7)
+            time.sleep(5)
             limpar_bloqueios_tela(driver)
-            print("     -> Tela de Status de Comunicacao carregada com sucesso.")
-        except Exception as e_menu:
-            print(f"     [Aviso] Falha no clique do menu: {e_menu}. Tentando recarregar...")
+            print("     -> Menu acessado com sucesso.")
+        except Exception as e_nav:
+            print(f"     [Aviso] Menu nao localizado ({e_nav}), carregando URL direta...")
             driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-            time.sleep(10)
+            time.sleep(6)
             limpar_bloqueios_tela(driver)
 
-        print("     [4/4] Iniciando extracoes...")
+        print("     [4/4] Iniciando loop de extracoes (14 combinacoes)...")
 
+        # 4. Loop das Empresas e Situações
         for sit_alvo in situacoes:
             for idx, emp_nome in enumerate(empresas, 1):
                 sucesso_download = False
@@ -208,41 +203,47 @@ def iniciar_automacao_flits():
                     try:
                         limpar_bloqueios_tela(driver)
 
-                        # 1. Abre o painel de filtros
-                        btn_f = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
-                            By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
-                        )))
-                        driver.execute_script("arguments[0].click();", btn_f)
-                        time.sleep(1.5)
+                        # Verifica se os campos estão visíveis; se NÃO estiverem, clica no botão de filtro (funil)
+                        campos_emp = driver.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]")
+                        if not campos_emp or not campos_emp[0].is_displayed():
+                            try:
+                                btn_f = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((
+                                    By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
+                                )))
+                                driver.execute_script("arguments[0].click();", btn_f)
+                                time.sleep(1.5)
+                            except Exception: pass
 
-                        # 2. Seleciona Empresa
-                        box_emp = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
+                        # Preenchimento da Empresa
+                        box_emp = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
                             By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
                         )))
                         driver.execute_script("arguments[0].click();", box_emp)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(emp_nome).pause(1.5).send_keys(Keys.ENTER).perform()
-                        time.sleep(1.5)
+                        time.sleep(0.8)
+                        ActionChains(driver).send_keys(emp_nome).pause(1.2).send_keys(Keys.ENTER).perform()
+                        time.sleep(1.2)
 
-                        # 3. Seleciona Situação
-                        box_sit = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
+                        # Preenchimento da Situação
+                        box_sit = WebDriverWait(driver, 8).until(EC.presence_of_element_located((
                             By.XPATH, "//div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1]"
                         )))
                         driver.execute_script("arguments[0].click();", box_sit)
-                        time.sleep(1)
-                        ActionChains(driver).send_keys(sit_alvo).pause(1.5).send_keys(Keys.ENTER).perform()
+                        time.sleep(0.8)
+                        ActionChains(driver).send_keys(sit_alvo).pause(1.2).send_keys(Keys.ENTER).perform()
                         time.sleep(1)
 
                         abas_antes = driver.window_handles
 
-                        # 4. Submete a pesquisa
-                        btn_submit = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
+                        # Submissão (Pesquisar)
+                        btn_submit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
                             By.XPATH, "//button[@data-testid='button-submit'] | //button[.//span[contains(text(), 'Pesquisar')]] | //button[contains(text(), 'Pesquisar')]"
                         )))
                         driver.execute_script("arguments[0].click();", btn_submit)
+                        
+                        # Aguarda 6 segundos para a tabela processar a resposta
                         time.sleep(6)
 
-                        # 5. Se abriu nova guia, migra o foco e fecha a anterior
+                        # 5. Tratamento de Múltiplas Abas (se houver nova guia)
                         abas_depois = driver.window_handles
                         if len(abas_depois) > len(abas_antes):
                             aba_antiga = driver.current_window_handle
@@ -250,10 +251,10 @@ def iniciar_automacao_flits():
                             driver.switch_to.window(aba_antiga)
                             driver.close()
                             driver.switch_to.window(aba_nova)
-                            time.sleep(6)
+                            time.sleep(4)
                             limpar_bloqueios_tela(driver)
 
-                        # 6. Verifica se retornou registros
+                        # 6. Verificação de Dados e Download do Excel
                         sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
                         if sem_dados and any(el.is_displayed() for el in sem_dados):
                             print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
