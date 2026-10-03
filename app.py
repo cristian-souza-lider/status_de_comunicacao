@@ -133,10 +133,11 @@ def enviar_para_github(nome_dados_dia_local):
         print(f"[Git - Erro] {e}")
 
 # =====================================================================
-#                 ROTINA DE AUTOMAÇÃO FLITS
+#                 ROTINA DE AUTOMAÇÃO FLITS (REFATORADA)
 # =====================================================================
 
 def iniciar_automacao_flits():
+    # 1. Lista oficial das 7 empresas e das 2 situações operacionais
     empresas = [
         "Cidade de Caieiras - Municipal Caieiras",
         "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -148,133 +149,120 @@ def iniciar_automacao_flits():
     ]
     situacoes = ["Operando", "Em Manutenção"]
     driver = None
+
     try:
+        # 2. Configurações de inicialização do Firefox e preferências de download
         options = Options()
-        # options.add_argument("--headless")
+        # options.add_argument("--headless") # Comente para ver a tela; descomente para rodar oculto
         caminho_f = buscar_caminho_firefox()
-        if caminho_f: options.binary_location = caminho_f
-        options.set_preference("browser.download.folderList", 2)
-        options.set_preference("browser.download.dir", DOWNLOAD_DIR)
-        options.set_preference("browser.download.alwaysOpenPanel", False)
-        options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.ms-excel;application/octet-stream")
+        if caminho_f: 
+            options.binary_location = caminho_f # Define o executável do Firefox encontrado no Windows
         
+        options.set_preference("browser.download.folderList", 2) # 2 = Salvar em pasta personalizada
+        options.set_preference("browser.download.dir", DOWNLOAD_DIR) # Pasta onde os relatórios serão salvos
+        options.set_preference("browser.download.alwaysOpenPanel", False) # Desativa janela pop-up de download
+        options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.ms-excel;application/octet-stream") # Download automático sem confirmação
+        
+        # 3. Inicializa o WebDriver do Firefox
         service = Service(executable_path=GECKODRIVER_PATH)
         driver = webdriver.Firefox(service=service, options=options)
-        driver.maximize_window()
-        wait = WebDriverWait(driver, 30)
+        driver.maximize_window() # Maximiza para garantir que todos os elementos fiquem visíveis
+        wait = WebDriverWait(driver, 30) # Tempo máximo de espera padrão de 30 segundos
 
-        # 1. Autenticação e Acesso Inicial
-        print("     [1/4] Acessando tela de login...")
-        driver.get(URL_FLITS)
-        wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
-        driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
-        driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
-        print("     [2/4] Login submetido, aguardando 5s e limpando pop-ups...")
-        time.sleep(5)
-        limpar_bloqueios_tela(driver)
+        # -------------------------------------------------------------
+        # FUNÇÕES AUXILIARES DO FLUXO (ESCOPO INTERNO)
+        # -------------------------------------------------------------
 
-        # 2. Navegação inicial: Monitoramento -> Status Comunicação
-        print("     [3/4] Navegando para Monitoramento -> Status Comunicacao...")
-        try:
-            menu_monit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
-                By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
-            )))
-            driver.execute_script("arguments[0].click();", menu_monit)
-            time.sleep(2)
-
-            opcao_status = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
-                By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')]"
-            )))
-            driver.execute_script("arguments[0].click();", opcao_status)
-            time.sleep(5)
+        def abrir_gaveta_filtro():
+            """Garante que o painel lateral de filtros esteja aberto na tela."""
             limpar_bloqueios_tela(driver)
-            print("     -> Menu acessado com sucesso.")
-        except Exception as e_nav:
-            print(f"     [Aviso] Menu nao localizado ({e_nav}), carregando URL direta...")
-            driver.get("https://flits.cittati.com.br/monitoring/status-communication")
-            time.sleep(6)
-            limpar_bloqueios_tela(driver)
-
-        print("     [4/4] Iniciando loop de extracoes...")
-
-        # 1. Abre a gaveta de filtros na lateral direita
-        def abrir_gaveta_filtro(drv, forcar=False):
-            limpar_bloqueios_tela(drv)
-            # Verifica se o botão Pesquisar já está na tela. Se não estiver, o filtro está fechado.
-            btn_pesquisar = drv.find_elements(By.XPATH, "//button[contains(., 'Pesquisar')]")
-            if forcar or not btn_pesquisar or not btn_pesquisar[0].is_displayed():
+            # Se o botão 'Pesquisar' já estiver visível, o painel já está aberto
+            botoes_pesquisar = driver.find_elements(By.XPATH, "//button[contains(., 'Pesquisar')]")
+            if not botoes_pesquisar or not botoes_pesquisar[0].is_displayed():
                 try:
-                    btn_f = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
+                    # Se não estiver visível, clica no ícone de funil/filtro para abrir a gaveta
+                    btn_f = WebDriverWait(driver, 6).until(EC.element_to_be_clickable((
                         By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
                     )))
-                    drv.execute_script("arguments[0].click();", btn_f)
+                    driver.execute_script("arguments[0].click();", btn_f)
                     time.sleep(1.5)
                 except Exception: pass
 
-        # 2. Navegação para Status Comunicação
-        def navegar_monitoramento_status(drv):
-            limpar_bloqueios_tela(drv)
+        def navegar_monitoramento_status():
+            """Clica em Monitoramento -> Status Comunicação ou usa URL direta caso o menu falhe."""
+            limpar_bloqueios_tela(driver)
             try:
-                # Clica apenas em Monitoramento
-                menu_monit = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
-                    By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
+                # Clica no menu Monitoramento na barra lateral azul
+                menu_monit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
+                    By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
                 )))
-                drv.execute_script("arguments[0].click();", menu_monit)
+                driver.execute_script("arguments[0].click();", menu_monit)
                 time.sleep(1.5)
 
-                # Clica apenas em Status Comunicação
-                opcao_status = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
-                    By.XPATH, "//span[contains(text(), 'Status Comunicação')] | //div[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'communicationStatus')]"
+                # Clica na opção Status Comunicação
+                opcao_status = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
+                    By.XPATH, "//span[contains(text(), 'Status Comunicação')] | //div[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'communicationStatus')]"
                 )))
-                drv.execute_script("arguments[0].click();", opcao_status)
+                driver.execute_script("arguments[0].click();", opcao_status)
                 time.sleep(5)
-                limpar_bloqueios_tela(drv)
-                print("     -> Tela de Status de Comunicacao aberta na guia ativa.", flush=True)
+                limpar_bloqueios_tela(driver)
+                print("     -> Tela de Status de Comunicacao aberta com sucesso.", flush=True)
             except Exception as e_nav:
-                print(f"     [Aviso Navegacao] Carregando URL direta: {e_nav}", flush=True)
-                drv.get("https://flits.cittati.com.br/monitoring/communicationStatus")
+                # Fallback direto caso o clique no menu lateral falhe
+                print(f"     [Aviso Navegacao] Carregando URL direta de comunicacao: {e_nav}", flush=True)
+                driver.get("https://flits.cittati.com.br/monitoring/communicationStatus")
                 time.sleep(6)
-                limpar_bloqueios_tela(drv)
+                limpar_bloqueios_tela(driver)
 
-        # 3. Seleciona Situação (Operando / Em Manutenção) clicando diretamente na opção
-        def selecionar_situacao(drv, sit):
-            box_sit = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
+        def selecionar_situacao(sit):
+            """Abre o campo de Situação no filtro e seleciona o item desejado."""
+            # Clica no container do seletor de Situação
+            box_sit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
                 By.XPATH, "//label[contains(., 'Situação')]/following::div[contains(@class, 'ant-select-selector')][1] | //div[@data-testid='Select-situation']//div[contains(@class, 'ant-select-selector')]"
             )))
-            drv.execute_script("arguments[0].click();", box_sit)
+            driver.execute_script("arguments[0].click();", box_sit)
             time.sleep(0.8)
 
+            # Clica na opção da lista suspensa (Operando ou Em Manutenção)
             try:
-                opcao = WebDriverWait(drv, 4).until(EC.element_to_be_clickable((
+                opcao = WebDriverWait(driver, 4).until(EC.element_to_be_clickable((
                     By.XPATH, f"//div[contains(@class, 'ant-select-dropdown')]//div[contains(@class, 'ant-select-item-option-content') and (text()='{sit}' or contains(., '{sit}'))]"
                 )))
-                drv.execute_script("arguments[0].click();", opcao)
+                driver.execute_script("arguments[0].click();", opcao)
             except Exception:
-                ActionChains(drv).send_keys(sit).pause(0.8).send_keys(Keys.ENTER).perform()
+                ActionChains(driver).send_keys(sit).pause(0.8).send_keys(Keys.ENTER).perform()
             time.sleep(1)
 
-        # 4. Clica em Pesquisar e faz o download
-        def submeter_pesquisa_e_exportar(drv, emp_nome, sit_alvo):
-            btn_submit = WebDriverWait(drv, 8).until(EC.element_to_be_clickable((
+        def submeter_pesquisa_e_exportar(emp_nome, sit_alvo):
+            """Clica no botão Pesquisar, valida se há dados e realiza o download do Excel."""
+            # 1. Clica no botão laranja Pesquisar
+            btn_submit = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
                 By.XPATH, "//button[contains(., 'Pesquisar')] | //button[@data-testid='button-submit'] | //button[contains(@class, 'ant-btn-primary')]"
             )))
-            drv.execute_script("arguments[0].click();", btn_submit)
+            driver.execute_script("arguments[0].click();", btn_submit)
             print(f"      - [{emp_nome}] ({sit_alvo}): Pesquisa enviada, aguardando tabela...", flush=True)
-            time.sleep(7)
+            time.sleep(7) # Tempo para a tabela processar e exibir os registros
 
-            sem_dados = drv.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(text(), 'Não há dados') or contains(@class, 'ant-empty')]")
+            # 2. Verifica se a tabela retornou vazia
+            sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(text(), 'Não há dados') or contains(@class, 'ant-empty')]")
             if sem_dados and any(el.is_displayed() for el in sem_dados):
                 print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).", flush=True)
             else:
                 try:
+                    # 3. Mapeia arquivos existentes antes do clique
                     arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
-                    btn_excel = WebDriverWait(drv, 8).until(
+                    
+                    # Localiza e clica no botão verde do Excel
+                    btn_excel = WebDriverWait(driver, 8).until(
                         EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel'] | //button[.//span[@aria-label='file-excel']] | //*[local-name()='svg' and @data-icon='file-excel']/ancestor::button"))
                     )
-                    drv.execute_script("arguments[0].click();", btn_excel)
+                    driver.execute_script("arguments[0].click();", btn_excel)
+                    
+                    # Aguarda a gravação no disco
                     aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
                     time.sleep(1.5)
 
+                    # 4. Valida se o arquivo baixado possui conteúdo
                     arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
                     novos_arquivos = list(arquivos_depois - arquivos_antes)
 
@@ -282,39 +270,41 @@ def iniciar_automacao_flits():
                         arq_novo = novos_arquivos[0]
                         tamanho = os.path.getsize(arq_novo)
                         if tamanho == 0:
-                            print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio).", flush=True)
+                            print(f"      - [{emp_nome}] ({sit_alvo}): Arquivo baixado com 0 bytes (vazio descartado).", flush=True)
                             os.remove(arq_novo)
                         else:
                             print(f"      - [{emp_nome}] ({sit_alvo}): Download OK ({tamanho} bytes).", flush=True)
                     else:
                         print(f"      - [{emp_nome}] ({sit_alvo}): Download disparado, mas nenhum arquivo gerado.", flush=True)
                 except Exception as e_down:
-                    print(f"      - [{emp_nome}] ({sit_alvo}): Sem botao de exportacao ou tabela vazia ({e_down}).", flush=True)
+                    print(f"      - [{emp_nome}] ({sit_alvo}): Tabela sem registros ou botao de exportacao ausente.", flush=True)
 
-        # 5. Identifica a empresa do topo direito
-        def identificar_empresa_ativa(drv, lista_empresas):
+        def identificar_empresa_ativa():
+            """Lê qual empresa já está aberta no seletor global do cabeçalho."""
             try:
-                el = drv.find_element(By.XPATH, "//div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')] | //header//div[contains(@class, 'context-select')]")
+                el = driver.find_element(By.XPATH, "//div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')] | //header//div[contains(@class, 'context-select')]")
                 txt = el.text.strip()
-                for emp in lista_empresas:
+                for emp in empresas:
                     if emp.lower() in txt.lower() or txt.lower() in emp.lower():
                         return emp
             except Exception: pass
-            return lista_empresas[0]
+            return empresas[0]
 
-        # 6. Altera a Empresa e fecha a guia anterior
-        def selecionar_empresa(drv, nome):
-            limpar_bloqueios_tela(drv)
-            abas_antes = drv.window_handles
-            aba_atual = drv.current_window_handle
+        def selecionar_empresa(nome):
+            """Troca a empresa no seletor .context-select do cabeçalho e transfere o foco para a nova guia aberta."""
+            limpar_bloqueios_tela(driver)
+            abas_antes = driver.window_handles
+            aba_atual = driver.current_window_handle
 
-            box_emp = WebDriverWait(drv, 10).until(EC.element_to_be_clickable((
+            # 1. Clica no seletor global de empresa do cabeçalho
+            box_emp = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
                 By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')] | //div[contains(@class, 'context-select')]"
             )))
-            drv.execute_script("arguments[0].click();", box_emp)
+            driver.execute_script("arguments[0].click();", box_emp)
             time.sleep(0.8)
 
-            inp = WebDriverWait(drv, 6).until(EC.presence_of_element_located((
+            # 2. Digita o nome da empresa e seleciona
+            inp = WebDriverWait(driver, 6).until(EC.presence_of_element_located((
                 By.XPATH, "//div[contains(@class, 'context-select')]//input[@type='search']"
             )))
             inp.send_keys(Keys.CONTROL + "a")
@@ -324,60 +314,85 @@ def iniciar_automacao_flits():
             time.sleep(1.5)
 
             try:
-                opcao = WebDriverWait(drv, 3).until(EC.element_to_be_clickable((
+                # Clica na opção filtrada da lista
+                opcao = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((
                     By.XPATH, f"//div[contains(@class, 'ant-select-dropdown')]//div[contains(@class, 'ant-select-item-option-content') and (contains(text(), '{nome}') or contains(., '{nome}'))]"
                 )))
-                drv.execute_script("arguments[0].click();", opcao)
+                driver.execute_script("arguments[0].click();", opcao)
             except Exception:
                 inp.send_keys(Keys.ENTER)
             
             time.sleep(3)
 
-            abas_depois = drv.window_handles
+            # 3. Migra para a nova guia que o Flits abriu e fecha a antiga
+            abas_depois = driver.window_handles
             if len(abas_depois) > len(abas_antes):
                 aba_nova = [a for a in abas_depois if a not in abas_antes][0]
-                drv.switch_to.window(aba_atual)
-                drv.close()
-                drv.switch_to.window(aba_nova)
+                driver.switch_to.window(aba_atual)
+                driver.close() # Fecha a aba da empresa anterior
+                driver.switch_to.window(aba_nova) # Foca na nova aba da nova empresa
                 time.sleep(5)
-                limpar_bloqueios_tela(drv)
-                print(f"     -> Guia migrada com sucesso para: [{nome}]", flush=True)
+                limpar_bloqueios_tela(driver)
+                print(f"     -> Foco transferido para a nova guia: [{nome}]", flush=True)
 
-        empresa_inicial = identificar_empresa_ativa(driver, empresas)
+        # -------------------------------------------------------------
+        # FLUXO PRINCIPAL DE EXECUÇÃO
+        # -------------------------------------------------------------
+
+        # PASSO 1: Login no Sistema
+        print("     [1/4] Acessando tela de login...", flush=True)
+        driver.get(URL_FLITS)
+        wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
+        driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
+        driver.find_element(By.CSS_SELECTOR, "button.btn-login").click()
+        print("     [2/4] Login submetido, aguardando 5s e limpando pop-ups...", flush=True)
+        time.sleep(5)
+        limpar_bloqueios_tela(driver)
+
+        # PASSO 2: Navega para a tela de Status Comunicação
+        print("     [3/4] Navegando para Status de Comunicacao...", flush=True)
+        navegar_monitoramento_status()
+
+        # PASSO 3: Identifica a empresa inicial na tela e organiza a fila
+        print("     [4/4] Iniciando loop de extracoes...", flush=True)
+        empresa_inicial = identificar_empresa_ativa()
         empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
-        print(f"     -> Empresa inicial detectada: [{empresa_inicial}]", flush=True)
+        print(f"     -> Empresa inicial ativa detectada: [{empresa_inicial}]", flush=True)
 
-        # Execução sequencial por empresa
+        # PASSO 4: Loop sequencial pelas 7 empresas
         for idx, emp_nome in enumerate(empresas_ordenadas):
             try:
                 print(f"\n     === [{idx + 1}/{len(empresas_ordenadas)}] Empresa: {emp_nome} ===", flush=True)
 
-                # 1. SITUAÇÃO "Operando" (Já vem selecionado, apenas Pesquisar)
-                # Tenta submeter direto ou abre filtro se precisar
-                submeter_pesquisa_e_exportar(driver, emp_nome, "Operando")
+                # 1. Situação "Operando" (Já vem selecionada por padrão -> apenas garante gaveta e clica Pesquisar)
+                abrir_gaveta_filtro()
+                submeter_pesquisa_e_exportar(emp_nome, "Operando")
 
-                # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR
-                abrir_gaveta_filtro(driver, forcar=True)
-                selecionar_situacao(driver, "Em Manutenção")
-                submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
+                # 2. Situação "Em Manutenção" (Reabre filtro, troca para Em Manutenção e clica Pesquisar)
+                abrir_gaveta_filtro()
+                selecionar_situacao("Em Manutenção")
+                submeter_pesquisa_e_exportar(emp_nome, "Em Manutenção")
 
-                # 3. Próxima Empresa -> Monitoramento -> Status Comunicação
+                # 3. Transição: Seleciona a próxima empresa e clica em Monitoramento -> Status Comunicação
                 if idx + 1 < len(empresas_ordenadas):
                     proxima_empresa = empresas_ordenadas[idx + 1]
-                    print(f"\n     -> Selecionando nova Empresa: [{proxima_empresa}]...", flush=True)
-                    selecionar_empresa(driver, proxima_empresa)
+                    print(f"\n     -> Selecionando proxima empresa: [{proxima_empresa}]...", flush=True)
+                    selecionar_empresa(proxima_empresa)
                     print("     -> Clicando em Monitoramento -> Status Comunicacao...", flush=True)
-                    navegar_monitoramento_status(driver)
+                    navegar_monitoramento_status()
 
             except Exception as e_emp:
-                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}")
+                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}", flush=True)
 
+        # PASSO 5: Encerra o navegador e dispara o processamento dos dados baixados
         driver.quit()
         processar_e_unificar_arquivos()
         return True
+
     except Exception as e:
-        print(f"[Erro] {e}")
-        if driver: driver.quit()
+        print(f"[Erro Geral na Automacao] {e}", flush=True)
+        if driver: 
+            driver.quit()
         return False
 
 # =====================================================================
