@@ -312,26 +312,27 @@ def iniciar_automacao_flits():
 
         primeira_execucao = True
 
-        for emp_nome in empresas_ordenadas:
+        for idx, emp_nome in enumerate(empresas_ordenadas):
             try:
-                # Se não for a empresa inicial na primeira rodada, seleciona a nova empresa e clica em Monitoramento -> Status Comunicação
-                if not (primeira_execucao and emp_nome == empresa_inicial):
-                    print(f"\n     [Empresa] Selecionando: [{emp_nome}]...")
-                    selecionar_empresa(driver, emp_nome)
-                    print("     [Menu] Clicando em Monitoramento -> Status Comunicacao...")
-                    navegar_monitoramento_status(driver)
+                print(f"\n     === [{idx + 1}/{len(empresas_ordenadas)}] Empresa: {emp_nome} ===")
 
-                # 1. SITUAÇÃO "Operando" + PESQUISAR
+                # 1. SITUAÇÃO "Operando" + PESQUISAR + DOWNLOAD
                 abrir_gaveta_filtro(driver)
                 selecionar_situacao(driver, "Operando")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Operando")
 
-                # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR
+                # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR + DOWNLOAD
                 abrir_gaveta_filtro(driver, forcar=True)
                 selecionar_situacao(driver, "Em Manutenção")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
 
-                primeira_execucao = False
+                # 3. APÓS BAIXAR EM MANUTENÇÃO: Seleciona a próxima empresa e clica em Monitoramento -> Status Comunicação
+                if idx + 1 < len(empresas_ordenadas):
+                    proxima_empresa = empresas_ordenadas[idx + 1]
+                    print(f"\n     -> Selecionando nova Empresa: [{proxima_empresa}]...")
+                    selecionar_empresa(driver, proxima_empresa)
+                    print("     -> Clicando em Monitoramento -> Status Comunicacao...")
+                    navegar_monitoramento_status(driver)
 
             except Exception as e_emp:
                 print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}")
