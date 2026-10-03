@@ -200,8 +200,9 @@ def iniciar_automacao_flits():
         # 1. Abre a gaveta de filtros na lateral direita
         def abrir_gaveta_filtro(drv, forcar=False):
             limpar_bloqueios_tela(drv)
-            campos_situacao = drv.find_elements(By.XPATH, "//label[contains(., 'Situação')]/following::div[contains(@class, 'ant-select')][1] | //button[contains(., 'Pesquisar')]")
-            if forcar or not campos_situacao or not campos_situacao[0].is_displayed():
+            # Verifica se o botão Pesquisar já está na tela. Se não estiver, o filtro está fechado.
+            btn_pesquisar = drv.find_elements(By.XPATH, "//button[contains(., 'Pesquisar')]")
+            if forcar or not btn_pesquisar or not btn_pesquisar[0].is_displayed():
                 try:
                     btn_f = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
                         By.XPATH, "//*[local-name()='svg' and @data-icon='filter']/parent::* | //button[contains(@class, 'filter')]"
@@ -351,12 +352,11 @@ def iniciar_automacao_flits():
             try:
                 print(f"\n     === [{idx + 1}/{len(empresas_ordenadas)}] Empresa: {emp_nome} ===", flush=True)
 
-                # 1. Operando -> Pesquisar -> Download
-                abrir_gaveta_filtro(driver)
-                selecionar_situacao(driver, "Operando")
+                # 1. SITUAÇÃO "Operando" (Já vem selecionado, apenas Pesquisar)
+                # Tenta submeter direto ou abre filtro se precisar
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Operando")
 
-                # 2. Filtro -> Em Manutenção -> Pesquisar -> Download
+                # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR
                 abrir_gaveta_filtro(driver, forcar=True)
                 selecionar_situacao(driver, "Em Manutenção")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
@@ -370,7 +370,7 @@ def iniciar_automacao_flits():
                     navegar_monitoramento_status(driver)
 
             except Exception as e_emp:
-                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}", flush=True)
+                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}")
 
         driver.quit()
         processar_e_unificar_arquivos()
