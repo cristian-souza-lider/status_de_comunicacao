@@ -190,9 +190,9 @@ def iniciar_automacao_flits():
             time.sleep(6)
             limpar_bloqueios_tela(driver)
 
-        print("     [4/4] Iniciando loop de extracoes sequencial (Empresa -> Operando -> Filtro -> Manutencao)...")
+        print("     [4/4] Iniciando loop de extracoes com navegacao por empresa...")
 
-        # Funções auxiliares para navegação direta nos elementos
+        # Funções auxiliares do fluxo
         def abrir_gaveta_filtro(drv, forcar=False):
             limpar_bloqueios_tela(drv)
             campos = drv.find_elements(By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]")
@@ -206,13 +206,35 @@ def iniciar_automacao_flits():
                 except Exception: pass
 
         def selecionar_empresa(drv, nome):
+            abrir_gaveta_filtro(drv)
             box_emp = WebDriverWait(drv, 8).until(EC.presence_of_element_located((
-                By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1]"
+                By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1] | //header//div[contains(@class, 'ant-select-selector')]"
             )))
             drv.execute_script("arguments[0].click();", box_emp)
             time.sleep(0.8)
             ActionChains(drv).send_keys(nome).pause(1.2).send_keys(Keys.ENTER).perform()
-            time.sleep(1.2)
+            time.sleep(1.5)
+
+        def navegar_monitoramento_status(drv):
+            limpar_bloqueios_tela(drv)
+            try:
+                menu_monit = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
+                    By.XPATH, "//div[@title='Monitoramento'] | //span[contains(text(), 'Monitoramento')] | //div[contains(text(), 'Monitoramento')] | //div[@data-testid='03']"
+                )))
+                drv.execute_script("arguments[0].click();", menu_monit)
+                time.sleep(1.5)
+
+                opcao_status = WebDriverWait(drv, 6).until(EC.element_to_be_clickable((
+                    By.XPATH, "//div[contains(text(), 'Status Comunicação')] | //span[contains(text(), 'Status Comunicação')] | //li[contains(text(), 'Status Comunicação')] | //a[contains(@href, 'status-communication')]"
+                )))
+                drv.execute_script("arguments[0].click();", opcao_status)
+                time.sleep(5)
+                limpar_bloqueios_tela(drv)
+            except Exception as e_nav:
+                print(f"     [Aviso Navegacao] Recarregando tela de Status: {e_nav}")
+                drv.get("https://flits.cittati.com.br/monitoring/status-communication")
+                time.sleep(6)
+                limpar_bloqueios_tela(drv)
 
         def selecionar_situacao(drv, sit):
             box_sit = WebDriverWait(drv, 8).until(EC.presence_of_element_located((
@@ -231,7 +253,7 @@ def iniciar_automacao_flits():
             drv.execute_script("arguments[0].click();", btn_submit)
             time.sleep(6)
 
-            # Tratamento de Múltiplas Abas (se abrir nova guia)
+            # Tratamento de Múltiplas Abas (se houver abertura de nova guia)
             abas_depois = drv.window_handles
             if len(abas_depois) > len(abas_antes):
                 aba_antiga = drv.current_window_handle
@@ -242,7 +264,7 @@ def iniciar_automacao_flits():
                 time.sleep(4)
                 limpar_bloqueios_tela(drv)
 
-            # Checagem de dados vazios ou download do Excel
+            # Verificação de registros e exportação
             sem_dados = drv.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(@class, 'ant-empty')]")
             if sem_dados and any(el.is_displayed() for el in sem_dados):
                 print(f"      - [{emp_nome}] ({sit_alvo}): Sem dados para exportar (0 registros).")
@@ -292,21 +314,19 @@ def iniciar_automacao_flits():
 
         for emp_nome in empresas_ordenadas:
             try:
-                # -------------------------------------------------------------
-                # 1. EMPRESA + SITUAÇÃO "Operando" + PESQUISAR
-                # -------------------------------------------------------------
-                abrir_gaveta_filtro(driver)
-                
-                # Se não for a empresa inicial na 1ª rodada, digita o nome da empresa
+                # Se não for a empresa inicial na primeira rodada, seleciona a nova empresa e clica em Monitoramento -> Status Comunicação
                 if not (primeira_execucao and emp_nome == empresa_inicial):
+                    print(f"\n     [Empresa] Selecionando: [{emp_nome}]...")
                     selecionar_empresa(driver, emp_nome)
+                    print("     [Menu] Clicando em Monitoramento -> Status Comunicacao...")
+                    navegar_monitoramento_status(driver)
 
+                # 1. SITUAÇÃO "Operando" + PESQUISAR
+                abrir_gaveta_filtro(driver)
                 selecionar_situacao(driver, "Operando")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Operando")
 
-                # -------------------------------------------------------------
                 # 2. BOTÃO FILTRO + SITUAÇÃO "Em Manutenção" + PESQUISAR
-                # -------------------------------------------------------------
                 abrir_gaveta_filtro(driver, forcar=True)
                 selecionar_situacao(driver, "Em Manutenção")
                 submeter_pesquisa_e_exportar(driver, emp_nome, "Em Manutenção")
@@ -314,7 +334,7 @@ def iniciar_automacao_flits():
                 primeira_execucao = False
 
             except Exception as e_emp:
-                print(f"      - [{emp_nome}]: Erro no ciclo de exportação: {e_emp}")
+                print(f"      - [{emp_nome}]: Erro no ciclo de exportacao: {e_emp}")
 
         driver.quit()
         processar_e_unificar_arquivos()
