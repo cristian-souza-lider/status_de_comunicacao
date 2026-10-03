@@ -120,9 +120,9 @@ def enviar_para_github(nome_dados_dia_local):
         arquivos_para_adicionar = ["app.py", "app.js", "index.html", "style.css", "datas.json", "dados.json", nome_dados_dia_local]
         existentes = [a for a in arquivos_para_adicionar if os.path.exists(os.path.join(LOCAL_PROJETO_DIR, a))]
         
-        # Puxa atualizações remotas antes do push
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+        # Adiciona arquivos modificados antes de alinhar com o remoto
         subprocess.run(["git", "add"] + existentes, cwd=LOCAL_PROJETO_DIR, check=True)
+        subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
         
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
         if status.stdout.strip():
@@ -150,7 +150,7 @@ def iniciar_automacao_flits():
     driver = None
     try:
         options = Options()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         caminho_f = buscar_caminho_firefox()
         if caminho_f: options.binary_location = caminho_f
         options.set_preference("browser.download.folderList", 2)
