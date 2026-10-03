@@ -205,16 +205,6 @@ def iniciar_automacao_flits():
                     time.sleep(1.5)
                 except Exception: pass
 
-        def selecionar_empresa(drv, nome):
-            abrir_gaveta_filtro(drv)
-            box_emp = WebDriverWait(drv, 8).until(EC.presence_of_element_located((
-                By.XPATH, "//div[contains(@class, '_containerOperation_')] | //div[@data-testid='Select-operation']//div[contains(@class, 'ant-select-selector')] | //label[contains(text(), 'Empresa')]/following::div[contains(@class, 'ant-select-selector')][1] | //header//div[contains(@class, 'ant-select-selector')]"
-            )))
-            drv.execute_script("arguments[0].click();", box_emp)
-            time.sleep(0.8)
-            ActionChains(drv).send_keys(nome).pause(1.2).send_keys(Keys.ENTER).perform()
-            time.sleep(1.5)
-
         def navegar_monitoramento_status(drv):
             limpar_bloqueios_tela(drv)
             try:
@@ -294,17 +284,37 @@ def iniciar_automacao_flits():
                 except Exception:
                     print(f"      - [{emp_nome}] ({sit_alvo}): Sem botão de exportação (provavelmente sem registros).")
 
-        # Identifica a empresa inicial já carregada na tela
+        # Identifica a empresa atualmente selecionada no seletor global do cabeçalho
         def identificar_empresa_ativa(drv, lista_empresas):
             try:
-                elementos = drv.find_elements(By.XPATH, "//span[contains(@class, 'ant-select-selection-item')] | //div[contains(@class, '_containerOperation_')] | //header//* | //div[contains(@class, 'header')]//*")
-                for el in elementos:
-                    txt = el.text.strip()
-                    for emp in lista_empresas:
-                        if emp.lower() in txt.lower() or (len(txt) > 6 and txt.lower() in emp.lower()):
-                            return emp
+                el = drv.find_element(By.XPATH, "//div[contains(@class, 'context-options')]//span[contains(@class, 'ant-select-selection-item')] | //div[contains(@class, 'context-select')]//span[contains(@class, 'ant-select-selection-item')]")
+                txt = el.text.strip()
+                for emp in lista_empresas:
+                    if emp.lower() in txt.lower() or txt.lower() in emp.lower():
+                        return emp
             except Exception: pass
             return lista_empresas[0]
+
+        # Seleciona a nova empresa usando o campo context-options / context-select
+        def selecionar_empresa(drv, nome):
+            limpar_bloqueios_tela(drv)
+            # 1. Clica no seletor global de empresa do cabeçalho (.context-options .context-select)
+            box_emp = WebDriverWait(drv, 10).until(EC.element_to_be_clickable((
+                By.XPATH, "//div[contains(@class, 'context-options')]//div[contains(@class, 'ant-select-selector')] | //div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
+            )))
+            drv.execute_script("arguments[0].click();", box_emp)
+            time.sleep(1)
+
+            # 2. Digita o nome da nova empresa no campo de busca e pressiona ENTER
+            inps = drv.find_elements(By.XPATH, "//div[contains(@class, 'context-options')]//input[@type='search'] | //input[contains(@class, 'ant-select-selection-search-input')]")
+            if inps and inps[0].is_displayed():
+                inps[0].send_keys(nome)
+                time.sleep(1)
+                inps[0].send_keys(Keys.ENTER)
+            else:
+                ActionChains(drv).send_keys(nome).pause(1.2).send_keys(Keys.ENTER).perform()
+            time.sleep(2)
+            limpar_bloqueios_tela(drv)
 
         empresa_inicial = identificar_empresa_ativa(driver, empresas)
         empresas_ordenadas = [empresa_inicial] + [e for e in empresas if e != empresa_inicial]
