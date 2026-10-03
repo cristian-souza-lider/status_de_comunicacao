@@ -193,14 +193,52 @@ def iniciar_automacao_flits():
                 limpar_bloqueios_tela(driver)
 
         def clicar_pesquisar_depois_exportar(emp_nome, situacao_nome):
-            """Clica no botão Pesquisar e em seguida em Exportar Excel."""
-            # Clica em 'Pesquisar'
-            btn_pesquisar = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((
-                By.XPATH, "//button[contains(., 'Pesquisar')] | //button[@data-testid='button-submit'] | //button[contains(@class, 'ant-btn-primary')]"
+            """Garante filtro aberto, clica no botão Pesquisar e em seguida em Exportar Excel."""
+            # 1. Se o botão 'Pesquisar' não estiver visível na tela, abre a gaveta do filtro
+            botoes_pesq = driver.find_elements(By.XPATH, "//span[text()='Pesquisar']/ancestor::button | //button[not(contains(@class, 'hambuguer')) and .//span[contains(text(), 'Pesquisar')]]")
+            if not botoes_pesq or not botoes_pesq[0].is_displayed():
+                clicar_icone_filtro()
+
+            # 2. Localiza ESTRITAMENTE o botão com o texto 'Pesquisar' (ignora qualquer botão hamburguer)
+            btn_pesquisar = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
+                By.XPATH, "//span[text()='Pesquisar']/ancestor::button | //button[not(contains(@class, 'hambuguer')) and .//span[contains(text(), 'Pesquisar')]]"
             )))
             driver.execute_script("arguments[0].click();", btn_pesquisar)
-            print(f"      - [{emp_nome}] ({situacao_nome}): Pesquisa enviada, aguardando...", flush=True)
-            time.sleep(6)
+            print(f"      - [{emp_nome}] ({situacao_nome}): Botao Pesquisar clicado. Aguardando tabela...", flush=True)
+            time.sleep(7)
+
+            # 3. Verifica se há dados na tabela
+            sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(text(), 'Não há dados') or contains(@class, 'ant-empty')]")
+            if sem_dados and any(el.is_displayed() for el in sem_dados):
+                print(f"      - [{emp_nome}] ({situacao_nome}): Sem dados para exportar (0 registros).", flush=True)
+            else:
+                try:
+                    arquivos_antes = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                    
+                    # 4. Clica em 'Exportar Excel'
+                    btn_excel = WebDriverWait(driver, 8).until(
+                        EC.presence_of_element_located((By.XPATH, "//span[@aria-label='file-excel'] | //button[.//span[@aria-label='file-excel']] | //*[local-name()='svg' and @data-icon='file-excel']/ancestor::button"))
+                    )
+                    driver.execute_script("arguments[0].click();", btn_excel)
+                    
+                    aguardar_conclusao_download(DOWNLOAD_DIR, timeout=10)
+                    time.sleep(1.5)
+
+                    arquivos_depois = set(glob.glob(os.path.join(DOWNLOAD_DIR, "*.xls*")))
+                    novos_arquivos = list(arquivos_depois - arquivos_antes)
+
+                    if novos_arquivos:
+                        arq_novo = novos_arquivos[0]
+                        tamanho = os.path.getsize(arq_novo)
+                        if tamanho == 0:
+                            print(f"      - [{emp_nome}] ({situacao_nome}): Arquivo vazio de 0 bytes descartado.", flush=True)
+                            os.remove(arq_novo)
+                        else:
+                            print(f"      - [{emp_nome}] ({situacao_nome}): Download OK ({tamanho} bytes).", flush=True)
+                    else:
+                        print(f"      - [{emp_nome}] ({situacao_nome}): Download disparado, mas nenhum arquivo gravado.", flush=True)
+                except Exception as e_down:
+                    print(f"      - [{emp_nome}] ({situacao_nome}): Botao de exportacao nao localizado ou tabela vazia ({e_down}).", flush=True)
 
             # Verifica se há dados na tabela
             sem_dados = driver.find_elements(By.XPATH, "//*[contains(text(), 'Nenhum registro') or contains(text(), 'Sem dados') or contains(text(), 'Não há dados') or contains(@class, 'ant-empty')]")
