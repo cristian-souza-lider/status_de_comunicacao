@@ -117,11 +117,8 @@ def aguardar_conclusao_download(pasta_download, timeout=15):
 def enviar_para_github(nome_dados_dia_local):
     try:
         print("[Git] Sincronizando com GitHub...")
-        arquivos_para_adicionar = ["app.py", "app.js", "index.html", "style.css", "datas.json", "dados.json", nome_dados_dia_local]
-        existentes = [a for a in arquivos_para_adicionar if os.path.exists(os.path.join(LOCAL_PROJETO_DIR, a))]
-        
-        # Adiciona arquivos modificados antes de alinhar com o remoto
-        subprocess.run(["git", "add"] + existentes, cwd=LOCAL_PROJETO_DIR, check=True)
+        # Usa 'git add -A' para registrar tanto novos arquivos quanto a exclusão dos arquivos antigos (> 7 dias)
+        subprocess.run(["git", "add", "-A"], cwd=LOCAL_PROJETO_DIR, check=True)
         subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
         
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
@@ -149,9 +146,11 @@ def iniciar_automacao_flits():
     driver = None
 
     try:
-        # Configurações do Firefox
+        # Configurações do Firefox (Modo Oculto / Headless Ativado)
         options = Options()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
+        options.add_argument("--width=1920")
+        options.add_argument("--height=1080")
         caminho_f = buscar_caminho_firefox()
         if caminho_f: options.binary_location = caminho_f
         options.set_preference("browser.download.folderList", 2)
@@ -161,7 +160,6 @@ def iniciar_automacao_flits():
         
         service = Service(executable_path=GECKODRIVER_PATH)
         driver = webdriver.Firefox(service=service, options=options)
-        driver.maximize_window()
         wait = WebDriverWait(driver, 30)
 
         # -------------------------------------------------------------
@@ -519,15 +517,37 @@ def processar_e_unificar_arquivos():
     
     shutil.copy(caminho_local, os.path.join(LOCAL_PROJETO_DIR, "dados.json"))
     
-    datas = set()
-    for arq_j in glob.glob(os.path.join(LOCAL_PROJETO_DIR, "dados-*.json")):
-        n = os.path.basename(arq_j).replace("dados-", "").replace(".json", "")
+    # POLÍTICA DE RETENÇÃO: Mantém apenas os 7 dias mais recentes
+    arquivos_diarios = glob.glob(os.path.join(LOCAL_PROJETO_DIR, "dados-*.json"))
+    mapa_datas_arquivos = []
+
+    for arq_j in arquivos_diarios:
+        nome_base = os.path.basename(arq_j).replace("dados-", "").replace(".json", "")
         try:
-            d, m, a = n.split("-")
-            datas.add(f"{d}/{m}/{a}")
-        except: pass
-    
-    lista_ord = sorted(list(datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
+            d, m, a = nome_base.split("-")
+            data_obj = datetime.strptime(f"{d}/{m}/{a}", "%d/%m/%Y")
+            mapa_datas_arquivos.append({
+                "caminho": arq_j,
+                "data_str": f"{d}/{m}/{a}",
+                "data_obj": data_obj
+            })
+        except Exception: pass
+
+    # Ordena as datas do mais antigo para o mais recente
+    mapa_datas_arquivos.sort(key=lambda x: x["data_obj"])
+
+    # Se houver mais de 7 dias, apaga os arquivos mais antigos que ultrapassarem o limite
+    while len(mapa_datas_arquivos) > 7:
+        mais_antigo = mapa_datas_arquivos.pop(0)
+        try:
+            if os.path.exists(mais_antigo["caminho"]):
+                os.remove(mais_antigo["caminho"])
+                print(f"[Retencao 7 Dias] Arquivo antigo removido: {os.path.basename(mais_antigo['caminho'])}")
+        except Exception as e_del:
+            print(f"[Erro Limpeza] Falha ao remover {mais_antigo['caminho']}: {e_del}")
+
+    # Salva datas.json contendo apenas a lista dos 7 dias vigentes
+    lista_ord = [item["data_str"] for item in mapa_datas_arquivos]
     with open(os.path.join(LOCAL_PROJETO_DIR, "datas.json"), 'w', encoding='utf-8') as f:
         json.dump(lista_ord, f, ensure_ascii=False, indent=4)
 
