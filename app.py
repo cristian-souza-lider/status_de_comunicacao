@@ -117,15 +117,22 @@ def aguardar_conclusao_download(pasta_download, timeout=15):
 def enviar_para_github(nome_dados_dia_local):
     try:
         print("[Git] Sincronizando com GitHub...")
-        # Usa 'git add -A' para registrar tanto novos arquivos quanto a exclusão dos arquivos antigos (> 7 dias)
+        # 1. Alinha com o repositório remoto primeiro
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+
+        # 2. Prepara todos os arquivos modificados e apagados após o alinhamento
         subprocess.run(["git", "add", "-A"], cwd=LOCAL_PROJETO_DIR, check=True)
-        subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
         
+        # 3. Comita e envia se houver alterações
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
         if status.stdout.strip():
             subprocess.run(["git", "commit", "-m", f"Automacao Flits: {datetime.now().strftime('%d/%m %H:%M')}"], cwd=LOCAL_PROJETO_DIR, check=True)
             subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
             print("[Git] Sincronização automática OK.")
+        else:
+            # Caso os arquivos já estejam comitados, apenas envia o que estiver pendente
+            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+            print("[Git] Repositório já atualizado.")
     except Exception as e: 
         print(f"[Git - Erro] {e}")
 
