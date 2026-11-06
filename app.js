@@ -506,25 +506,77 @@ function aplicarFiltros() {
 }
 
 function atualizarKPIs() {
-    const total = dadosFiltrados.length;
-    const operando = dadosFiltrados.filter(d => d._situacao === "Operando").length;
-    const manutencao = dadosFiltrados.filter(d => d._situacao === "Em Manutenção").length;
-    const escalados = dadosFiltrados.filter(d => d._condicao === "Escalado").length;
-    const semEscala = total - escalados;
-    const gpsValido = dadosFiltrados.filter(d => d._gps === "Válido").length;
-    const falhaInt = dadosFiltrados.filter(d => d._integracao === "Falha na Integração").length;
-    
-    const fichasAbertas = new Set(dadosFiltrados.filter(d => resolverEstadoFicha(d._veiculo, d._data, d._hora).estado.startsWith('Aberta')).map(d => d._veiculo)).size;
+    const fHora = document.getElementById('filtro-hora')?.value || '';
+    const isModoMedia = (fHora === ''); // Se for "Todas", calcula a média do dia
 
-    document.getElementById('kpi-total').textContent = total.toLocaleString('pt-BR');
-    document.getElementById('kpi-operando').textContent = operando.toLocaleString('pt-BR');
-    document.getElementById('kpi-manutencao').textContent = manutencao.toLocaleString('pt-BR');
-    document.getElementById('kpi-escalados').textContent = escalados.toLocaleString('pt-BR');
-    document.getElementById('kpi-sem-escala').textContent = semEscala.toLocaleString('pt-BR');
-    document.getElementById('kpi-gps-valido').textContent = gpsValido.toLocaleString('pt-BR');
-    document.getElementById('kpi-gps-invalido').textContent = (total - gpsValido).toLocaleString('pt-BR');
-    document.getElementById('kpi-falha-integracao').textContent = falhaInt.toLocaleString('pt-BR');
+    // Identifica as horas distintas presentes nos dados filtrados
+    const horasDistintas = [...new Set(dadosFiltrados.map(d => d._hora).filter(Boolean))];
+    const qtdHoras = horasDistintas.length || 1;
+
+    // 1. Total de Veículos: Mostra a quantidade real de veículos únicos (frota total do dia)
+    const veiculosUnicos = new Set(dadosFiltrados.map(d => d._veiculo).filter(v => v && v !== '00000')).size;
+    const totalExibicao = isModoMedia ? veiculosUnicos : dadosFiltrados.length;
+
+    // 2. Fichas Abertas: Sempre mostra o estado real de pendências em aberto
+    const fichasAbertas = new Set(
+        dadosFiltrados
+            .filter(d => resolverEstadoFicha(d._veiculo, d._data, d._hora).estado.startsWith('Aberta'))
+            .map(d => d._veiculo)
+    ).size;
+
+    let operandoFinal, manutencaoFinal, escaladosFinal, semEscalaFinal, gpsValidoFinal, gpsInvalidoFinal, falhaIntFinal;
+
+    if (isModoMedia && qtdHoras > 1) {
+        // MODO MÉDIA: Soma os totais de cada hora e divide pela quantidade de horas coletadas
+        const somaOperando = dadosFiltrados.filter(d => d._situacao === "Operando").length;
+        const somaManutencao = dadosFiltrados.filter(d => d._situacao === "Em Manutenção").length;
+        const somaEscalados = dadosFiltrados.filter(d => d._condicao === "Escalado").length;
+        const somaGpsValido = dadosFiltrados.filter(d => d._gps === "Válido").length;
+        const somaFalhaInt = dadosFiltrados.filter(d => d._integracao === "Falha na Integração").length;
+
+        operandoFinal = Math.round(somaOperando / qtdHoras);
+        manutencaoFinal = Math.round(somaManutencao / qtdHoras);
+        escaladosFinal = Math.round(somaEscalados / qtdHoras);
+        semEscalaFinal = Math.max(0, totalExibicao - escaladosFinal);
+        gpsValidoFinal = Math.round(somaGpsValido / qtdHoras);
+        gpsInvalidoFinal = Math.max(0, totalExibicao - gpsValidoFinal);
+        falhaIntFinal = Math.round(somaFalhaInt / qtdHoras);
+    } else {
+        // MODO PONTUAL (Hora Específica): Fotografia exata daquela hora
+        operandoFinal = dadosFiltrados.filter(d => d._situacao === "Operando").length;
+        manutencaoFinal = dadosFiltrados.filter(d => d._situacao === "Em Manutenção").length;
+        escaladosFinal = dadosFiltrados.filter(d => d._condicao === "Escalado").length;
+        semEscalaFinal = Math.max(0, dadosFiltrados.length - escaladosFinal);
+        gpsValidoFinal = dadosFiltrados.filter(d => d._gps === "Válido").length;
+        gpsInvalidoFinal = Math.max(0, dadosFiltrados.length - gpsValidoFinal);
+        falhaIntFinal = dadosFiltrados.filter(d => d._integracao === "Falha na Integração").length;
+    }
+
+    // Atualiza os valores numéricos nos cards
+    document.getElementById('kpi-total').textContent = totalExibicao.toLocaleString('pt-BR');
+    document.getElementById('kpi-operando').textContent = operandoFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-manutencao').textContent = manutencaoFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-escalados').textContent = escaladosFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-sem-escala').textContent = semEscalaFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-gps-valido').textContent = gpsValidoFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-gps-invalido').textContent = gpsInvalidoFinal.toLocaleString('pt-BR');
+    document.getElementById('kpi-falha-integracao').textContent = falhaIntFinal.toLocaleString('pt-BR');
     document.getElementById('kpi-fichas-abertas').textContent = fichasAbertas.toLocaleString('pt-BR');
+
+    // Atualiza dinamicamente os rótulos dos cards indicando se é (MÉDIA) ou pontual
+    const sufixoMedia = (isModoMedia && qtdHoras > 1) ? ' (MÉDIA)' : '';
+    const atualizarLabel = (cardId, textoBase) => {
+        const el = document.getElementById(cardId)?.closest('.kpi-card')?.querySelector('.kpi-label');
+        if (el) el.textContent = `${textoBase}${sufixoMedia}`;
+    };
+
+    atualizarLabel('kpi-operando', 'Operando');
+    atualizarLabel('kpi-manutencao', 'Manutenção');
+    atualizarLabel('kpi-escalados', 'Escalados');
+    atualizarLabel('kpi-sem-escala', 'Sem Escala');
+    atualizarLabel('kpi-gps-valido', 'GPS Válido');
+    atualizarLabel('kpi-gps-invalido', 'GPS Inválido');
+    atualizarLabel('kpi-falha-integracao', 'Falha Int.');
 }
 
 // =====================================================================
