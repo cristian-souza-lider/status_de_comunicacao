@@ -173,10 +173,18 @@ document.addEventListener('fullscreenchange', () => {
 function inicializarDadosEstruturados() {
     const ts = new Date().getTime();
     
+    // Sempre busca a versão oficial mais recente das fichas no repositório
     fetch(`fichas_manutencao.json?v=${ts}`)
         .then(r => r.ok ? r.json() : [])
-        .then(f => { fichasManutencaoGlobal = Array.isArray(f) ? f : []; })
-        .catch(() => { fichasManutencaoGlobal = []; })
+        .then(f => {
+            fichasManutencaoGlobal = Array.isArray(f) ? f : [];
+            localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
+        })
+        .catch(() => {
+            // Se falhar o download, usa a cópia em cache local
+            const local = localStorage.getItem('manutencao_fichas');
+            fichasManutencaoGlobal = local ? JSON.parse(local) : [];
+        })
         .finally(() => {
             fetch(`datas.json?v=${ts}`)
                 .then(r => r.ok ? r.json() : [])

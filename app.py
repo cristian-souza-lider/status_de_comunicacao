@@ -564,6 +564,9 @@ def processar_e_unificar_arquivos():
     with open(os.path.join(LOCAL_PROJETO_DIR, "datas.json"), 'w', encoding='utf-8') as f:
         json.dump(lista_ord, f, ensure_ascii=False, indent=4)
 
+    # Exporta as fichas de manutenção do SQLite para fichas_manutencao.json antes de subir ao Git
+    exportar_fichas_para_json()
+
     enviar_para_github(nome_json)
 
 # =====================================================================
@@ -586,6 +589,21 @@ def serve_fichas():
         fichas = [dict(row) for row in cursor.fetchall()]
     return jsonify(fichas)
 
+def exportar_fichas_para_json():
+    """Lê o SQLite e gera o arquivo fichas_manutencao.json atualizado."""
+    try:
+        with sqlite3.connect(DB_PATH) as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, veiculo, data_abertura, hora_abertura, data_fechamento, hora_fechamento FROM fichas_manutencao")
+            fichas = [dict(row) for row in cursor.fetchall()]
+        
+        caminho_fichas = os.path.join(LOCAL_PROJETO_DIR, "fichas_manutencao.json")
+        with open(caminho_fichas, 'w', encoding='utf-8') as f:
+            json.dump(fichas, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"[Erro ao exportar fichas para JSON] {e}", flush=True)
+
 @app.route('/salvar-ficha-item', methods=['POST'])
 def salvar_ficha_item():
     dados = request.get_json()
@@ -600,6 +618,8 @@ def salvar_ficha_item():
             VALUES (?, ?, ?)
         ''', (veiculo, data_ab, hora_ab))
         conn.commit()
+    
+    exportar_fichas_para_json()
     return jsonify({"status": "sucesso"})
 
 @app.route('/fechar-ficha-item', methods=['POST'])
@@ -617,6 +637,8 @@ def fechar_ficha_item():
             WHERE id = ?
         ''', (data_fc, hora_fc, ficha_id))
         conn.commit()
+    
+    exportar_fichas_para_json()
     return jsonify({"status": "sucesso"})
 
 @app.route('/datas.json')
