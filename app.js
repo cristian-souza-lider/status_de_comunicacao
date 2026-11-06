@@ -452,15 +452,26 @@ function aplicarFiltros() {
         minHorasNC: minHorasNC
     };
 
+    // 1. BASE DE DADOS: Se a Hora estiver em "Todas", descobre a última hora coletada no dia
     let baseParaFiltrar = dadosProcessados;
-    if (!f.hora) {
-        const ultimosPorVeiculo = new Map();
-        dadosProcessados.forEach(d => {
-            ultimosPorVeiculo.set(d._veiculo, d);
-        });
-        baseParaFiltrar = Array.from(ultimosPorVeiculo.values());
+    
+    if (!f.hora && dadosProcessados.length > 0) {
+        // Encontra todas as horas disponíveis na data selecionada
+        const horasDoDia = [...new Set(
+            dadosProcessados
+                .filter(d => !f.data || d._data === f.data)
+                .map(d => d._hora)
+                .filter(Boolean)
+        )].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+
+        // Pega a hora mais recente do dia (ex: se tiver 12h, 13h, 14h -> pega 14h)
+        if (horasDoDia.length > 0) {
+            const ultimaHora = horasDoDia[horasDoDia.length - 1];
+            baseParaFiltrar = dadosProcessados.filter(d => d._hora === ultimaHora);
+        }
     }
 
+    // 2. Aplica os demais filtros sobre a hora mais recente
     dadosFiltrados = baseParaFiltrar.filter(d => {
         if (f.data && d._data !== f.data) return false;
         if (f.hora && d._hora !== f.hora) return false;
