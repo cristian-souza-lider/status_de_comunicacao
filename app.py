@@ -117,22 +117,20 @@ def aguardar_conclusao_download(pasta_download, timeout=15):
 def enviar_para_github(nome_dados_dia_local):
     try:
         print("[Git] Sincronizando com GitHub...")
-        # 1. Alinha com o repositório remoto primeiro
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
-
-        # 2. Prepara todos os arquivos modificados e apagados após o alinhamento
+        # 1. Adiciona todas as modificações locais primeiro
         subprocess.run(["git", "add", "-A"], cwd=LOCAL_PROJETO_DIR, check=True)
         
-        # 3. Comita e envia se houver alterações
+        # 2. Cria o commit local se houver mudanças nos arquivos
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
         if status.stdout.strip():
             subprocess.run(["git", "commit", "-m", f"Automacao Flits: {datetime.now().strftime('%d/%m %H:%M')}"], cwd=LOCAL_PROJETO_DIR, check=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
-            print("[Git] Sincronização automática OK.")
-        else:
-            # Caso os arquivos já estejam comitados, apenas envia o que estiver pendente
-            subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
-            print("[Git] Repositório já atualizado.")
+
+        # 3. Alinha com o GitHub (com as mudanças locais já comitadas com segurança)
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+
+        # 4. Envia para o GitHub sem erros
+        subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
+        print("[Git] Sincronização automática OK.")
     except Exception as e: 
         print(f"[Git - Erro] {e}")
 
