@@ -516,8 +516,16 @@ def processar_e_unificar_arquivos():
         except Exception:
             registros_consolidados = []
 
+    # Remove registros da mesma hora para a empresa/veículo atual e anexa
     registros_consolidados = [r for r in registros_consolidados if not (r.get("Data") == data_extracao and r.get("Hora") == hora_extracao)]
-    registros_consolidados.extend(dados_totais)
+    
+    # Desduplica a lista de novos dados por Prefixo
+    novos_unicos = {}
+    for r in dados_totais:
+        chave = (str(r.get("Prefixo", "")).strip(), str(r.get("Data", "")), str(r.get("Hora", "")))
+        novos_unicos[chave] = r
+    
+    registros_consolidados.extend(list(novos_unicos.values()))
 
     with open(caminho_local, 'w', encoding='utf-8') as f:
         json.dump(registros_consolidados, f, ensure_ascii=False, indent=4)

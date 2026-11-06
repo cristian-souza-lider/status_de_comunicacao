@@ -276,7 +276,19 @@ function calcularStatusIntegracao(item) {
 }
 
 function processarDadosGerais() {
-    dadosProcessados = dadosOriginais.map(item => {
+    // 1. Remove registros duplicados exatos (mesmo Veículo, Data e Hora)
+    const chavesVistas = new Set();
+    const dadosSemDuplicatas = dadosOriginais.filter(item => {
+        const prefixo = String(item["Prefixo"] || item["_veiculo"] || "").padStart(5, '0');
+        const data = item["Data"] || item["_data"] || "";
+        const hora = item["Hora"] || item["_hora"] || "";
+        const chave = `${prefixo}_${data}_${hora}`;
+        if (chavesVistas.has(chave)) return false;
+        chavesVistas.add(chave);
+        return true;
+    });
+
+    dadosProcessados = dadosSemDuplicatas.map(item => {
         const segmento = item["Segmento"] || item["Empresa"] || "";
         const linhaFull = String(item["Linha"] || "").trim();
         const prefixo = item["Prefixo"] || "00000";
