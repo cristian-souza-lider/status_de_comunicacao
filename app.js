@@ -909,7 +909,7 @@ function carregarFichasEAtualizar() {
 // =====================================================================
 
 function copiarParaWhatsApp() {
-    // 1. Filtra apenas os registros que possuem descrição de Não Conformidade válida
+    // 1. Filtra os registros atuais que possuem Não Conformidade válida
     const itensComNC = dadosFiltrados.filter(item => 
         item._ncOriginal && 
         item._ncOriginal.trim() !== "" && 
@@ -917,35 +917,32 @@ function copiarParaWhatsApp() {
         item._ncResumida !== "Normal"
     );
 
+    // 2. Extrai os valores aplicados nos filtros
+    const fData = document.getElementById('filtro-data')?.value || (dadosFiltrados[0]?._data || "Data atual");
+    const fHora = document.getElementById('filtro-hora')?.value || (dadosFiltrados[0]?._hora || "Geral");
+    const fEmpresa = document.getElementById('filtro-empresa')?.value || "Todas";
+    const fSegmento = document.getElementById('filtro-segmento')?.value || "Todos";
+    const fCondicao = document.getElementById('filtro-condicao')?.value || "Todos";
+
+    let textoFinal = "";
+
+    // 3. Caso NÃO HAJA Não Conformidade, monta a frase padrão solicitada
     if (itensComNC.length === 0) {
-        alert("Nenhum registro com Não Conformidade encontrado no filtro atual.");
-        return;
+        const condicaoTexto = fCondicao === "Todos" ? "sem/com escala" : fCondicao.toLowerCase();
+        textoFinal = `${fData}, no status das ${fHora}, empresa ${fEmpresa} e segmento ${fSegmento}, não houveram "Não Conformidades" para os veículos (${condicaoTexto})`;
+    } else {
+        // 4. Caso HAJA Não Conformidade, monta cabeçalho + lista de veículos
+        const condicaoTexto = fCondicao ? `Somente veículos ${fCondicao}` : "Todos os veículos";
+        const cabecalho = `Status das ${fHora} - Empresa ${fEmpresa} - Segmento ${fSegmento} - ${condicaoTexto}\n`;
+
+        const listaVeiculos = itensComNC.map(item => 
+            `${item._data} - ${item._veiculo} - ${item._ncOriginal}`
+        ).join('\n');
+
+        textoFinal = `${cabecalho}\n${listaVeiculos}`;
     }
 
-    // 2. Extrai os valores atuais dos filtros para montar o cabeçalho
-    const fHora = document.getElementById('filtro-hora')?.value;
-    const fEmpresa = document.getElementById('filtro-empresa')?.value;
-    const fSegmento = document.getElementById('filtro-segmento')?.value;
-    const fCondicao = document.getElementById('filtro-condicao')?.value;
-
-    // Detecta a hora dos registros caso o filtro esteja em "Todas"
-    const horaTexto = fHora || (itensComNC[0]?._hora ? `${itensComNC[0]._hora}` : "Geral");
-    const empresaTexto = fEmpresa || "Todas";
-    const segmentoTexto = fSegmento || "Todos";
-    const condicaoTexto = fCondicao ? `Somente veículos ${fCondicao}` : "Todos os veículos";
-
-    // 3. Monta a frase de cabeçalho
-    const cabecalho = `Status das ${horaTexto} - Empresa ${empresaTexto} - Segmento ${segmentoTexto} - ${condicaoTexto}\n`;
-
-    // 4. Monta as linhas de veículos: Data - Veículo - Não Conformidade
-    const listaVeiculos = itensComNC.map(item => 
-        `${item._data} - ${item._veiculo} - ${item._ncOriginal}`
-    ).join('\n');
-
-    // 5. Junta o cabeçalho com a lista
-    const textoFinal = `${cabecalho}\n${listaVeiculos}`;
-
-    // 6. Copia para a área de transferência com feedback no botão
+    // 5. Copia para a área de transferência com feedback visual no botão
     navigator.clipboard.writeText(textoFinal).then(() => {
         const btn = document.getElementById('btn-copiar-whatsapp');
         const txt = document.getElementById('txt-btn-copiar');
