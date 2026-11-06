@@ -650,3 +650,32 @@ tbody tr:hover {
   .kpis-grid-9 { grid-template-columns: repeat(3, 1fr) !important; }
   .charts-bottom-grid { grid-template-columns: 1fr !important; }
 }
+
+/* Botão Copiar para WhatsApp */
+.btn-copy-wpp {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0 0.75rem;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-wpp:hover {
+  border-color: #22c55e;
+  color: #22c55e;
+  transform: translateY(-1px);
+}
+
+.btn-copy-wpp.copied {
+  background: #22c55e !important;
+  color: #ffffff !important;
+  border-color: #22c55e !important;
+}
