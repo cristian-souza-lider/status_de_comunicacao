@@ -304,47 +304,67 @@ def iniciar_automacao_flits():
             time.sleep(1)
 
         def alterar_para_nova_empresa_e_fechar_antiga(nome_empresa):
-            """Altera para uma nova Empresa no cabeçalho e fecha a guia antiga."""
+            """Altera a Empresa no cabeçalho e CONFIRMA visualmente a troca antes de prosseguir."""
             limpar_bloqueios_tela(driver)
-            abas_antes = driver.window_handles
-            aba_atual = driver.current_window_handle
+            sucesso_troca = False
 
-            # Clica no seletor global context-select
-            box_emp = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
-                By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')]"
-            )))
-            driver.execute_script("arguments[0].click();", box_emp)
-            time.sleep(0.8)
+            for tentativa_troca in range(3):
+                try:
+                    abas_antes = driver.window_handles
+                    aba_atual = driver.current_window_handle
 
-            inp = WebDriverWait(driver, 6).until(EC.presence_of_element_located((
-                By.XPATH, "//div[contains(@class, 'context-select')]//input[@type='search']"
-            )))
-            inp.send_keys(Keys.CONTROL + "a")
-            inp.send_keys(Keys.BACKSPACE)
-            time.sleep(0.3)
-            inp.send_keys(nome_empresa)
-            time.sleep(1.5)
+                    # Clica no seletor global context-select
+                    box_emp = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
+                        By.XPATH, "//div[contains(@class, 'context-select')]//div[contains(@class, 'ant-select-selector')] | //div[contains(@class, 'context-select')]"
+                    )))
+                    driver.execute_script("arguments[0].click();", box_emp)
+                    time.sleep(1)
 
-            try:
-                opcao = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((
-                    By.XPATH, f"//div[contains(@class, 'ant-select-dropdown')]//div[contains(@class, 'ant-select-item-option-content') and (contains(text(), '{nome_empresa}') or contains(., '{nome_empresa}'))]"
-                )))
-                driver.execute_script("arguments[0].click();", opcao)
-            except Exception:
-                inp.send_keys(Keys.ENTER)
-            
-            time.sleep(3)
+                    inp = WebDriverWait(driver, 6).until(EC.presence_of_element_located((
+                        By.XPATH, "//div[contains(@class, 'context-select')]//input[@type='search']"
+                    )))
+                    inp.send_keys(Keys.CONTROL + "a")
+                    inp.send_keys(Keys.BACKSPACE)
+                    time.sleep(0.5)
+                    inp.send_keys(nome_empresa)
+                    time.sleep(2) # Aguarda o dropdown filtrar na tela
 
-            # Fecha a guia antiga e foca na nova
-            abas_depois = driver.window_handles
-            if len(abas_depois) > len(abas_antes):
-                aba_nova = [a for a in abas_depois if a not in abas_antes][0]
-                driver.switch_to.window(aba_atual)
-                driver.close()
-                driver.switch_to.window(aba_nova)
-                time.sleep(5)
-                limpar_bloqueios_tela(driver)
-                print(f"     -> Guia antiga fechada. Foco na nova empresa: [{nome_empresa}]", flush=True)
+                    # Clica na opção exata correspondente no dropdown
+                    try:
+                        opcao = WebDriverWait(driver, 4).until(EC.element_to_be_clickable((
+                            By.XPATH, f"//div[contains(@class, 'ant-select-dropdown')]//div[contains(@class, 'ant-select-item-option-content') and (contains(text(), '{nome_empresa}') or contains(., '{nome_empresa}'))]"
+                        )))
+                        driver.execute_script("arguments[0].click();", opcao)
+                    except Exception:
+                        inp.send_keys(Keys.ENTER)
+
+                    time.sleep(3)
+
+                    # Se o sistema abriu nova guia com a nova empresa:
+                    abas_depois = driver.window_handles
+                    if len(abas_depois) > len(abas_antes):
+                        aba_nova = [a for a in abas_depois if a not in abas_antes][0]
+                        driver.switch_to.window(aba_atual)
+                        driver.close()
+                        driver.switch_to.window(aba_nova)
+                        time.sleep(5)
+                        limpar_bloqueios_tela(driver)
+
+                    # VALIDAÇÃO OBRIGATÓRIA: Confere se o texto da tela ativa realmente mudou para a empresa desejada
+                    empresa_na_tela = identificar_empresa_ativa()
+                    if nome_empresa.lower() in empresa_na_tela.lower() or empresa_na_tela.lower() in nome_empresa.lower():
+                        print(f"     -> Empresa [{nome_empresa}] confirmada na tela ativa com sucesso.", flush=True)
+                        sucesso_troca = True
+                        break
+                    else:
+                        print(f"     [Aviso Troca] Tentativa {tentativa_troca + 1}: Tela permaneceu em [{empresa_na_tela}]. Repetindo selecao...", flush=True)
+                        time.sleep(2)
+                except Exception as e_troca:
+                    print(f"     [Erro Troca] Tentativa {tentativa_troca + 1} falhou: {e_troca}", flush=True)
+                    time.sleep(2)
+
+            if not sucesso_troca:
+                print(f"     [ALERTA CRÍTICO] Nao foi possivel confirmar a mudanca para [{nome_empresa}]!", flush=True)
 
         def identificar_empresa_ativa():
             """Lê qual empresa já está aberta na tela inicial."""
@@ -533,11 +553,30 @@ def processar_e_unificar_arquivos():
         if chave.strip("_"):
             mapa_unificado[chave] = reg
 
-    # Atualiza/adiciona com os dados da nova extração (preservando o que já existia)
+    # Se a nova extração trouxe veículos, adiciona/atualiza garantindo integridade
     for reg in dados_totais:
         chave = gerar_chave_unica(reg)
         if chave.strip("_"):
             mapa_unificado[chave] = reg
+
+    # HERANÇA DE FROTA: Garante que todos os veículos conhecidos existam na hora atual
+    # Se uma empresa teve falha de exportação na hora atual, replica o status anterior para não sumir da frota
+    todos_prefixos_conhecidos = {}
+    for reg in mapa_unificado.values():
+        p = str(reg.get("Prefixo", "")).strip().zfill(5)
+        if p and p != "00000":
+            todos_prefixos_conhecidos[p] = reg
+
+    # Para cada prefixo conhecido, garante que ele exista na extração da hora atual
+    for p, reg_molde in todos_prefixos_conhecidos.items():
+        chave_hora_atual = f"{p}_{data_extracao}_{hora_extracao}_{reg_molde.get('Situação Veículo', '')}_{reg_molde.get('Empresa', '')}"
+        if chave_hora_atual not in mapa_unificado:
+            # Clona o registro para a hora atual sem perder o veículo
+            registro_herdado = dict(reg_molde)
+            registro_herdado["Data"] = data_extracao
+            registro_herdado["Hora"] = hora_extracao
+            registro_herdado["Hora_Extracao"] = hora_minuto_extracao
+            mapa_unificado[chave_hora_atual] = registro_herdado
 
     registros_consolidados = list(mapa_unificado.values())
 
