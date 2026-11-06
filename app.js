@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('filtro-data')?.addEventListener('change', (e) => carregarDados(e.target.value));
     document.getElementById('btn-atualizar')?.addEventListener('click', () => carregarDados(document.getElementById('filtro-data').value));
     document.getElementById('btn-limpar-filtros')?.addEventListener('click', limparFiltros);
+    document.getElementById('btn-copiar-whatsapp')?.addEventListener('click', copiarParaWhatsApp);
     document.getElementById('input-linhas-pagina')?.addEventListener('input', mudarLinhasPorPagina);
     document.getElementById('filtro-empresa')?.addEventListener('change', () => {
         atualizarSelectSegmentos();
@@ -889,4 +890,50 @@ function carregarFichasEAtualizar() {
             atualizarKPIs();
             renderizarTabela();
         });
+}
+
+// =====================================================================
+// COPIAR PARA O WHATSAPP
+// =====================================================================
+
+function copiarParaWhatsApp() {
+    // Filtra apenas os registros filtrados que possuem descrição de Não Conformidade válida
+    const itensComNC = dadosFiltrados.filter(item => 
+        item._ncOriginal && 
+        item._ncOriginal.trim() !== "" && 
+        item._ncOriginal !== "N/D" &&
+        item._ncResumida !== "Normal"
+    );
+
+    if (itensComNC.length === 0) {
+        alert("Nenhum registro com Não Conformidade encontrado no filtro atual.");
+        return;
+    }
+
+    // Monta o texto linha por linha: Data - Veículo - Não Conformidade
+    const textoFinal = itensComNC.map(item => 
+        `${item._data} - ${item._veiculo} - ${item._ncOriginal}`
+    ).join('\n');
+
+    // Copia para a área de transferência
+    navigator.clipboard.writeText(textoFinal).then(() => {
+        const btn = document.getElementById('btn-copiar-whatsapp');
+        const txt = document.getElementById('txt-btn-copiar');
+        const icon = document.getElementById('icon-copiar');
+        
+        if (btn && txt && icon) {
+            btn.classList.add('copied');
+            txt.textContent = 'Copiado!';
+            icon.className = 'ph ph-check';
+            
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                txt.textContent = 'Copiar';
+                icon.className = 'ph ph-copy';
+            }, 2000);
+        }
+    }).catch(err => {
+        console.error("Erro ao copiar:", err);
+        alert("Não foi possível copiar para a área de transferência.");
+    });
 }
