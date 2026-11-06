@@ -897,7 +897,7 @@ function carregarFichasEAtualizar() {
 // =====================================================================
 
 function copiarParaWhatsApp() {
-    // Filtra apenas os registros filtrados que possuem descrição de Não Conformidade válida
+    // 1. Filtra apenas os registros que possuem descrição de Não Conformidade válida
     const itensComNC = dadosFiltrados.filter(item => 
         item._ncOriginal && 
         item._ncOriginal.trim() !== "" && 
@@ -910,12 +910,30 @@ function copiarParaWhatsApp() {
         return;
     }
 
-    // Monta o texto linha por linha: Data - Veículo - Não Conformidade
-    const textoFinal = itensComNC.map(item => 
+    // 2. Extrai os valores atuais dos filtros para montar o cabeçalho
+    const fHora = document.getElementById('filtro-hora')?.value;
+    const fEmpresa = document.getElementById('filtro-empresa')?.value;
+    const fSegmento = document.getElementById('filtro-segmento')?.value;
+    const fCondicao = document.getElementById('filtro-condicao')?.value;
+
+    // Detecta a hora dos registros caso o filtro esteja em "Todas"
+    const horaTexto = fHora || (itensComNC[0]?._hora ? `${itensComNC[0]._hora}` : "Geral");
+    const empresaTexto = fEmpresa || "Todas";
+    const segmentoTexto = fSegmento || "Todos";
+    const condicaoTexto = fCondicao ? `Somente veículos ${fCondicao}` : "Todos os veículos";
+
+    // 3. Monta a frase de cabeçalho
+    const cabecalho = `Status das ${horaTexto} - Empresa ${empresaTexto} - Segmento ${segmentoTexto} - ${condicaoTexto}\n`;
+
+    // 4. Monta as linhas de veículos: Data - Veículo - Não Conformidade
+    const listaVeiculos = itensComNC.map(item => 
         `${item._data} - ${item._veiculo} - ${item._ncOriginal}`
     ).join('\n');
 
-    // Copia para a área de transferência
+    // 5. Junta o cabeçalho com a lista
+    const textoFinal = `${cabecalho}\n${listaVeiculos}`;
+
+    // 6. Copia para a área de transferência com feedback no botão
     navigator.clipboard.writeText(textoFinal).then(() => {
         const btn = document.getElementById('btn-copiar-whatsapp');
         const txt = document.getElementById('txt-btn-copiar');
