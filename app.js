@@ -582,7 +582,7 @@ function renderizarTabela() {
                 <td>${badgeSit}</td>
                 <td style="font-size: 0.72rem;">${item._equipamento}</td>
                 <td style="font-size: 0.72rem;">${item._status}</td>
-                <td style="max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${item._ncOriginal}">${item._ncOriginal}</td>
+                <td style="white-space: normal; min-width: 200px; text-align: left; padding: 0.45rem 0.65rem;" title="${item._ncOriginal}">${item._ncOriginal}</td>
                 <td><span class="${corGps}">${item._gps}</span></td>
                 <td style="font-family: monospace; font-size: 0.72rem;">${item._horaVal}</td>
                 <td><span class="${corInt}">${item._integracao}</span></td>
