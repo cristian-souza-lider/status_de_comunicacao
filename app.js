@@ -439,7 +439,16 @@ function aplicarFiltros() {
         minHorasNC: minHorasNC
     };
 
-    dadosFiltrados = dadosProcessados.filter(d => {
+    let baseParaFiltrar = dadosProcessados;
+    if (!f.hora) {
+        const ultimosPorVeiculo = new Map();
+        dadosProcessados.forEach(d => {
+            ultimosPorVeiculo.set(d._veiculo, d);
+        });
+        baseParaFiltrar = Array.from(ultimosPorVeiculo.values());
+    }
+
+    dadosFiltrados = baseParaFiltrar.filter(d => {
         if (f.data && d._data !== f.data) return false;
         if (f.hora && d._hora !== f.hora) return false;
         if (f.empresa && d._empresa !== f.empresa) return false;
@@ -455,7 +464,6 @@ function aplicarFiltros() {
         if (f.int && d._integracao !== f.int) return false;
         if (f.minHorasNC > 0 && d._horasNC < f.minHorasNC) return false;
 
-        // Filtros Cruzados dos Gráficos
         if (filtroGraficoAtivo.tipo) {
             if (filtroGraficoAtivo.tipo === 'empresa' && d._empresa !== filtroGraficoAtivo.valor) return false;
             if (filtroGraficoAtivo.tipo === 'segmento' && d._segmento !== filtroGraficoAtivo.valor) return false;
