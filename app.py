@@ -506,24 +506,40 @@ def processar_e_unificar_arquivos():
     nome_json = f"dados-{now.strftime('%d-%m-%Y')}.json"
     caminho_local = os.path.join(LOCAL_PROJETO_DIR, nome_json)
 
-    registros_consolidados = []
+    # 1. ACÚMULO TOTAL E SEGURO: Preserva histórico de todas as extrações do dia
+    registros_existentes = []
     if os.path.exists(caminho_local):
         try:
             with open(caminho_local, 'r', encoding='utf-8') as f_existente:
-                registros_consolidados = json.load(f_existente)
+                registros_existentes = json.load(f_existente)
         except Exception:
-            registros_consolidados = []
+            registros_existentes = []
 
-    # Remove registros da mesma hora para a empresa/veículo atual e anexa
-    registros_consolidados = [r for r in registros_consolidados if not (r.get("Data") == data_extracao and r.get("Hora") == hora_extracao)]
-    
-    # Desduplica a lista de novos dados por Prefixo
-    novos_unicos = {}
-    for r in dados_totais:
-        chave = (str(r.get("Prefixo", "")).strip(), str(r.get("Data", "")), str(r.get("Hora", "")))
-        novos_unicos[chave] = r
-    
-    registros_consolidados.extend(list(novos_unicos.values()))
+    # Dicionário indexado por chave completa única para não perder registros legítimos
+    mapa_unificado = {}
+
+    def gerar_chave_unica(reg):
+        # A chave considera Prefixo + Data + Hora + Situação + Empresa para nunca mesclar dados distintos
+        prefixo = str(reg.get("Prefixo", reg.get("Veículo", ""))).strip().zfill(5)
+        data = str(reg.get("Data", "")).strip()
+        hora = str(reg.get("Hora", "")).strip()
+        situacao = str(reg.get("Situação Veículo", reg.get("Situação", ""))).strip()
+        empresa = str(reg.get("Empresa", reg.get("Segmento", ""))).strip()
+        return f"{prefixo}_{data}_{hora}_{situacao}_{empresa}"
+
+    # Carrega registros já existentes no arquivo diário
+    for reg in registros_existentes:
+        chave = gerar_chave_unica(reg)
+        if chave.strip("_"):
+            mapa_unificado[chave] = reg
+
+    # Atualiza/adiciona com os dados da nova extração (preservando o que já existia)
+    for reg in dados_totais:
+        chave = gerar_chave_unica(reg)
+        if chave.strip("_"):
+            mapa_unificado[chave] = reg
+
+    registros_consolidados = list(mapa_unificado.values())
 
     with open(caminho_local, 'w', encoding='utf-8') as f:
         json.dump(registros_consolidados, f, ensure_ascii=False, indent=4)

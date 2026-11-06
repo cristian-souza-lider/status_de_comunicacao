@@ -284,13 +284,18 @@ function calcularStatusIntegracao(item) {
 }
 
 function processarDadosGerais() {
-    // 1. Remove registros duplicados exatos (mesmo Veículo, Data e Hora)
+    // Desduplicação estrita: apenas descarta se TODAS as informações operacionais forem idênticas
     const chavesVistas = new Set();
     const dadosSemDuplicatas = dadosOriginais.filter(item => {
-        const prefixo = String(item["Prefixo"] || item["_veiculo"] || "").padStart(5, '0');
-        const data = item["Data"] || item["_data"] || "";
-        const hora = item["Hora"] || item["_hora"] || "";
-        const chave = `${prefixo}_${data}_${hora}`;
+        const prefixo = String(item["Prefixo"] || item["Veículo"] || item["_veiculo"] || "").padStart(5, '0');
+        const data = String(item["Data"] || item["_data"] || "").trim();
+        const hora = String(item["Hora"] || item["_hora"] || "").trim();
+        const sit = String(item["Situação Veículo"] || item["Situação"] || "").trim();
+        const linha = String(item["Linha"] || "").trim();
+        const nc = String(item["Não Conformidade"] || "").trim();
+
+        // Chave completa: se a linha, situação ou NC mudaram, o registro É MANTIDO
+        const chave = `${prefixo}_${data}_${hora}_${sit}_${linha}_${nc}`;
         if (chavesVistas.has(chave)) return false;
         chavesVistas.add(chave);
         return true;
