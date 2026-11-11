@@ -1010,10 +1010,14 @@ function copiarParaWhatsApp() {
 
     let textoFinal = "";
 
-    // 3. Caso NÃO HAJA Não Conformidade, monta a frase padrão solicitada
+    // 3. Caso NÃO HAJA Não Conformidade, monta a nova frase no formato solicitado
     if (itensComNC.length === 0) {
-        const condicaoTexto = fCondicao === "Todos" ? "sem/com escala" : fCondicao.toLowerCase();
-        textoFinal = `${fData}, no status das ${fHora}, empresa ${fEmpresa} e segmento ${fSegmento}, não houveram "Não Conformidades" para os veículos (${condicaoTexto})`;
+        // Converte a condição para o plural correto
+        let condicaoPlural = "todos";
+        if (fCondicao === "Escalado") condicaoPlural = "escalados";
+        else if (fCondicao === "Sem Escala") condicaoPlural = "sem escala";
+
+        textoFinal = `No dia ${fData}, não houveram "Não Conformidades" nos veículos ${condicaoPlural}, na empresa ${fEmpresa}, no segmento ${fSegmento}, no status das ${fHora}.`;
     } else {
         // 4. Caso HAJA Não Conformidade, monta cabeçalho + lista de veículos
         const condicaoTexto = fCondicao ? `Somente veículos ${fCondicao}` : "Todos os veículos";
