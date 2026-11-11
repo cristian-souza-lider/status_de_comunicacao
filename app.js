@@ -31,16 +31,20 @@ let fichasManutencaoGlobal = [];
 
 // Função que grava o fichas_manutencao.json direto no repositório GitHub via API REST
 async function sincronizarFichasComGitHub(fichasAtualizadas) {
-    if (!GITHUB_TOKEN) return;
+    if (!GITHUB_TOKEN) {
+        console.warn("[GitHub API] Token não configurado.");
+        return;
+    }
 
     try {
         const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/fichas_manutencao.json`;
         
-        // 1. Busca o SHA atual do arquivo no GitHub com cache-buster (?ts)
+        // 1. Obtém o SHA atual do arquivo no repositório
         const resConsulta = await fetch(`${url}?ts=${new Date().getTime()}`, {
             headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json'
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
             }
         });
 
@@ -50,7 +54,7 @@ async function sincronizarFichasComGitHub(fichasAtualizadas) {
             sha = dadosArquivo.sha;
         }
 
-        // 2. Codificação segura de UTF-8 para Base64 (evita erro com acentuação)
+        // 2. Converte UTF-8 para Base64
         const jsonTexto = JSON.stringify(fichasAtualizadas, null, 4);
         const encoder = new TextEncoder();
         const dadosArray = encoder.encode(jsonTexto);
@@ -60,32 +64,34 @@ async function sincronizarFichasComGitHub(fichasAtualizadas) {
         }
         const conteudoBase64 = btoa(binario);
 
-        // 3. Monta o payload para o commit
+        // 3. Monta o commit
         const payload = {
-            message: `Atualizacao Ficha de Manutencao via Web - ${new Date().toLocaleTimeString('pt-BR')}`,
+            message: `Atualizacao Ficha de Manutencao via Web [${new Date().toLocaleTimeString('pt-BR')}]`,
             content: conteudoBase64
         };
         if (sha) payload.sha = sha;
 
-        // 4. Envia o commit via método PUT para a API do GitHub
+        // 4. Executa o commit no GitHub
         const resCommit = await fetch(url, {
             method: 'PUT',
             headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
                 'Content-Type': 'application/json',
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
             },
             body: JSON.stringify(payload)
         });
 
         if (resCommit.ok) {
-            console.log("Fichas sincronizadas com sucesso no GitHub!");
+            console.log("✅ [GitHub API] Fichas sincronizadas com sucesso no repositório!");
         } else {
-            const errLog = await resCommit.json();
-            console.error("Falha ao comitar no GitHub:", errLog);
+            const errResposta = await resCommit.json();
+            console.error("❌ [GitHub API] Erro ao sincronizar:", errResposta);
+            alert(`Aviso: Não foi possível sincronizar com o GitHub (${errResposta.message || 'Verifique o Token'}).`);
         }
     } catch (err) {
-        console.error("Erro na comunicação com a API do GitHub:", err);
+        console.error("❌ [GitHub API] Erro de rede ou comunicação:", err);
     }
 }
 
@@ -119,15 +125,38 @@ function converterParaDataObjeto(d, h) {
 
 function resolverEstadoFicha(v, d, h) {
     const fichas = obterFichasManutencao();
+    const tAtual = converterParaDataObjeto(d, h).getTime();
+
     for (let i = 0; i < fichas.length; i++) {
         const f = fichas[i];
         if (f.veiculo === v) {
-            // Se possui data de fechamento, a ficha está oficialmente Fechada
-            if (f.data_fechamento) {
+            const tAbertura = converterParaDataObjeto(f.data_abertura, f.hora_abertura).getTime();
+            const tFechamento = f.data_fechamento ? converterParaDataObjeto(f.data_fechamento, f.hora_fechamento).getTime() : null;
+
+            // 1. ANTES DA ABERTURA: Carro estava normal (mostra checkbox)
+            if (tAtual < tAbertura) {
+                continue;
+            }
+
+            // 2. FICHA ABERTA AINDA NÃO CONCLUÍDA: Permanece aberta da abertura em diante
+            if (tFechamento === null) {
+                return { estado: 'AbertaAtiva', ticket: f, index: i };
+            }
+
+            // 3. NO HORÁRIO DO FECHAMENTO: Mostra 'Resolvido' com o botão de excluir histórico (X)
+            if (tAtual === tFechamento) {
                 return { estado: 'Fechada', ticket: f, index: i };
             }
-            // Se não possui data de fechamento, continua Aberta
-            return { estado: 'AbertaAtiva', ticket: f, index: i };
+
+            // 4. ENTRE ABERTURA E FECHAMENTO: Estava quebrada naquele momento histórico
+            if (tAtual > tAbertura && tAtual < tFechamento) {
+                return { estado: 'AbertaAtiva', ticket: f, index: i };
+            }
+
+            // 5. APÓS O FECHAMENTO (tAtual > tFechamento): O carro já foi consertado, volta a ficar limpo (checkbox)
+            if (tAtual > tFechamento) {
+                continue;
+            }
         }
     }
     return { estado: 'Sem Ficha', ticket: null, index: -1 };
