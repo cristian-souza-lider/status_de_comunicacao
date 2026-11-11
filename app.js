@@ -224,6 +224,12 @@ function carregarDados(dataEsp) {
                 const sData = document.getElementById('filtro-data');
                 if (sData) sData.value = dataEsp;
             }
+
+            // Garante que o filtro de hora esteja apontando para a hora mais recente da extração
+            const sHora = document.getElementById('filtro-hora');
+            if (sHora && sHora.options.length > 0 && !sHora.value) {
+                sHora.value = sHora.options[sHora.options.length - 1].value;
+            }
             
             aplicarFiltros();
 
@@ -403,8 +409,19 @@ function atualizarSelectSegmentos() {
 
 function atualizarOpcoesHora() {
     const sHora = document.getElementById('filtro-hora');
-    const horas = [...new Set(dadosProcessados.map(d => d._hora))].sort((a,b) => parseInt(a, 10) - parseInt(b, 10));
-    sHora.innerHTML = '<option value="">Todas</option>' + horas.map(v => `<option value="${v}">${v}</option>`).join('');
+    if (!sHora) return;
+    
+    // Obtém todas as horas únicas e ordena cronologicamente
+    const horas = [...new Set(dadosProcessados.map(d => d._hora).filter(Boolean))]
+        .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    
+    // Gera as opções sem a opção "Todas"
+    sHora.innerHTML = horas.map(v => `<option value="${v}">${v}</option>`).join('');
+    
+    // Seleciona sempre a hora mais recente por padrão
+    if (horas.length > 0) {
+        sHora.value = horas[horas.length - 1];
+    }
 }
 
 function configurarBorrachinhasFiltros() {
@@ -706,10 +723,16 @@ function mudarLinhasPorPagina() {
 }
 
 function limparFiltros() {
-    ['filtro-hora', 'filtro-empresa', 'filtro-segmento', 'filtro-situacao', 'filtro-condicao', 'filtro-equipamento', 'filtro-status', 'filtro-nao-conformidade', 'filtro-status-gps', 'filtro-integracao'].forEach(id => { 
+    ['filtro-empresa', 'filtro-segmento', 'filtro-situacao', 'filtro-condicao', 'filtro-equipamento', 'filtro-status', 'filtro-nao-conformidade', 'filtro-status-gps', 'filtro-integracao'].forEach(id => { 
         const el = document.getElementById(id);
         if (el) el.value = ""; 
     });
+
+    // Ao limpar filtros, redefine a hora para a mais recente disponível
+    const sHora = document.getElementById('filtro-hora');
+    if (sHora && sHora.options.length > 0) {
+        sHora.value = sHora.options[sHora.options.length - 1].value;
+    }
     
     const elLinha = document.getElementById('filtro-linha');
     if (elLinha) elLinha.value = "";
