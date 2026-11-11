@@ -68,17 +68,15 @@ function converterParaDataObjeto(d, h) {
 
 function resolverEstadoFicha(v, d, h) {
     const fichas = obterFichasManutencao();
-    const t = converterParaDataObjeto(d, h).getTime();
     for (let i = 0; i < fichas.length; i++) {
         const f = fichas[i];
         if (f.veiculo === v) {
-            const ta = converterParaDataObjeto(f.data_abertura, f.hora_abertura).getTime();
-            const tf = f.data_fechamento ? converterParaDataObjeto(f.data_fechamento, f.hora_fechamento).getTime() : null;
-            if (t >= ta) {
-                if (tf === null) return { estado: 'AbertaAtiva', ticket: f, index: i };
-                else if (t < tf) return { estado: 'AbertaHistorico', ticket: f, index: i };
-                else if (t === tf) return { estado: 'Fechada', ticket: f, index: i };
+            // Se possui data de fechamento, a ficha está oficialmente Fechada
+            if (f.data_fechamento) {
+                return { estado: 'Fechada', ticket: f, index: i };
             }
+            // Se não possui data de fechamento, continua Aberta
+            return { estado: 'AbertaAtiva', ticket: f, index: i };
         }
     }
     return { estado: 'Sem Ficha', ticket: null, index: -1 };
@@ -1015,22 +1013,36 @@ function fecharFichaManutencao(index) {
     const agora = new Date();
     const dia = String(agora.getDate()).padStart(2, '0');
     const mes = String(agora.getMonth() + 1).padStart(2, '0');
-    const ano = String(agora.getFullYear()).slice(-2);
+    const ano = String(agora.getFullYear()); // 4 dígitos para padronização
     const data_fc = `${dia}/${mes}/${ano}`;
     const hora_fc = `${agora.getHours()}h`;
 
-    if (isLocal && ficha.id) {
+    // 1. Atualiza imediatamente no estado da aplicação
+    ficha.data_fechamento = data_fc;
+    ficha.hora_fechamento = hora_fc;
+
+    // 2. Salva em cache local e atualiza a interface instantaneamente
+    localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
+    atualizarKPIs();
+    renderizarTabela();
+
+    // 3. Sincroniza com a API do GitHub (para todos os colaboradores na web)
+    sincronizarFichasComGitHub(fichasManutencaoGlobal);
+
+    // 4. Se for ambiente local, envia para o SQLite
+    if (isLocal) {
         fetch('/fechar-ficha-item', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: ficha.id, data_fechamento: data_fc, hora_fechamento: hora_fc })
-        }).then(() => carregarFichasEAtualizar());
-    } else {
-        ficha.data_fechamento = data_fc;
-        ficha.hora_fechamento = hora_fc;
-        localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
-        atualizarKPIs();
-        renderizarTabela();
+            body: JSON.stringify({
+                id: ficha.id,
+                veiculo: ficha.veiculo,
+                data_abertura: ficha.data_abertura,
+                hora_abertura: ficha.hora_abertura,
+                data_fechamento: data_fc,
+                hora_fechamento: hora_fc
+            })
+        }).catch(err => console.error("Erro sincronizando com SQLite:", err));
     }
 }
 
