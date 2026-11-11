@@ -212,7 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const btnFechar = e.target.closest('.btn-fechar-ficha');
             if (btnFechar) {
                 const idx = parseInt(btnFechar.dataset.idx, 10);
-                fecharFichaManutencao(idx);
+                const dataItem = btnFechar.dataset.data;
+                const horaItem = btnFechar.dataset.hora;
+                fecharFichaManutencao(idx, dataItem, horaItem);
                 return;
             }
 
@@ -787,8 +789,8 @@ function renderizarTabela() {
             // 1. Checkbox na situação normal (sem ficha)
             fichaHtml = `<input type="checkbox" class="chk-abrir-ficha" data-veiculo="${item._veiculo}" data-data="${item._data}" data-hora="${item._hora}">`;
         } else if (resFicha.estado.startsWith('Aberta')) {
-            // 2. Ficha Aberta: exibe apenas o botão 'Fechar'
-            fichaHtml = `<button class="btn-fechar-ficha" data-idx="${resFicha.index}" title="Concluir e fechar ficha">Fechar</button>`;
+            // 2. Ficha Aberta: exibe apenas o botão 'Fechar' com data e hora vinculadas
+            fichaHtml = `<button class="btn-fechar-ficha" data-idx="${resFicha.index}" data-data="${item._data}" data-hora="${item._hora}" title="Concluir e fechar ficha">Fechar</button>`;
         } else if (resFicha.estado === 'Fechada') {
             // 3. Ficha Fechada: exibe o ícone de X com confirmação de exclusão
             fichaHtml = `
@@ -1100,27 +1102,36 @@ function abrirFichaManutencao(veiculo, data, hora) {
     }
 }
 
-function fecharFichaManutencao(index) {
+function fecharFichaManutencao(index, dataReferencia, horaReferencia) {
     const ficha = fichasManutencaoGlobal[index];
     if (!ficha) return;
 
-    const agora = new Date();
-    const dia = String(agora.getDate()).padStart(2, '0');
-    const mes = String(agora.getMonth() + 1).padStart(2, '0');
-    const ano = String(agora.getFullYear());
-    const data_fc = `${dia}/${mes}/${ano}`;
-    const hora_fc = `${agora.getHours()}h`;
+    // Se receber a data/hora do registro da tabela, usa ela para manter coerência com o ano dos dados (ex: 2026)
+    let data_fc = dataReferencia;
+    let hora_fc = horaReferencia;
 
+    if (!data_fc || !hora_fc) {
+        const agora = new Date();
+        const dia = String(agora.getDate()).padStart(2, '0');
+        const mes = String(agora.getMonth() + 1).padStart(2, '0');
+        const ano = String(agora.getFullYear());
+        data_fc = `${dia}/${mes}/${ano}`;
+        hora_fc = `${agora.getHours()}h`;
+    }
+
+    // Marca o fechamento da ficha
     ficha.data_fechamento = data_fc;
     ficha.hora_fechamento = hora_fc;
 
+    // Atualiza imediatamente na memória local e redesenha a tela
     localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
     atualizarKPIs();
     renderizarTabela();
 
-    // Sincroniza fechamento no GitHub
+    // Envia o fechamento diretamente para o repositório no GitHub
     sincronizarFichasComGitHub(fichasManutencaoGlobal);
 
+    // Se estiver rodando no computador local com Flask/SQLite, salva também no banco
     if (isLocal) {
         fetch('/fechar-ficha-item', {
             method: 'POST',
