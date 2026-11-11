@@ -29,14 +29,65 @@ function alternarFiltroGrafico(tipo, valor) {
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 let fichasManutencaoGlobal = [];
 
-// Configuração da API do GitHub para persistência multiusuário
-const GITHUB_REPO = "cristian-souza-lider/status_de_comunicacao";
+// Função que grava o fichas_manutencao.json direto no repositório GitHub via API REST
+async function sincronizarFichasComGitHub(fichasAtualizadas) {
+    if (!GITHUB_TOKEN) return;
 
-// Token protegido contra o robô de revogação do GitHub
-const _p1 = "ghp_LmQmbgxHseQF";
-const _p2 = "f9rpn3LbUzlajs";
-const _p3 = "WSke3rZd5i";
-const GITHUB_TOKEN = `${_p1}${_p2}${_p3}`;
+    try {
+        const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/fichas_manutencao.json`;
+        
+        // 1. Busca o SHA atual do arquivo no GitHub com cache-buster (?ts)
+        const resConsulta = await fetch(`${url}?ts=${new Date().getTime()}`, {
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+
+        let sha = null;
+        if (resConsulta.ok) {
+            const dadosArquivo = await resConsulta.json();
+            sha = dadosArquivo.sha;
+        }
+
+        // 2. Codificação segura de UTF-8 para Base64 (evita erro com acentuação)
+        const jsonTexto = JSON.stringify(fichasAtualizadas, null, 4);
+        const encoder = new TextEncoder();
+        const dadosArray = encoder.encode(jsonTexto);
+        let binario = '';
+        for (let i = 0; i < dadosArray.length; i++) {
+            binario += String.fromCharCode(dadosArray[i]);
+        }
+        const conteudoBase64 = btoa(binario);
+
+        // 3. Monta o payload para o commit
+        const payload = {
+            message: `Atualizacao Ficha de Manutencao via Web - ${new Date().toLocaleTimeString('pt-BR')}`,
+            content: conteudoBase64
+        };
+        if (sha) payload.sha = sha;
+
+        // 4. Envia o commit via método PUT para a API do GitHub
+        const resCommit = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github.v3+json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (resCommit.ok) {
+            console.log("Fichas sincronizadas com sucesso no GitHub!");
+        } else {
+            const errLog = await resCommit.json();
+            console.error("Falha ao comitar no GitHub:", errLog);
+        }
+    } catch (err) {
+        console.error("Erro na comunicação com a API do GitHub:", err);
+    }
+}
 
 const segmentosPorEmpresa = {
     "AVUL": ["Urubupungá", "Urubupungá Municipal Osasco", "Urubupungá Municipal Santana", "Urubupungá Municipal Cajamar"],
@@ -990,19 +1041,31 @@ function atualizarMiniCards() {
 // =====================================================================
 
 function abrirFichaManutencao(veiculo, data, hora) {
-    const payload = { veiculo, data_abertura: data, hora_abertura: hora };
-    
+    const novaFicha = {
+        id: new Date().getTime(),
+        veiculo: veiculo,
+        data_abertura: data,
+        hora_abertura: hora,
+        data_fechamento: null,
+        hora_fechamento: null
+    };
+
+    // 1. Atualiza o estado da memória e renderiza na hora na tela
+    fichasManutencaoGlobal.push(novaFicha);
+    localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
+    atualizarKPIs();
+    renderizarTabela();
+
+    // 2. Envia para o GitHub para que os outros colaboradores vejam
+    sincronizarFichasComGitHub(fichasManutencaoGlobal);
+
+    // 3. Se for no computador local com Python, salva no SQLite
     if (isLocal) {
         fetch('/salvar-ficha-item', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        }).then(() => carregarFichasEAtualizar());
-    } else {
-        fichasManutencaoGlobal.push({ ...payload, data_fechamento: null, hora_fechamento: null });
-        localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
-        atualizarKPIs();
-        renderizarTabela();
+            body: JSON.stringify(novaFicha)
+        }).catch(err => console.error("Erro no SQLite:", err));
     }
 }
 
@@ -1013,23 +1076,20 @@ function fecharFichaManutencao(index) {
     const agora = new Date();
     const dia = String(agora.getDate()).padStart(2, '0');
     const mes = String(agora.getMonth() + 1).padStart(2, '0');
-    const ano = String(agora.getFullYear()); // 4 dígitos para padronização
+    const ano = String(agora.getFullYear());
     const data_fc = `${dia}/${mes}/${ano}`;
     const hora_fc = `${agora.getHours()}h`;
 
-    // 1. Atualiza imediatamente no estado da aplicação
     ficha.data_fechamento = data_fc;
     ficha.hora_fechamento = hora_fc;
 
-    // 2. Salva em cache local e atualiza a interface instantaneamente
     localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
     atualizarKPIs();
     renderizarTabela();
 
-    // 3. Sincroniza com a API do GitHub (para todos os colaboradores na web)
+    // Sincroniza fechamento no GitHub
     sincronizarFichasComGitHub(fichasManutencaoGlobal);
 
-    // 4. Se for ambiente local, envia para o SQLite
     if (isLocal) {
         fetch('/fechar-ficha-item', {
             method: 'POST',
@@ -1042,7 +1102,7 @@ function fecharFichaManutencao(index) {
                 data_fechamento: data_fc,
                 hora_fechamento: hora_fc
             })
-        }).catch(err => console.error("Erro sincronizando com SQLite:", err));
+        }).catch(err => console.error("Erro no SQLite:", err));
     }
 }
 
