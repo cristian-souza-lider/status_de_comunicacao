@@ -129,9 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         corpoTabela.addEventListener('click', (e) => {
-            if (e.target.classList.contains('btn-fechar-ficha')) {
-                const idx = parseInt(e.target.dataset.idx, 10);
+            const btnFechar = e.target.closest('.btn-fechar-ficha');
+            if (btnFechar) {
+                const idx = parseInt(btnFechar.dataset.idx, 10);
                 fecharFichaManutencao(idx);
+                return;
+            }
+
+            const btnExcluir = e.target.closest('.btn-excluir-ficha');
+            if (btnExcluir) {
+                const idx = parseInt(btnExcluir.dataset.idx, 10);
+                const veiculo = btnExcluir.dataset.veiculo;
+                excluirFichaManutencao(idx, veiculo);
             }
         });
     }
@@ -692,9 +701,25 @@ function renderizarTabela() {
         const corInt = item._integracao === "Integrado" ? "badge integrado" : (item._integracao === "Não Aplicável" ? "badge nao-aplic" : "badge falha-int");
         const corGps = item._gps === "Válido" ? "badge valido" : "badge invalido";
 
-        const fichaHtml = resFicha.estado === 'Sem Ficha'
-            ? `<input type="checkbox" class="chk-abrir-ficha" data-veiculo="${item._veiculo}" data-data="${item._data}" data-hora="${item._hora}">`
-            : `<div style="display: inline-flex; align-items: center; gap: 0.35rem;"><span class="badge aberta-pulse">ABERTA</span><button class="btn-fechar-ficha" data-idx="${resFicha.index}">Fechar</button></div>`;
+        let fichaHtml = '';
+
+        if (resFicha.estado === 'Sem Ficha') {
+            // 1. Checkbox na situação normal (sem ficha)
+            fichaHtml = `<input type="checkbox" class="chk-abrir-ficha" data-veiculo="${item._veiculo}" data-data="${item._data}" data-hora="${item._hora}">`;
+        } else if (resFicha.estado.startsWith('Aberta')) {
+            // 2. Ficha Aberta: exibe apenas o botão 'Fechar'
+            fichaHtml = `<button class="btn-fechar-ficha" data-idx="${resFicha.index}" title="Concluir e fechar ficha">Fechar</button>`;
+        } else if (resFicha.estado === 'Fechada') {
+            // 3. Ficha Fechada: exibe o ícone de X com confirmação de exclusão
+            fichaHtml = `
+                <div style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                    <span style="font-size: 0.68rem; color: #10b981; font-weight: 700;">Resolvido</span>
+                    <button class="btn-excluir-ficha" data-idx="${resFicha.index}" data-veiculo="${item._veiculo}" title="Excluir histórico desta ficha">
+                        <i class="ph ph-x"></i>
+                    </button>
+                </div>
+            `;
+        }
 
         return `
             <tr>
@@ -1018,6 +1043,19 @@ function carregarFichasEAtualizar() {
             atualizarKPIs();
             renderizarTabela();
         });
+}
+
+function excluirFichaManutencao(index, veiculo) {
+    const confirmou = confirm(`Deseja realmente excluir o histórico de ficha de manutenção do veículo ${veiculo}?`);
+    if (!confirmou) return;
+
+    if (fichasManutencaoGlobal[index]) {
+        fichasManutencaoGlobal.splice(index, 1);
+        localStorage.setItem('manutencao_fichas', JSON.stringify(fichasManutencaoGlobal));
+        atualizarKPIs();
+        renderizarTabela();
+        sincronizarFichasComGitHub(fichasManutencaoGlobal);
+    }
 }
 
 // =====================================================================

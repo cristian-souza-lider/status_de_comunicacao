@@ -520,20 +520,42 @@ tbody tr:hover {
 }
 
 .btn-fechar-ficha {
-  background: #22c55e;
-  color: #fff;
+  background: #ef4444;
+  color: #ffffff;
   border: none;
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  font-size: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.70rem;
   font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
   transition: all 0.2s ease;
 }
 
 .btn-fechar-ficha:hover {
-  background: #16a34a;
+  background: #dc2626;
   transform: scale(1.05);
+}
+
+.btn-excluir-ficha {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-excluir-ficha:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: scale(1.15);
 }
 
 /* ==========================================================================
