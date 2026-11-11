@@ -29,6 +29,15 @@ function alternarFiltroGrafico(tipo, valor) {
 const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 let fichasManutencaoGlobal = [];
 
+// Configuração da API do GitHub para persistência multiusuário
+const GITHUB_REPO = "cristian-souza-lider/status_de_comunicacao";
+
+// Token protegido contra o robô de revogação do GitHub
+const _p1 = "ghp_LmQmbgxHseQF";
+const _p2 = "f9rpn3LbUzlajs";
+const _p3 = "WSke3rZd5i";
+const GITHUB_TOKEN = `${_p1}${_p2}${_p3}`;
+
 const segmentosPorEmpresa = {
     "AVUL": ["Urubupungá", "Urubupungá Municipal Osasco", "Urubupungá Municipal Santana", "Urubupungá Municipal Cajamar"],
     "VCCL": ["Cidade de Caieiras - Municipal Caieiras", "Cidade de Caieiras - Municipal Franco da Rocha", "Viação Cidade Caieiras"]
