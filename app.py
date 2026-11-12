@@ -116,23 +116,29 @@ def aguardar_conclusao_download(pasta_download, timeout=15):
 
 def enviar_para_github(nome_dados_dia_local):
     try:
-        print("[Git] Sincronizando com GitHub...")
-        # 1. Adiciona todas as modificações locais primeiro
+        print("[Git] Sincronizando com GitHub...", flush=True)
+        # Se houver algum rebase travado por travamento anterior, aborta
+        subprocess.run(["git", "rebase", "--abort"], cwd=LOCAL_PROJETO_DIR, check=False)
+
+        # 1. Garante que estamos na branch main
+        subprocess.run(["git", "checkout", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+
+        # 2. Puxa eventuais fichas enviadas da Web usando merge seguro (sem travar em rebase)
+        subprocess.run(["git", "pull", "--no-rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
+
+        # 3. Adiciona as alterações locais
         subprocess.run(["git", "add", "-A"], cwd=LOCAL_PROJETO_DIR, check=True)
         
-        # 2. Cria o commit local se houver mudanças nos arquivos
+        # 4. Comita se houver alterações
         status = subprocess.run(["git", "status", "--porcelain"], cwd=LOCAL_PROJETO_DIR, capture_output=True, text=True)
         if status.stdout.strip():
             subprocess.run(["git", "commit", "-m", f"Automacao Flits: {datetime.now().strftime('%d/%m %H:%M')}"], cwd=LOCAL_PROJETO_DIR, check=True)
 
-        # 3. Alinha com o GitHub (com as mudanças locais já comitadas com segurança)
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=False)
-
-        # 4. Envia para o GitHub sem erros
+        # 5. Envia para o GitHub
         subprocess.run(["git", "push", "origin", "main"], cwd=LOCAL_PROJETO_DIR, check=True)
-        print("[Git] Sincronização automática OK.")
+        print("[Git] Sincronização automática OK.", flush=True)
     except Exception as e: 
-        print(f"[Git - Erro] {e}")
+        print(f"[Git - Erro] {e}", flush=True)
 
 # =====================================================================
 #                 ROTINA DE AUTOMAÇÃO FLITS (FLUXO LINEAR)
@@ -381,13 +387,20 @@ def iniciar_automacao_flits():
         # INÍCIO DO FLUXO
         # -------------------------------------------------------------
 
-        # 1. Abre o Mozilla na página Flits, efetua login e clica em "Acesso"
+        # 1. Abre o Mozilla na página Flits, efetua login e clica em "Acesso" com espera segura
         print("     [1/4] Acessando Flits e realizando login...", flush=True)
         driver.get(URL_FLITS)
-        wait.until(EC.element_to_be_clickable((By.NAME, "username"))).send_keys(USUARIO_FLITS)
-        driver.find_element(By.NAME, "password").send_keys(SENHA_FLITS)
+        time.sleep(3)
+
+        campo_user = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.NAME, "username")))
+        campo_user.clear()
+        campo_user.send_keys(USUARIO_FLITS)
+
+        campo_pass = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "password")))
+        campo_pass.clear()
+        campo_pass.send_keys(SENHA_FLITS)
         
-        btn_login = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn-login, button[type='submit']")))
+        btn_login = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn-login, button[type='submit']")))
         driver.execute_script("arguments[0].click();", btn_login)
         print("     [2/4] Login submetido, aguardando 5s e fechando pop-ups ('Entendido' e 'Aceite')...", flush=True)
         time.sleep(5)
