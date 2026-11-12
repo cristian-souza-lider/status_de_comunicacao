@@ -124,10 +124,22 @@ function salvarFichasManutencao(f) {
 
 function converterParaDataObjeto(d, h) {
     if (!d) return new Date(0);
-    const p = d.split("/");
-    const ano = p[2].length === 2 ? "20" + p[2] : p[2];
-    const hora = h ? parseInt(h.replace("h", ""), 10) : 0;
-    return new Date(ano, p[1] - 1, p[0], hora, 0, 0);
+    const p = String(d).trim().split("/");
+    if (p.length < 3) return new Date(0);
+    
+    // Normaliza ano para 4 dígitos (ex: 26 -> 2026)
+    const ano = p[2].length === 2 ? parseInt("20" + p[2], 10) : parseInt(p[2], 10);
+    const mes = parseInt(p[1], 10) - 1;
+    const dia = parseInt(p[0], 10);
+    
+    // Normaliza hora numérica (ex: "15h" -> 15)
+    let hora = 0;
+    if (h) {
+        const match = String(h).match(/\d+/);
+        if (match) hora = parseInt(match[0], 10);
+    }
+    
+    return new Date(ano, mes, dia, hora, 0, 0);
 }
 
 function resolverEstadoFicha(v, d, h) {
@@ -140,24 +152,29 @@ function resolverEstadoFicha(v, d, h) {
             const tAbertura = converterParaDataObjeto(f.data_abertura, f.hora_abertura).getTime();
             const tFechamento = f.data_fechamento ? converterParaDataObjeto(f.data_fechamento, f.hora_fechamento).getTime() : null;
 
-            // 1. ANTES DA ABERTURA: O veículo ainda não tinha chamado aberto
+            // 1. ANTES DA ABERTURA (Ex: 00h às 11h): Carro sem problema -> Checkbox livre
             if (tAtual < tAbertura) {
                 continue;
             }
 
-            // 2. FICHA ABERTA AINDA NÃO CONCLUÍDA: Permanece aberta da abertura em diante
+            // 2. FICHA ABERTA AINDA NÃO FECHADA: Permanece com botão 'Fechar' da abertura em diante
             if (tFechamento === null) {
                 return { estado: 'AbertaAtiva', ticket: f, index: i };
             }
 
-            // 3. HORÁRIO DO FECHAMENTO EM DIANTE: Ficha resolvida, exibe o ícone de X permitindo exclusão
-            if (tAtual >= tFechamento) {
+            // 3. EXATAMENTE NO HORÁRIO DO FECHAMENTO (Ex: 15h): Mostra 'Resolvido' com o ícone (X)
+            if (tAtual === tFechamento) {
                 return { estado: 'Fechada', ticket: f, index: i };
             }
 
-            // 4. ENTRE ABERTURA E FECHAMENTO: Estava em manutenção naquele momento histórico
+            // 4. ENTRE ABERTURA E O FECHAMENTO (Ex: 12h às 14h): Mostra botão 'Fechar'
             if (tAtual >= tAbertura && tAtual < tFechamento) {
                 return { estado: 'AbertaAtiva', ticket: f, index: i };
+            }
+
+            // 5. APÓS O FECHAMENTO (Ex: 16h em diante): O carro já foi consertado e liberado -> Checkbox livre
+            if (tAtual > tFechamento) {
+                continue;
             }
         }
     }
