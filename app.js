@@ -16,6 +16,7 @@ let charts = { empresa: null, segmento: null, veiculo: null, equipamento: null, 
 
 // Filtro Cruzado Interativo dos Gráficos
 let filtroGraficoAtivo = { tipo: null, valor: null };
+let filtroFichaAbertaAtivo = false; // Controle do filtro do cartão Ficha Aberta
 
 function alternarFiltroGrafico(tipo, valor) {
     if (filtroGraficoAtivo.tipo === tipo && filtroGraficoAtivo.valor === valor) {
@@ -211,6 +212,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('btn-tema')?.addEventListener('click', alternarTema);
     document.getElementById('btn-fullscreen')?.addEventListener('click', alternarFullscreen);
+
+    // Transforma o cartão Ficha Aberta em filtro clicável
+    const cardFichaAberta = document.getElementById('kpi-fichas-abertas')?.closest('.kpi-card');
+    if (cardFichaAberta) {
+        cardFichaAberta.style.cursor = 'pointer';
+        cardFichaAberta.setAttribute('title', 'Clique para filtrar apenas veículos com Ficha Aberta');
+        cardFichaAberta.addEventListener('click', () => {
+            filtroFichaAbertaAtivo = !filtroFichaAbertaAtivo;
+            cardFichaAberta.classList.toggle('kpi-card-ativo', filtroFichaAbertaAtivo);
+            aplicarFiltros();
+        });
+    }
 
     // Ordenação clicável nos cabeçalhos da tabela
     document.querySelectorAll('#tabela-analise th[data-sort]').forEach(th => {
@@ -622,6 +635,12 @@ function aplicarFiltros() {
         if (f.int && d._integracao !== f.int) return false;
         if (f.minHorasNC > 0 && d._horasNC < f.minHorasNC) return false;
 
+        // Filtro do Cartão Ficha Aberta (mostra apenas veículos com ficha aberta na hora selecionada)
+        if (filtroFichaAbertaAtivo) {
+            const estadoFicha = resolverEstadoFicha(d._veiculo, d._data, d._hora);
+            if (!estadoFicha.estado.startsWith('Aberta')) return false;
+        }
+
         if (filtroGraficoAtivo.tipo) {
             if (filtroGraficoAtivo.tipo === 'empresa' && d._empresa !== filtroGraficoAtivo.valor) return false;
             if (filtroGraficoAtivo.tipo === 'segmento' && d._segmento !== filtroGraficoAtivo.valor) return false;
@@ -880,6 +899,8 @@ function limparFiltros() {
     ordemAscendente = false;
 
     filtroGraficoAtivo = { tipo: null, valor: null };
+    filtroFichaAbertaAtivo = false;
+    document.getElementById('kpi-fichas-abertas')?.closest('.kpi-card')?.classList.remove('kpi-card-ativo');
 
     atualizarSelectSegmentos();
     aplicarFiltros();

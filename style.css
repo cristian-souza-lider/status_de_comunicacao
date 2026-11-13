@@ -701,3 +701,11 @@ tbody tr:hover {
   color: #ffffff !important;
   border-color: #22c55e !important;
 }
+
+/* Destaque visual quando o cartão Ficha Aberta estiver filtrando a tela */
+.kpi-card-ativo {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.4), var(--shadow) !important;
+  background: var(--bg-card-hover) !important;
+  transform: translateY(-2px);
+}
