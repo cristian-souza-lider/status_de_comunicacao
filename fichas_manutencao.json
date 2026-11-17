@@ -4,7 +4,7 @@
         "veiculo": "00444",
         "data_abertura": "17/11/2026",
         "hora_abertura": "02h",
-        "data_fechamento": null,
-        "hora_fechamento": null
+        "data_fechamento": "17/11/2026",
+        "hora_fechamento": "02h"
     }
 ]
