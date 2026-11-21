@@ -46,5 +46,13 @@
         "hora_abertura": "02h",
         "data_fechamento": null,
         "hora_fechamento": null
+    },
+    {
+        "id": 1795239104254,
+        "veiculo": "20608",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
     }
 ]
