@@ -1,1 +1,66 @@
-[]
+[
+    {
+        "id": 1795238941062,
+        "veiculo": "00387",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239091718,
+        "veiculo": "20048",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239092422,
+        "veiculo": "20133",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239098254,
+        "veiculo": "20135",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239099102,
+        "veiculo": "20157",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239103086,
+        "veiculo": "20159",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239104254,
+        "veiculo": "20608",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    },
+    {
+        "id": 1795239105214,
+        "veiculo": "20789",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "02h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    }
+]
