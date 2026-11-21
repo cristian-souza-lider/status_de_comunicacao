@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": 1795246752786,
+        "veiculo": "20048",
+        "data_abertura": "21/11/2026",
+        "hora_abertura": "04h",
+        "data_fechamento": null,
+        "hora_fechamento": null
+    }
+]
