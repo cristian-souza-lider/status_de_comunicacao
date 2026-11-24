@@ -1,18 +1,1 @@
-[
-    {
-        "id": 1795495675647,
-        "veiculo": "00367",
-        "data_abertura": "24/11/2026",
-        "hora_abertura": "01h",
-        "data_fechamento": null,
-        "hora_fechamento": null
-    },
-    {
-        "id": 1795495679895,
-        "veiculo": "20082",
-        "data_abertura": "24/11/2026",
-        "hora_abertura": "01h",
-        "data_fechamento": null,
-        "hora_fechamento": null
-    }
-]
+[]
