@@ -289513,11 +289513,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:29",
+        "Hora Validador": "2026-11-26T22:36:57",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289529,11 +289529,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:24",
+        "Hora Validador": "2026-11-26T22:36:53",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289545,11 +289545,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:46",
+        "Hora Validador": "2026-11-26T22:36:49",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289561,15 +289561,15 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:25",
+        "Hora Validador": "2026-11-26T22:36:59",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
-        "Linha": "361TRO-FCO. MORATO(Pq. 120) - SP(Term. Barra Funda)",
+        "Linha": "",
         "Prefixo": "22125",
         "Situação Veículo": "Operando",
         "Número do AVL": "57618",
@@ -289577,11 +289577,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:22:11",
+        "Hora Validador": "2026-11-26T22:36:18",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289593,11 +289593,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:58",
+        "Hora Validador": "2026-11-26T22:36:57",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289609,11 +289609,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:33",
+        "Hora Validador": "2026-11-26T22:37:01",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289625,11 +289625,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:37",
+        "Hora Validador": "2026-11-26T22:37:05",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289641,11 +289641,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:34",
+        "Hora Validador": "2026-11-26T22:37:07",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289655,13 +289655,13 @@
         "Número do AVL": "57333",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 12h6min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h16min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:22:41",
+        "Hora Validador": "2026-11-26T22:36:46",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289673,11 +289673,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:32",
+        "Hora Validador": "2026-11-26T22:37:06",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289687,13 +289687,13 @@
         "Número do AVL": "54889",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h0min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:16:45",
+        "Hora Validador": "2026-11-26T22:36:45",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289705,11 +289705,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:14",
+        "Hora Validador": "2026-11-26T22:36:42",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289719,13 +289719,13 @@
         "Número do AVL": "56656",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 11h54min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h4min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:22:06",
+        "Hora Validador": "2026-11-26T22:37:07",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289737,11 +289737,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:14:39",
+        "Hora Validador": "2026-11-26T22:35:36",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289751,13 +289751,13 @@
         "Número do AVL": "56586",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 24h51min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 25h2min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:00",
+        "Hora Validador": "2026-11-26T22:29:03",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289769,11 +289769,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:24",
+        "Hora Validador": "2026-11-26T22:36:52",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289785,11 +289785,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:18",
+        "Hora Validador": "2026-11-26T22:36:51",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289799,13 +289799,13 @@
         "Número do AVL": "57960",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h22min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:15:41",
+        "Hora Validador": "2026-11-26T22:35:40",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289817,11 +289817,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:22",
+        "Hora Validador": "2026-11-26T22:36:50",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289833,11 +289833,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:03",
+        "Hora Validador": "2026-11-26T22:30:07",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289849,11 +289849,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:21",
+        "Hora Validador": "2026-11-26T22:36:49",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289865,11 +289865,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:44",
+        "Hora Validador": "2026-11-26T22:33:40",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289881,11 +289881,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:18:14",
+        "Hora Validador": "2026-11-26T22:36:11",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289901,7 +289901,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289913,11 +289913,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:19",
+        "Hora Validador": "2026-11-26T22:36:52",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289929,11 +289929,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:28",
+        "Hora Validador": "2026-11-26T22:37:02",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289945,11 +289945,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:09",
+        "Hora Validador": "2026-11-26T22:37:08",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289961,11 +289961,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:15",
+        "Hora Validador": "2026-11-26T22:36:49",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289977,11 +289977,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:36",
+        "Hora Validador": "2026-11-26T22:37:09",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -289993,11 +289993,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:22:21",
+        "Hora Validador": "2026-11-26T22:36:21",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290009,11 +290009,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:23",
+        "Hora Validador": "2026-11-26T22:36:56",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290025,11 +290025,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:27",
+        "Hora Validador": "2026-11-26T22:37:01",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290039,13 +290039,13 @@
         "Número do AVL": "56749",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h20min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h31min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:06",
+        "Hora Validador": "2026-11-26T22:30:04",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290057,11 +290057,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:47",
+        "Hora Validador": "2026-11-26T22:36:45",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290073,11 +290073,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:21",
+        "Hora Validador": "2026-11-26T22:32:21",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290089,11 +290089,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:28",
+        "Hora Validador": "2026-11-26T22:37:02",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290105,11 +290105,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:00",
+        "Hora Validador": "2026-11-26T22:34:02",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290121,11 +290121,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:49",
+        "Hora Validador": "2026-11-26T22:34:46",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290137,11 +290137,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:40",
+        "Hora Validador": "2026-11-26T22:30:38",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290153,11 +290153,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:24",
+        "Hora Validador": "2026-11-26T22:36:54",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290169,11 +290169,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:20",
+        "Hora Validador": "2026-11-26T22:30:23",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290185,11 +290185,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:28",
+        "Hora Validador": "2026-11-26T22:36:26",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290199,13 +290199,13 @@
         "Número do AVL": "60043",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 10h45min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 10h55min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:42",
+        "Hora Validador": "2026-11-26T22:33:42",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290217,11 +290217,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:03",
+        "Hora Validador": "2026-11-26T22:33:04",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290233,11 +290233,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:33",
+        "Hora Validador": "2026-11-26T22:37:01",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290249,11 +290249,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:22",
+        "Hora Validador": "2026-11-26T22:36:51",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290265,11 +290265,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:32",
+        "Hora Validador": "2026-11-26T22:37:01",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290281,11 +290281,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:11",
+        "Hora Validador": "2026-11-26T22:37:09",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290297,11 +290297,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:30",
+        "Hora Validador": "2026-11-26T22:36:59",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290313,11 +290313,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:19",
+        "Hora Validador": "2026-11-26T22:36:53",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290329,11 +290329,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:13",
+        "Hora Validador": "2026-11-26T22:36:44",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290345,11 +290345,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:44",
+        "Hora Validador": "2026-11-26T22:36:45",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290361,11 +290361,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:41",
+        "Hora Validador": "2026-11-26T22:34:41",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290377,11 +290377,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:23",
+        "Hora Validador": "2026-11-26T22:36:58",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290393,11 +290393,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:15",
+        "Hora Validador": "2026-11-26T22:36:50",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290413,7 +290413,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290425,11 +290425,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:00",
+        "Hora Validador": "2026-11-26T22:37:01",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290441,11 +290441,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:23",
+        "Hora Validador": "2026-11-26T22:36:54",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290457,11 +290457,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:05",
+        "Hora Validador": "2026-11-26T22:37:06",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290473,11 +290473,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:29",
+        "Hora Validador": "2026-11-26T22:37:00",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290489,11 +290489,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:49",
+        "Hora Validador": "2026-11-26T22:36:50",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290503,13 +290503,13 @@
         "Número do AVL": "566",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 6h59min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 7h10min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:17",
+        "Hora Validador": "2026-11-26T22:36:18",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290521,11 +290521,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:20",
+        "Hora Validador": "2026-11-26T22:36:51",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290537,11 +290537,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:10",
+        "Hora Validador": "2026-11-26T22:37:11",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290553,11 +290553,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:58",
+        "Hora Validador": "2026-11-26T22:36:59",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290569,11 +290569,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:25:52",
+        "Hora Validador": "2026-11-26T22:31:23",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290585,11 +290585,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:23",
+        "Hora Validador": "2026-11-26T22:36:23",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290601,11 +290601,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:05",
+        "Hora Validador": "2026-11-26T22:37:06",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290615,13 +290615,13 @@
         "Número do AVL": "485",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 7h31min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 7h42min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:19",
+        "Hora Validador": "2026-11-26T22:36:20",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290633,11 +290633,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:11",
+        "Hora Validador": "2026-11-26T22:37:11",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290649,11 +290649,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:41",
+        "Hora Validador": "2026-11-26T22:37:12",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290665,11 +290665,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:41",
+        "Hora Validador": "2026-11-26T22:36:41",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290681,11 +290681,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:29",
+        "Hora Validador": "2026-11-26T22:36:59",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290697,11 +290697,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:16",
+        "Hora Validador": "2026-11-26T22:36:47",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290713,11 +290713,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:32",
+        "Hora Validador": "2026-11-26T22:36:33",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290729,11 +290729,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:26:36",
+        "Hora Validador": "2026-11-26T22:37:06",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290743,13 +290743,13 @@
         "Número do AVL": "55092",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 35h25min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 35h35min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:18:59",
+        "Hora Validador": "2026-11-26T22:36:58",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290759,13 +290759,13 @@
         "Número do AVL": "57787",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h48min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h58min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-26T22:23:24",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -290781,7 +290781,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290797,7 +290797,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290813,7 +290813,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290829,7 +290829,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290845,7 +290845,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290861,7 +290861,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290877,7 +290877,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290893,7 +290893,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290909,7 +290909,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290925,7 +290925,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290941,11 +290941,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
-        "Linha": "060-JARDIM NOVA ERA - LARANJEIRAS",
+        "Linha": "",
         "Prefixo": "00318",
         "Situação Veículo": "Operando",
         "Número do AVL": "97718",
@@ -290957,7 +290957,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290973,7 +290973,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -290989,7 +290989,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291005,7 +291005,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291021,7 +291021,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291037,7 +291037,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291053,7 +291053,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291069,7 +291069,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291085,7 +291085,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291101,7 +291101,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291117,7 +291117,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291133,7 +291133,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291149,7 +291149,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291165,7 +291165,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291181,11 +291181,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
-        "Linha": "055-ESTAÇÃO CAIEIRAS - JARDIM MARCELINO",
+        "Linha": "",
         "Prefixo": "00333",
         "Situação Veículo": "Operando",
         "Número do AVL": "94079",
@@ -291197,7 +291197,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291213,7 +291213,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291229,7 +291229,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291245,7 +291245,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291261,7 +291261,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291271,13 +291271,13 @@
         "Número do AVL": "94287",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h14min",
+        "Não Conformidade": "Veículo sem GPS válido 1h30min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291293,7 +291293,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291309,7 +291309,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291325,7 +291325,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291341,7 +291341,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291357,11 +291357,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
-        "Linha": "055-ESTAÇÃO CAIEIRAS - JARDIM MARCELINO",
+        "Linha": "",
         "Prefixo": "00344",
         "Situação Veículo": "Operando",
         "Número do AVL": "107206",
@@ -291373,7 +291373,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291389,7 +291389,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291405,11 +291405,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
-        "Linha": "",
+        "Linha": "055-ESTAÇÃO CAIEIRAS - JARDIM MARCELINO",
         "Prefixo": "00347",
         "Situação Veículo": "Operando",
         "Número do AVL": "109353",
@@ -291421,7 +291421,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291437,7 +291437,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291453,7 +291453,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291463,13 +291463,13 @@
         "Número do AVL": "97310",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 5h16min",
+        "Não Conformidade": "Veículo sem transmissão 5h32min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291479,13 +291479,13 @@
         "Número do AVL": "105181",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h23min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h38min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291501,7 +291501,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291517,7 +291517,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291533,7 +291533,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291549,7 +291549,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291565,7 +291565,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291581,7 +291581,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291591,13 +291591,13 @@
         "Número do AVL": "94064",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 11h53min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h8min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291613,7 +291613,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -291623,13 +291623,13 @@
         "Número do AVL": "97762",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 107h32min",
+        "Não Conformidade": "Veículo sem transmissão 107h47min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291645,11 +291645,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "310-LAGO AZUL - ESTAÇÃO PARADINHA.",
+        "Linha": "",
         "Prefixo": "00402",
         "Situação Veículo": "Operando",
         "Número do AVL": "121840",
@@ -291661,7 +291661,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291677,7 +291677,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291693,7 +291693,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291709,7 +291709,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291725,7 +291725,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291741,7 +291741,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291757,7 +291757,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291773,7 +291773,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291783,13 +291783,13 @@
         "Número do AVL": "94033",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h45min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h0min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291799,13 +291799,13 @@
         "Número do AVL": "94088",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h14min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291821,7 +291821,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291837,7 +291837,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291853,7 +291853,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291869,7 +291869,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291885,7 +291885,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291901,11 +291901,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "210-ESTAÇÃO DE FRANCO DA ROCHA - PQ VITÓRIA-V. RAMOS",
+        "Linha": "",
         "Prefixo": "00423",
         "Situação Veículo": "Operando",
         "Número do AVL": "94046",
@@ -291917,7 +291917,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291933,7 +291933,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291949,7 +291949,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291965,7 +291965,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291981,7 +291981,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -291997,7 +291997,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292013,7 +292013,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292029,7 +292029,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292045,7 +292045,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292057,11 +292057,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-26T22:23:40",
+        "Hora Validador": "2026-11-26T22:38:40",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292077,7 +292077,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292093,7 +292093,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292109,11 +292109,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "110-JARDIM LUCIANA - ESTAÇÃO DE FRANCO DA ROCHA",
+        "Linha": "",
         "Prefixo": "00437",
         "Situação Veículo": "Operando",
         "Número do AVL": "97890",
@@ -292125,7 +292125,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292141,7 +292141,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292157,7 +292157,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292167,13 +292167,13 @@
         "Número do AVL": "97901",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 12h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h34min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292189,7 +292189,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292205,7 +292205,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292221,7 +292221,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292237,7 +292237,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292253,7 +292253,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292269,7 +292269,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292285,7 +292285,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292301,7 +292301,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292317,7 +292317,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292333,7 +292333,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292349,11 +292349,11 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "250-ESTAÇÃO DE FRANCO DA ROCHA - LAGO AZUL ALTO",
+        "Linha": "",
         "Prefixo": "00452",
         "Situação Veículo": "Operando",
         "Número do AVL": "97344",
@@ -292365,7 +292365,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292381,7 +292381,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292397,7 +292397,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292413,7 +292413,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292423,13 +292423,13 @@
         "Número do AVL": "97944",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 22h38min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 22h53min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292445,7 +292445,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292461,7 +292461,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292477,7 +292477,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292493,7 +292493,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292509,7 +292509,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292519,13 +292519,13 @@
         "Número do AVL": "112806",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 20h36min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 20h52min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292541,7 +292541,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292557,7 +292557,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292573,7 +292573,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292589,7 +292589,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292605,7 +292605,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292621,7 +292621,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292637,7 +292637,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292653,7 +292653,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292669,7 +292669,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292685,7 +292685,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292701,7 +292701,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292717,7 +292717,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292727,13 +292727,13 @@
         "Número do AVL": "55001648",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h30min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h45min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292749,7 +292749,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292765,7 +292765,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292781,7 +292781,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292797,7 +292797,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292813,7 +292813,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292829,7 +292829,7 @@
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292839,13 +292839,13 @@
         "Número do AVL": "97715",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h25min",
+        "Não Conformidade": "Veículo sem GPS válido 2h40min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292855,13 +292855,13 @@
         "Número do AVL": "115322",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 30h31min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 30h46min",
         "GPS Status": "1",
         "Hora Validador": "2026-07-29T22:14:10",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292871,13 +292871,13 @@
         "Número do AVL": "65353",
         "Fabricante": "Prodata V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 4h20min",
+        "Não Conformidade": "Veículo sem transmissão 4h35min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-26T18:03:21",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -292887,13 +292887,13 @@
         "Número do AVL": "120489",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 84h9min",
+        "Não Conformidade": "Veículo sem transmissão 84h24min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "26/11/2026",
         "Hora": "22h",
-        "Hora_Extracao": "22h27"
+        "Hora_Extracao": "22h41"
     },
     {
         "Segmento": "Urubupungá",
