@@ -13177,11 +13177,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:43",
+        "Hora Validador": "2026-11-27T01:26:14",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13193,11 +13193,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:08",
+        "Hora Validador": "2026-11-27T01:26:05",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13209,11 +13209,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:03",
+        "Hora Validador": "2026-11-27T01:26:34",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13225,11 +13225,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:51",
+        "Hora Validador": "2026-11-27T01:25:57",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13239,13 +13239,13 @@
         "Número do AVL": "57618",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h25min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h44min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:00",
+        "Hora Validador": "2026-11-27T01:25:59",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13257,11 +13257,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:40",
+        "Hora Validador": "2026-11-27T01:26:41",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13273,11 +13273,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:47",
+        "Hora Validador": "2026-11-27T01:26:17",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13287,13 +13287,13 @@
         "Número do AVL": "54913",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h3min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:00",
+        "Hora Validador": "2026-11-27T01:26:01",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13305,11 +13305,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:03",
+        "Hora Validador": "2026-11-27T01:26:06",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13319,13 +13319,13 @@
         "Número do AVL": "57333",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h46min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h6min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:59",
+        "Hora Validador": "2026-11-27T01:25:57",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13337,11 +13337,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:51",
+        "Hora Validador": "2026-11-27T01:25:54",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13351,13 +13351,13 @@
         "Número do AVL": "54889",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h30min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h50min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:49",
+        "Hora Validador": "2026-11-27T01:25:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13369,11 +13369,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:50",
+        "Hora Validador": "2026-11-27T01:25:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13383,13 +13383,13 @@
         "Número do AVL": "56656",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h34min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h54min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:46",
+        "Hora Validador": "2026-11-27T01:25:51",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13401,11 +13401,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:40",
+        "Hora Validador": "2026-11-27T01:26:41",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13415,13 +13415,13 @@
         "Número do AVL": "56586",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 27h32min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 27h51min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:04",
+        "Hora Validador": "2026-11-27T01:11:03",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13433,11 +13433,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:03",
+        "Hora Validador": "2026-11-27T01:11:01",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13449,11 +13449,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:59",
+        "Hora Validador": "2026-11-27T01:26:34",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13463,13 +13463,13 @@
         "Número do AVL": "57960",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h52min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h12min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:36",
+        "Hora Validador": "2026-11-27T01:26:35",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13485,7 +13485,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13497,11 +13497,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:46",
+        "Hora Validador": "2026-11-27T01:25:49",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13513,11 +13513,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:51",
+        "Hora Validador": "2026-11-27T01:25:49",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13529,11 +13529,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:44",
+        "Hora Validador": "2026-11-27T01:25:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13545,11 +13545,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:32",
+        "Hora Validador": "2026-11-27T01:26:32",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13559,13 +13559,13 @@
         "Número do AVL": "7034",
         "Fabricante": "Quanta Plus",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h28min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h47min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-26T22:02:23",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13577,11 +13577,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:53",
+        "Hora Validador": "2026-11-27T01:25:51",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13593,11 +13593,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:03",
+        "Hora Validador": "2026-11-27T01:26:02",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13609,11 +13609,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:37",
+        "Hora Validador": "2026-11-27T01:26:36",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13625,11 +13625,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:17",
+        "Hora Validador": "2026-11-27T01:21:16",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13641,11 +13641,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:45",
+        "Hora Validador": "2026-11-27T01:25:49",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13657,11 +13657,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:08",
+        "Hora Validador": "2026-11-27T01:26:07",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13673,11 +13673,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:14",
+        "Hora Validador": "2026-11-27T01:26:14",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13689,11 +13689,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:48",
+        "Hora Validador": "2026-11-27T01:25:46",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13703,13 +13703,13 @@
         "Número do AVL": "56749",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 7h1min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 7h20min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:48",
+        "Hora Validador": "2026-11-27T01:25:47",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13721,11 +13721,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:18",
+        "Hora Validador": "2026-11-27T01:26:18",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13735,13 +13735,13 @@
         "Número do AVL": "57266",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h32min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:43",
+        "Hora Validador": "2026-11-27T01:25:46",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13753,11 +13753,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:40",
+        "Hora Validador": "2026-11-27T01:25:45",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13767,13 +13767,13 @@
         "Número do AVL": "58059",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h47min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h6min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:04",
+        "Hora Validador": "2026-11-27T01:26:02",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13785,11 +13785,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:36",
+        "Hora Validador": "2026-11-27T01:26:35",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13801,11 +13801,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:47",
+        "Hora Validador": "2026-11-27T01:25:51",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13817,11 +13817,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:10",
+        "Hora Validador": "2026-11-27T01:26:09",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13833,11 +13833,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:01",
+        "Hora Validador": "2026-11-27T01:26:04",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13849,11 +13849,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:45",
+        "Hora Validador": "2026-11-27T01:25:44",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13863,13 +13863,13 @@
         "Número do AVL": "60043",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h25min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h45min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:45",
+        "Hora Validador": "2026-11-27T01:25:43",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13881,11 +13881,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:07",
+        "Hora Validador": "2026-11-27T01:26:12",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13895,13 +13895,13 @@
         "Número do AVL": "57229",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h12min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:51",
+        "Hora Validador": "2026-11-27T01:25:50",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13913,11 +13913,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:52",
+        "Hora Validador": "2026-11-27T01:25:51",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13929,11 +13929,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:00",
+        "Hora Validador": "2026-11-27T01:26:02",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13945,11 +13945,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:20",
+        "Hora Validador": "2026-11-27T01:26:26",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13961,11 +13961,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:13",
+        "Hora Validador": "2026-11-27T01:26:14",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13977,11 +13977,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:51",
+        "Hora Validador": "2026-11-27T01:25:55",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -13993,11 +13993,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:48",
+        "Hora Validador": "2026-11-27T01:25:49",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14007,13 +14007,13 @@
         "Número do AVL": "484",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h38min",
+        "Não Conformidade": "Veículo sem GPS válido 1h57min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-26T23:29:07",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14025,11 +14025,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:14",
+        "Hora Validador": "2026-11-27T01:26:15",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14041,11 +14041,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:52",
+        "Hora Validador": "2026-11-27T01:20:53",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14055,13 +14055,13 @@
         "Número do AVL": "540",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h38min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h58min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T00:57:59",
+        "Hora Validador": "2026-11-27T01:18:00",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14077,7 +14077,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14087,13 +14087,13 @@
         "Número do AVL": "568",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h6min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h25min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:12",
+        "Hora Validador": "2026-11-27T01:26:13",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14103,13 +14103,13 @@
         "Número do AVL": "542",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h29min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h48min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:56",
+        "Hora Validador": "2026-11-27T01:25:57",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14121,11 +14121,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:52",
+        "Hora Validador": "2026-11-27T01:26:35",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14137,11 +14137,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:08",
+        "Hora Validador": "2026-11-27T01:26:09",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14151,13 +14151,13 @@
         "Número do AVL": "550",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h39min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:49",
+        "Hora Validador": "2026-11-27T01:25:50",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14167,13 +14167,13 @@
         "Número do AVL": "566",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 9h40min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 9h59min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:17",
+        "Hora Validador": "2026-11-27T01:26:18",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14185,11 +14185,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:13",
+        "Hora Validador": "2026-11-27T01:26:14",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14201,11 +14201,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:15",
+        "Hora Validador": "2026-11-27T01:26:16",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14221,7 +14221,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14233,11 +14233,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:07",
+        "Hora Validador": "2026-11-27T01:26:09",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14249,11 +14249,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:25",
+        "Hora Validador": "2026-11-27T01:26:27",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14265,11 +14265,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:47",
+        "Hora Validador": "2026-11-27T01:25:49",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14279,13 +14279,13 @@
         "Número do AVL": "485",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 10h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 10h31min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:42",
+        "Hora Validador": "2026-11-27T01:25:38",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14297,11 +14297,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:59",
+        "Hora Validador": "2026-11-27T01:26:01",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14313,11 +14313,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:57",
+        "Hora Validador": "2026-11-27T01:25:58",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14329,11 +14329,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:17",
+        "Hora Validador": "2026-11-27T01:12:17",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14343,17 +14343,17 @@
         "Número do AVL": "582",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h5min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:05",
+        "Hora Validador": "2026-11-27T01:10:05",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
-        "Linha": "199TRO-FRANCO DA ROCHA (Jd. Luciana) - SP (Perus)",
+        "Linha": "",
         "Prefixo": "22228",
         "Situação Veículo": "Operando",
         "Número do AVL": "541",
@@ -14361,11 +14361,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:07",
+        "Hora Validador": "2026-11-27T01:26:08",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14377,11 +14377,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:07:10",
+        "Hora Validador": "2026-11-27T01:26:11",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14393,11 +14393,11 @@
         "Status": "Com Comunicação",
         "Não Conformidade": "",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:47",
+        "Hora Validador": "2026-11-27T01:25:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14407,13 +14407,13 @@
         "Número do AVL": "55092",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 38h5min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 38h25min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:43",
+        "Hora Validador": "2026-11-27T01:26:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14423,13 +14423,13 @@
         "Número do AVL": "57787",
         "Fabricante": "Autopass V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 8h28min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 8h48min",
         "GPS Status": "1",
-        "Hora Validador": "2026-11-27T01:06:50",
+        "Hora Validador": "2026-11-27T01:10:48",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Viação Cidade Caieiras",
@@ -14445,7 +14445,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14461,7 +14461,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14477,7 +14477,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14487,13 +14487,13 @@
         "Número do AVL": "116590",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h15min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h30min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14509,7 +14509,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14525,7 +14525,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14541,7 +14541,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14557,7 +14557,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14573,7 +14573,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14589,7 +14589,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14605,7 +14605,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14615,13 +14615,13 @@
         "Número do AVL": "97718",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h35min",
+        "Não Conformidade": "Veículo sem GPS válido 1h50min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14637,7 +14637,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14653,7 +14653,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14669,7 +14669,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14679,13 +14679,13 @@
         "Número do AVL": "94074",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem processar pontos de controle 10h51min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14701,7 +14701,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14717,7 +14717,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14733,7 +14733,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14749,7 +14749,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14759,13 +14759,13 @@
         "Número do AVL": "97938",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h21min",
+        "Não Conformidade": "Veículo sem GPS válido 1h36min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14781,7 +14781,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14791,13 +14791,13 @@
         "Número do AVL": "93420",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h51min",
+        "Não Conformidade": "Veículo sem GPS válido 2h6min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14813,7 +14813,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14829,7 +14829,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14845,7 +14845,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14861,7 +14861,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14877,7 +14877,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14893,7 +14893,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14909,7 +14909,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14919,13 +14919,13 @@
         "Número do AVL": "97881",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h45min",
+        "Não Conformidade": "Veículo sem GPS válido 1h59min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14935,13 +14935,13 @@
         "Número do AVL": "94287",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 12h17min",
-        "GPS Status": "1",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h31min",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14957,7 +14957,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -14967,17 +14967,17 @@
         "Número do AVL": "94103",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h6min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h21min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
-        "Linha": "060-JARDIM NOVA ERA - LARANJEIRAS",
+        "Linha": "075-VERA TEREZA - MORRO GRANDE(AJOÁ)",
         "Prefixo": "00341",
         "Situação Veículo": "Operando",
         "Número do AVL": "112805",
@@ -14989,7 +14989,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15005,7 +15005,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15021,7 +15021,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15037,7 +15037,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15053,7 +15053,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15069,7 +15069,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15085,7 +15085,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15101,7 +15101,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15117,7 +15117,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15127,13 +15127,13 @@
         "Número do AVL": "97310",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 8h2min",
+        "Não Conformidade": "Veículo sem transmissão 8h16min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15143,13 +15143,13 @@
         "Número do AVL": "105181",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 18h8min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 18h23min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15165,7 +15165,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15181,7 +15181,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15197,7 +15197,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15207,13 +15207,13 @@
         "Número do AVL": "97661",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h55min",
+        "Não Conformidade": "Veículo sem GPS válido 2h10min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15229,7 +15229,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15245,7 +15245,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15255,13 +15255,13 @@
         "Número do AVL": "94064",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h38min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h53min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15277,7 +15277,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Caieiras",
@@ -15287,13 +15287,13 @@
         "Número do AVL": "97762",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 110h17min",
+        "Não Conformidade": "Veículo sem transmissão 110h32min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15303,13 +15303,13 @@
         "Número do AVL": "116020",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h22min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h36min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15319,13 +15319,13 @@
         "Número do AVL": "121840",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h58min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h13min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15341,7 +15341,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15351,13 +15351,13 @@
         "Número do AVL": "97715",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 5h9min",
+        "Não Conformidade": "Veículo sem GPS válido 5h24min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15367,13 +15367,13 @@
         "Número do AVL": "94070",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h1min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h16min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15389,7 +15389,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15405,7 +15405,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15421,7 +15421,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15432,12 +15432,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15453,7 +15453,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15463,13 +15463,13 @@
         "Número do AVL": "94033",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h30min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h45min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15479,13 +15479,13 @@
         "Número do AVL": "94088",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h44min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h59min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15501,7 +15501,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15517,7 +15517,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15527,17 +15527,17 @@
         "Número do AVL": "97951",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h30min",
+        "Não Conformidade": "Veículo sem GPS válido 1h45min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "240-ESTAÇÃO DE FRANCO DA ROCHA - MONTE VERDE",
+        "Linha": "330-ESTAÇÃO FRANCO DA ROCHA - JARDIM LUCIANA",
         "Prefixo": "00420",
         "Situação Veículo": "Operando",
         "Número do AVL": "97911",
@@ -15549,7 +15549,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15565,7 +15565,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15581,7 +15581,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15597,11 +15597,11 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "260-ESTAÇÃO DE FRANCO DA ROCHA - LAGO AZUL ORTIZ",
+        "Linha": "350-ESTAÇÃO FRANCO DA ROCHA - JD. PRETÓRIA ALTO",
         "Prefixo": "00424",
         "Situação Veículo": "Operando",
         "Número do AVL": "97876",
@@ -15613,7 +15613,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15629,7 +15629,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15645,7 +15645,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15661,7 +15661,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15677,7 +15677,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15687,13 +15687,13 @@
         "Número do AVL": "97888",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h40min",
+        "Não Conformidade": "Veículo sem GPS válido 2h55min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15709,7 +15709,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15725,7 +15725,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15735,13 +15735,13 @@
         "Número do AVL": "64716",
         "Fabricante": "Prodata V2",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h2min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h17min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-27T01:04:36",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15757,7 +15757,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15773,7 +15773,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15789,7 +15789,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15799,13 +15799,13 @@
         "Número do AVL": "97890",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h45min",
+        "Não Conformidade": "Veículo sem GPS válido 2h0min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15815,13 +15815,13 @@
         "Número do AVL": "97940",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h38min",
+        "Não Conformidade": "Veículo sem GPS válido 1h52min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15837,7 +15837,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15847,13 +15847,13 @@
         "Número do AVL": "97901",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h4min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 15h19min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15869,7 +15869,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15885,7 +15885,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15901,7 +15901,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15917,7 +15917,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15933,7 +15933,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15943,13 +15943,13 @@
         "Número do AVL": "114990",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h44min",
+        "Não Conformidade": "Veículo sem GPS válido 1h59min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15965,7 +15965,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15981,7 +15981,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -15997,7 +15997,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16013,7 +16013,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16029,7 +16029,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16039,13 +16039,13 @@
         "Número do AVL": "97344",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h28min",
+        "Não Conformidade": "Veículo sem GPS válido 1h43min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16061,7 +16061,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16077,7 +16077,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16087,13 +16087,13 @@
         "Número do AVL": "97738",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h17min",
+        "Não Conformidade": "Veículo sem GPS válido 1h32min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16103,13 +16103,13 @@
         "Número do AVL": "97944",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h49min",
+        "Não Conformidade": "Veículo sem GPS válido 2h4min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16125,7 +16125,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16141,7 +16141,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16157,7 +16157,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16167,13 +16167,13 @@
         "Número do AVL": "97930",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h1min",
-        "GPS Status": "1",
+        "Não Conformidade": "Veículo sem GPS válido 1h16min",
+        "GPS Status": "0",
         "Hora Validador": "2026-07-29T22:16:19",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16189,7 +16189,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16199,13 +16199,13 @@
         "Número do AVL": "112806",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 23h22min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 23h36min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16215,17 +16215,17 @@
         "Número do AVL": "94032",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h12min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h27min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
-        "Linha": "120-ESTAÇÃO DE FRANCO DA ROCHA-PARQUE PAULISTA",
+        "Linha": "160-ESTAÇÃO DE FRANCO DA ROCHA - JARDIM MONTREAL",
         "Prefixo": "00465",
         "Situação Veículo": "Operando",
         "Número do AVL": "97755",
@@ -16237,7 +16237,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16253,7 +16253,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16269,7 +16269,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16285,7 +16285,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16301,7 +16301,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16317,7 +16317,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16333,7 +16333,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16349,7 +16349,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16365,7 +16365,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16381,7 +16381,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16397,7 +16397,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16407,13 +16407,13 @@
         "Número do AVL": "55001648",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 7h15min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 7h30min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16429,7 +16429,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16445,7 +16445,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16461,7 +16461,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16477,7 +16477,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16493,7 +16493,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16509,7 +16509,7 @@
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16519,13 +16519,13 @@
         "Número do AVL": "115322",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 33h16min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 33h31min",
         "GPS Status": "1",
         "Hora Validador": "2026-07-29T22:14:10",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16535,13 +16535,13 @@
         "Número do AVL": "65353",
         "Fabricante": "Prodata V2",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 7h5min",
+        "Não Conformidade": "Veículo sem transmissão 7h20min",
         "GPS Status": "1",
         "Hora Validador": "2026-11-26T18:03:21",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Cidade de Caieiras - Municipal Franco da Rocha",
@@ -16551,13 +16551,13 @@
         "Número do AVL": "120489",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 86h54min",
+        "Não Conformidade": "Veículo sem transmissão 87h9min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "VCCL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá",
@@ -22679,13 +22679,13 @@
         "Número do AVL": "95180",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h51min",
+        "Não Conformidade": "Veículo sem GPS válido 1h13min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22701,7 +22701,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22711,13 +22711,13 @@
         "Número do AVL": "116014",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h18min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h33min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22727,13 +22727,13 @@
         "Número do AVL": "108634",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 14h44min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 14h59min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22749,7 +22749,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22765,7 +22765,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22781,7 +22781,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22791,13 +22791,13 @@
         "Número do AVL": "97624",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h33min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22807,13 +22807,13 @@
         "Número do AVL": "116467",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 9h0min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 9h15min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22823,13 +22823,13 @@
         "Número do AVL": "97243",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 2h0min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 2h14min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22845,7 +22845,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22861,7 +22861,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22871,13 +22871,13 @@
         "Número do AVL": "97278",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h49min",
-        "GPS Status": "1",
+        "Não Conformidade": "Veículo sem GPS válido 1h12min",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22887,13 +22887,13 @@
         "Número do AVL": "105139",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 24h54min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 25h8min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22909,7 +22909,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22925,11 +22925,11 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
-        "Linha": "900-CONJUNTO MARIA LUIZA - JARDIM MURIANO",
+        "Linha": "",
         "Prefixo": "00817",
         "Situação Veículo": "Operando",
         "Número do AVL": "112813",
@@ -22941,7 +22941,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22951,13 +22951,13 @@
         "Número do AVL": "107229",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h32min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h46min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -22973,7 +22973,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -22989,7 +22989,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23005,7 +23005,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23021,7 +23021,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23031,13 +23031,13 @@
         "Número do AVL": "105286",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 54h19min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 54h33min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23053,7 +23053,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23064,12 +23064,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23079,13 +23079,13 @@
         "Número do AVL": "97784",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h37min",
+        "Não Conformidade": "Veículo sem GPS válido 2h51min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23101,7 +23101,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23117,7 +23117,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23133,7 +23133,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23149,7 +23149,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23160,12 +23160,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23181,7 +23181,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23197,7 +23197,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23213,7 +23213,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23229,7 +23229,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23245,7 +23245,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23255,13 +23255,13 @@
         "Número do AVL": "93348",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 15h54min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 16h8min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23271,13 +23271,13 @@
         "Número do AVL": "97747",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h44min",
+        "Não Conformidade": "Veículo sem GPS válido 1h58min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23293,7 +23293,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23303,13 +23303,13 @@
         "Número do AVL": "93936",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h6min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23325,7 +23325,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23341,7 +23341,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23357,7 +23357,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23373,7 +23373,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23383,13 +23383,13 @@
         "Número do AVL": "93386",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h47min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h1min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23405,7 +23405,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23421,7 +23421,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23437,7 +23437,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Cajamar",
@@ -23453,7 +23453,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23469,7 +23469,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23485,7 +23485,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23501,7 +23501,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23511,13 +23511,13 @@
         "Número do AVL": "93535",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 4h41min",
+        "Não Conformidade": "Veículo sem GPS válido 4h55min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23527,13 +23527,13 @@
         "Número do AVL": "97468",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 6h9min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 6h23min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23549,7 +23549,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23565,11 +23565,11 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "014-OLARIA DO NINO - PRESIDENTE ALTINO",
+        "Linha": "",
         "Prefixo": "00208",
         "Situação Veículo": "Operando",
         "Número do AVL": "97276",
@@ -23581,7 +23581,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23597,7 +23597,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23607,13 +23607,13 @@
         "Número do AVL": "94680",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h37min",
+        "Não Conformidade": "Veículo sem GPS válido 2h52min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23629,7 +23629,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23645,7 +23645,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23655,13 +23655,13 @@
         "Número do AVL": "96745",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h3min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23677,7 +23677,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23693,7 +23693,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23709,7 +23709,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23725,7 +23725,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23735,13 +23735,13 @@
         "Número do AVL": "93383",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 8h18min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 8h32min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23757,7 +23757,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23773,7 +23773,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23789,7 +23789,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23805,7 +23805,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23821,7 +23821,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23837,7 +23837,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23853,7 +23853,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23869,7 +23869,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23885,7 +23885,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23895,13 +23895,13 @@
         "Número do AVL": "95269",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h44min",
+        "Não Conformidade": "Veículo sem GPS válido 1h58min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23911,13 +23911,13 @@
         "Número do AVL": "97405",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h54min",
+        "Não Conformidade": "Veículo sem GPS válido 3h8min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23928,12 +23928,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23943,13 +23943,13 @@
         "Número do AVL": "97800",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h1min",
+        "Não Conformidade": "Veículo sem GPS válido 2h15min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23965,7 +23965,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23975,13 +23975,13 @@
         "Número do AVL": "93798",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h3min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -23997,7 +23997,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24013,7 +24013,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24029,7 +24029,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24045,7 +24045,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24061,7 +24061,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24077,7 +24077,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24093,7 +24093,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24103,13 +24103,13 @@
         "Número do AVL": "97774",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h14min",
+        "Não Conformidade": "Veículo sem GPS válido 1h28min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24125,7 +24125,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24141,7 +24141,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24157,7 +24157,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24173,7 +24173,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24189,7 +24189,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24205,7 +24205,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24221,7 +24221,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24231,13 +24231,13 @@
         "Número do AVL": "97455",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h27min",
+        "Não Conformidade": "Veículo sem GPS válido 1h42min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24247,13 +24247,13 @@
         "Número do AVL": "122665",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 5h3min",
-        "GPS Status": "1",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h17min",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24269,7 +24269,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24285,7 +24285,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24301,7 +24301,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24317,7 +24317,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24333,7 +24333,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24349,7 +24349,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24365,7 +24365,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24381,7 +24381,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24397,7 +24397,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24413,7 +24413,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24423,13 +24423,13 @@
         "Número do AVL": "97295",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 17h36min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 17h50min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24445,7 +24445,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24461,7 +24461,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24477,7 +24477,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24487,13 +24487,13 @@
         "Número do AVL": "93607",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 31h16min",
+        "Não Conformidade": "Veículo sem transmissão 31h30min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24509,7 +24509,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24525,7 +24525,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24541,7 +24541,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24557,7 +24557,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24573,7 +24573,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24589,7 +24589,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24599,13 +24599,13 @@
         "Número do AVL": "111883",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 184h50min",
+        "Não Conformidade": "Veículo sem transmissão 185h4min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24621,7 +24621,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24637,7 +24637,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24653,7 +24653,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24669,7 +24669,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24685,7 +24685,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24701,7 +24701,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24717,7 +24717,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24727,13 +24727,13 @@
         "Número do AVL": "93642",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h14min",
+        "Não Conformidade": "Veículo sem GPS válido 3h29min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24749,7 +24749,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24765,7 +24765,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24781,7 +24781,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24791,13 +24791,13 @@
         "Número do AVL": "112440",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h9min",
+        "Não Conformidade": "Veículo sem GPS válido 1h23min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24813,7 +24813,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24829,7 +24829,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24845,11 +24845,11 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "024-JD. BARONESA / MUNHOZ - VILA YARA",
+        "Linha": "",
         "Prefixo": "00358",
         "Situação Veículo": "Operando",
         "Número do AVL": "97739",
@@ -24861,7 +24861,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24877,7 +24877,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24887,17 +24887,17 @@
         "Número do AVL": "97991",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 4h32min",
+        "Não Conformidade": "Veículo sem GPS válido 4h46min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "016-JARDIM D'ABRIL - LARGO DE OSASCO - CIRCULAR",
+        "Linha": "",
         "Prefixo": "00361",
         "Situação Veículo": "Operando",
         "Número do AVL": "97245",
@@ -24909,7 +24909,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24925,7 +24925,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24935,13 +24935,13 @@
         "Número do AVL": "94572",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h8min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24957,7 +24957,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24973,7 +24973,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -24983,13 +24983,13 @@
         "Número do AVL": "96903",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 1h6min",
+        "Não Conformidade": "Veículo sem GPS válido 1h20min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25005,7 +25005,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25021,7 +25021,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25031,17 +25031,17 @@
         "Número do AVL": "97260",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "",
+        "Não Conformidade": "Veículo sem GPS válido 1h0min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "029-PORTAL D'OESTE I - JARDIM TEREZA",
+        "Linha": "024-JD. BARONESA / MUNHOZ - VILA YARA",
         "Prefixo": "00370",
         "Situação Veículo": "Operando",
         "Número do AVL": "93694",
@@ -25053,7 +25053,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25063,13 +25063,13 @@
         "Número do AVL": "97467",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 4h11min",
+        "Não Conformidade": "Veículo sem GPS válido 4h25min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25085,7 +25085,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25095,13 +25095,13 @@
         "Número do AVL": "112750",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 13h33min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 13h48min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25117,7 +25117,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25133,7 +25133,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25149,7 +25149,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25159,13 +25159,13 @@
         "Número do AVL": "97236",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h13min",
+        "Não Conformidade": "Veículo sem GPS válido 3h28min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25181,7 +25181,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25191,13 +25191,13 @@
         "Número do AVL": "97742",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h57min",
+        "Não Conformidade": "Veículo sem transmissão 2h9min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25207,13 +25207,13 @@
         "Número do AVL": "97471",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h19min",
+        "Não Conformidade": "Veículo sem GPS válido 3h33min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25229,7 +25229,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25245,7 +25245,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25261,7 +25261,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25277,7 +25277,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25287,13 +25287,13 @@
         "Número do AVL": "97782",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h7min",
+        "Não Conformidade": "Veículo sem GPS válido 3h21min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25309,7 +25309,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25325,7 +25325,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25341,7 +25341,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25357,7 +25357,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25373,7 +25373,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25389,7 +25389,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25405,7 +25405,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25421,11 +25421,11 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "021-GINÁSIO MUNHOZ - VILA YARA",
+        "Linha": "",
         "Prefixo": "00394",
         "Situação Veículo": "Operando",
         "Número do AVL": "55001911",
@@ -25437,7 +25437,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25453,7 +25453,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25469,7 +25469,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25485,7 +25485,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25496,12 +25496,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "0",
+        "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25517,7 +25517,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25533,7 +25533,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25549,7 +25549,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25565,7 +25565,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25581,7 +25581,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25591,13 +25591,13 @@
         "Número do AVL": "97239",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 4h13min",
+        "Não Conformidade": "Veículo sem GPS válido 4h27min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25613,7 +25613,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25629,7 +25629,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25639,13 +25639,13 @@
         "Número do AVL": "97420",
         "Fabricante": "Quanta Duo",
         "Status": "Sem Comunicação",
-        "Não Conformidade": "Veículo sem transmissão 2h0min",
+        "Não Conformidade": "Veículo sem transmissão 2h15min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25661,7 +25661,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25671,13 +25671,13 @@
         "Número do AVL": "97302",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h34min",
+        "Não Conformidade": "Veículo sem GPS válido 2h48min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25693,7 +25693,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25709,7 +25709,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25725,7 +25725,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25741,7 +25741,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25757,7 +25757,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25767,13 +25767,13 @@
         "Número do AVL": "97462",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h49min",
+        "Não Conformidade": "Veículo sem GPS válido 3h3min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25789,11 +25789,11 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
-        "Linha": "027-VILA DOS REMÉDIOS - VILA YARA",
+        "Linha": "040-VL. AYROSA - LGO OSASCO - CIRCULAR",
         "Prefixo": "00417",
         "Situação Veículo": "Operando",
         "Número do AVL": "97943",
@@ -25805,7 +25805,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25821,7 +25821,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25837,7 +25837,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Osasco",
@@ -25853,7 +25853,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25863,13 +25863,13 @@
         "Número do AVL": "93360",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 24h15min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 24h30min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25879,13 +25879,13 @@
         "Número do AVL": "93719",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 16h43min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 16h57min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25895,13 +25895,13 @@
         "Número do AVL": "105200",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 4h53min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 5h7min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25912,12 +25912,12 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25927,13 +25927,13 @@
         "Número do AVL": "93573",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 12h29min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 12h44min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25943,13 +25943,13 @@
         "Número do AVL": "93580",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 7h39min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 7h53min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25959,13 +25959,13 @@
         "Número do AVL": "94005",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h1min",
+        "Não Conformidade": "Veículo sem GPS válido 2h15min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25981,7 +25981,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -25991,13 +25991,13 @@
         "Número do AVL": "93553",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h39min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 3h53min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26013,7 +26013,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26029,7 +26029,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26045,7 +26045,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26061,7 +26061,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26077,7 +26077,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26087,17 +26087,17 @@
         "Número do AVL": "93405",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h2min",
+        "Não Conformidade": "Veículo sem GPS válido 3h16min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "850-CONJ. SÃO BENEDITO/ CIDADE SÃO PEDRO -HOSP. SANTA ANA",
+        "Linha": "",
         "Prefixo": "00846",
         "Situação Veículo": "Operando",
         "Número do AVL": "93564",
@@ -26109,7 +26109,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26119,13 +26119,13 @@
         "Número do AVL": "97251",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem processar pontos de controle 3h54min",
+        "Não Conformidade": "Veículo sem processar pontos de controle 4h8min",
         "GPS Status": "1",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26141,7 +26141,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26157,7 +26157,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26173,7 +26173,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26183,13 +26183,13 @@
         "Número do AVL": "97244",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 2h56min",
+        "Não Conformidade": "Veículo sem GPS válido 3h10min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26205,7 +26205,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26221,7 +26221,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26237,7 +26237,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26247,13 +26247,13 @@
         "Número do AVL": "93705",
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
-        "Não Conformidade": "Veículo sem GPS válido 3h13min",
+        "Não Conformidade": "Veículo sem GPS válido 3h27min",
         "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26269,7 +26269,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26280,16 +26280,16 @@
         "Fabricante": "Quanta Duo",
         "Status": "Com Comunicação",
         "Não Conformidade": "",
-        "GPS Status": "1",
+        "GPS Status": "0",
         "Hora Validador": "",
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
-        "Linha": "860-CONJ. SÃO BENEDITO / CIDADE SÃO PEDRO - COLINAS DA ANHAGUERA",
+        "Linha": "",
         "Prefixo": "00859",
         "Situação Veículo": "Operando",
         "Número do AVL": "93377",
@@ -26301,7 +26301,7 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     },
     {
         "Segmento": "Urubupungá Municipal Santana",
@@ -26317,6 +26317,6 @@
         "Empresa": "AVUL",
         "Data": "27/11/2026",
         "Hora": "01h",
-        "Hora_Extracao": "01h12"
+        "Hora_Extracao": "01h27"
     }
 ]
